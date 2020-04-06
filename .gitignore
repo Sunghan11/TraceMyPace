@@ -4,3 +4,4 @@
 #Ignore bundle
 bundle.js
 bundle.js.map
+tmp/
