@@ -1,0 +1,6 @@
+#ignore node modules
+/node_modules/
+
+#Ignore bundle
+bundle.js
+bundle.js.map
