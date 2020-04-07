@@ -1,10 +1,12 @@
 class User < ApplicationRecord
+    include ActionView::Helpers::DateHelper
+    
     validates :email, :first_name, :last_name, :password_digest, :session_token, presence: true
     validates :password, length: { minimum: 6, allow_nil: true }
     validates :email, uniqueness: true
     validates :session_token, uniqueness: true           
-    validates :gender, inclusion: %w(M F), if: -> { sex }
-    validate :birth_date_in_the_past, if: -> { birth_date }
+    # validates :gender, inclusion: %w(M F)
+    validates :gender, inclusion: {in: ["Male", "Female"]}
 
     attr_reader :password
     after_initialize :ensure_session_token
@@ -41,4 +43,8 @@ class User < ApplicationRecord
         self.update!(session_token: User.generate_session_token)
         self.session_token
     end
+
+    private
+
+
 end
