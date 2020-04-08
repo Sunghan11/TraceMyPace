@@ -1,0 +1,54 @@
+.signup-page, .login-page {
+    background-color: #F0F0F0;
+    position: fixed;    
+    width: 100%;
+    /* height: 100%; */
+
+}
+
+.signup-form, .login-form {
+    position: relative;
+    background-color: #F0F0F0;
+    margin: 80px auto 130px;;
+    padding: 0;
+    max-width: 320px;
+    height: 745px;
+    vertical-align: baseline;
+}
+
+.gender-button {
+    position: relative
+}
+
+.form-group {
+    padding: 5px;
+    width: 100%;
+
+}
+
+.input-group {
+    width: 100%;
+    height: 42px;
+}
+
+.control-label {
+    width: 100%;
+}
+
+.signup-form input[type="radio"] + label span {
+    display: inline-block;
+    margin: -2px 10px;
+    vertical-align: middle;
+    background-color: transparent;
+    width: 40%;
+    height: 40px;
+    cursor: pointer;
+}
+.signup-form input[type="radio"]:checked + label span {
+    border: solid rgb(0, 81, 255) 1px;
+    box-shadow: -.5px -.5px 1.75px 1.75px rgb(0, 153, 255)
+}
+
+.radioDiv {
+    border: solid rgb(122, 120, 120) 1px;
+}

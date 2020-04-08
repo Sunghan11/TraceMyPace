@@ -1,19 +1,17 @@
 class User < ApplicationRecord
     include ActionView::Helpers::DateHelper
     
-    validates :email, :first_name, :last_name, :password_digest, :session_token, presence: true
+    validates :email, :first_name, :last_name, :password_digest, :session_token, :location, presence: true
     validates :password, length: { minimum: 6, allow_nil: true }
     validates :email, uniqueness: true
-    validates :session_token, uniqueness: true           
+    validates :session_token, uniqueness: true        
+       
     # validates :gender, inclusion: %w(M F)
     validates :gender, inclusion: {in: ["Male", "Female"]}
 
     attr_reader :password
     after_initialize :ensure_session_token
 
-    belongs_to :location,
-        foreign_key: :location_id,
-        class_name: :Location
 
     def self.find_by_credentials(email, password)
         user = User.find_by(email: email)

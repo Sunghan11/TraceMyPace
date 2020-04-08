@@ -13,15 +13,3 @@
  *= require_tree .
  *= require_self
  */
-@font-face {
-    src: url(fonts/Helvetica95Black.ttf);
-    font-family: helvBold;
-}
-
-html {
-    height: 100%
-}
-
-body {
-    font-family: helvBold;
-}

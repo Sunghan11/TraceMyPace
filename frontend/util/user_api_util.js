@@ -1,7 +1,8 @@
-export const fetchUser = (email) => (
+export const fetchUsers = () => (
     $.ajax({
         method: 'GET',
-        url: `/api/users/${email.id}`,
-        data: { email }
+        url: `/api/users/`
     })
 );
+
+// export const createUser = 
