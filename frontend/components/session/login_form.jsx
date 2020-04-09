@@ -12,6 +12,7 @@ class LogInForm extends React.Component {
 
         // this.onChange = this.onChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
+        this.handleDemo = this.handleDemo.bind(this);
 
     }
 
@@ -25,10 +26,15 @@ class LogInForm extends React.Component {
         )
     };
 
+
     handleSubmit(e) {
         e.preventDefault();
         const user = Object.assign({}, this.state);
         this.props.submitForm(user);
+    }
+
+    handleDemo(e) {
+        const user = {email: ""}
     }
 
     renderErrors() {

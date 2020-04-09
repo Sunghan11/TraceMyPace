@@ -8,8 +8,8 @@ function Nav() {
         <nav className="nav-bar">
             {/* <div> */}
                 <Link to="/">
-                    <div className="logo">
-                        <img src={window.tmplogoURL} />
+                    <div className="nav-logo">
+                        <img src={window.logoBigURL} />
                     </div>
                 </Link>
             {/* </div>
@@ -22,8 +22,8 @@ function Nav() {
                 </ul>
             {/* </div>            */}
                 
-                <Link to="/login"><button className="splash-login-button">LOG IN</button></Link>
-                <Link to="/signup"><button className="splash-signup-button">SIGN UP</button></Link>
+                <Link to="/login"><button className="nav-login-button">LOG IN</button></Link>
+                <Link to="/signup"><button className="nav-signup-button">SIGN UP</button></Link>
 
 
         </nav>

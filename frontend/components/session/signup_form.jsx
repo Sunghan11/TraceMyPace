@@ -2,21 +2,6 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import COUNTRIES from './country_list';
 
-// const MONTHS = [
-//     "January", "February", "March", "April", "May", "June",
-//     "July", "August", "September", "October", "November", "December"
-// ]
-// const DAYS = [];
-// for (let i = 1; i < 32; i++) {
-//     DAYS.push(i);
-// };
-
-// const YEARS = [];
-// for (let i = 1900; i <= (new Date().getFullYear() - 12); i++) {
-//     YEARS.push(i)
-// }
-
-
 class SignUpForm extends React.Component {
     constructor(props) {
         super(props)
@@ -229,9 +214,10 @@ class SignUpForm extends React.Component {
 
 
                         <div className="session-form">
-                            <button className="btn btn-primary btn-lg">
-                                SIGN UP
-                            </button>
+                            <input className="signup-button"
+                                type="submit"
+                                value="SIGN UP" />
+                            <div className="error">{this.renderErrors()}</div>
                         </div>
                         
 

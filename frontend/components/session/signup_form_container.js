@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { signup } from '../../actions/session_actions';
+import { signup, login } from '../../actions/session_actions';
 import SignUpForm from './signup_form';
 
 const msp = ({ errors }) => ({
@@ -11,7 +11,8 @@ const msp = ({ errors }) => ({
 });
 
 const mdp = dispatch => ({
-    submitForm: (user) => dispatch(signup(user)),
+    submitForm: user => dispatch(signup(user)),
+    // demoLogin: user => dispatch(login(user))
 });
 
 export default connect(msp, mdp)(SignUpForm);

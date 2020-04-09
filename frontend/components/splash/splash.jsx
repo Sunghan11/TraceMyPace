@@ -21,19 +21,28 @@ class Splash extends React.Component {
             <>
                 <section className="splash-main">
                     <div id="splash-background-top">
-                        <h2 className="heading1">
-                            OWN EVERY MILE
-                        </h2>
-                        {/* <hr align="right"/> */}
-                        <p className="p-top">
-                            The best mobile run tracking experience,
-                            backed by the world's largest digital
-                            health and fitness community.
-                        </p>
-                        <Link to="/signup"><button className="spash-signup-button">SIGN UP</button></Link>
-                        <div>
-                            <span>Already a member?</span>
-                            <Link to="/login"><button className="splash-login-button">LOG IN</button> </Link>
+                        <div className="splash-first">
+                            <hr align="right"/>
+                            <h2 className="heading1" align="right">
+                                OWN EVERY MILE
+                            </h2>
+                            <hr align="right"/>
+                            <div className="top-description">
+                                <p className="p-top">
+                                    The best mobile run tracking experience,
+                                    backed by the world's largest digital
+                                    health and fitness community.
+                                </p>
+                            </div>
+                            <div className="splash-buttons-first">
+                                <Link to="/signup"><button className="splash-signup-button" align="right">SIGN UP</button></Link>
+                                <div>
+                                    <br/>
+                                    <br/>
+                                    <span className="span-top">Already a member?    </span>
+                                    <Link to="/login"><button className="splash-login-button">LOG IN</button> </Link>
+                                </div>  
+                            </div>
                         </div>
                     </div>
                     <div>

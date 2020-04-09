@@ -1,6 +1,6 @@
 class Api::SessionsController < ApplicationController
 
-    before_action :ensure_logged_in, only: [:destroy]
+    # before_action :ensure_logged_in, only: [:destroy]
 
     def create
         @user = User.find_by_credentials(
@@ -9,7 +9,7 @@ class Api::SessionsController < ApplicationController
         )
         if @user
             login!(@user)
-            render 'api/users/show'
+            render :show
         else
             render json: ["Invalid email/password credentials. Please try again."], status: 401
         end
@@ -17,8 +17,8 @@ class Api::SessionsController < ApplicationController
 
 
     def destroy
-        if current_user
-            log_out!
+        if logged_in?
+            logout!
         else
             render json: ["No user is currently logged in"], status: 404
         end

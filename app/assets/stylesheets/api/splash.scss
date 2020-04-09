@@ -2,23 +2,157 @@
     background-image: 
     linear-gradient(to right, rgba(15, 80, 136, 1), rgba(0, 255, 231, .70)),
     image-url('background1.jpg');
-    max-width: 100%;
-    height: 50%;
-    // background: -moz-linear-gradient(0deg, rgba(15,80,136,1) 0%, rgba(0,255,231,1) 50%);
-    // background: -webkit-linear-gradient(0deg, rgba(15,80,136,1) 0%, rgba(0,255,231,1) 50%);
-    // background: -o-linear-gradient(0deg, rgba(15,80,136,1) 0%, rgba(0,255,231,1) 100%);
-    // background: -ms-linear-gradient(0deg, rgba(15,80,136,1) 0%, rgba(0,255,231,1) 100%);
-    // background: linear-gradient(90deg, rgba(15,80,136,1) 0%, rgba(0,255,231,1) 100%);
+    // max-width: 1320px;
+    // height: 100%;
+    min-height: 400px;
+    background-size: auto 668px;
+    padding: 15px 48px 125px;
+    -webkit-background-size: cover;
+    position: relative;
+    overflow:hidden;
+    align-self: center;
 }
+
+#splash-background-top:after {
+    content: "";
+    position: absolute;
+    display: block;
+    bottom: -18%;
+    left: -5%;
+    height: 30%;
+    width: 110%;
+    background: white;
+    transform: rotate(-5deg);
+}
+
+
 
 .heading1 {
     color: white;
     font-size: 48px;                               
-    letter-spacing: 6px;
+    letter-spacing: 2px;
+    font-family: 'Heebo', sans-serif;
+    width: 100%;
 }
 
 .heading2 {
     color: black;
     font-size: 48px;
     letter-spacing: 6px;
+}
+
+.p-top {
+    color: white;
+    font-size: 16px;
+    text-align: right;
+    font-family: 'Heebo', sans-serif;
+    max-width: 290px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;;
+    
+
+}
+
+// .splash-first {
+    // width: 100%;
+    // min-height:500px;
+    // float: right;
+    // align-items: right;
+// }
+
+.splash-first {
+    height: 420px;
+    width: 420px;
+    float: right;
+    display: flex;
+    flex-direction: column;
+    align-items: right;
+    justify-content: right;
+}
+
+.splash-first div span {
+    color: white;
+    font-family: 'Heebo', sans-serif;
+    font-style: italic;
+}
+
+
+.splash-first hr{
+    border-color: white;
+    border-top: solid 5.5px white;
+    width: 87px;
+}
+
+.nav-signup-button {
+    background-color: #1DDD7C;
+    padding: 6px 15px;
+    font-weight: 700;
+    color: white;
+    min-width: 64px;
+    width: 100px;
+    height: 35px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    
+
+}
+
+.nav-login-button {
+    background-color: white;
+    border:none;
+    font-weight: 700;
+    min-width: 64px;
+    cursor: pointer;
+
+}
+
+.splash-signup-button {
+    background-color: #1DDD7C;
+    padding: 6px 15px;
+    font-weight: 700;
+    color: white;
+    min-width: 150px;
+    width: 290px;
+    height: 45px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-family: 'Heebo', sans-serif;
+    letter-spacing: 2px;
+    font-size: 19px;   
+}
+
+.top-description {
+    float: right;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: space space-between; 
+}
+
+.splash-buttons-first {
+    height: 420px;
+    width: 420px;
+    float: right;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: space space-between;
+    
+}
+
+.splash-login-button {
+    color: white;
+    background-color: transparent;
+    border:2 px solid rgb(107, 107, 107);
+    padding: 6px 15px;
+    font-weight: 530;
+    min-width: 64px;
+    width: 100px;
+    height: 35px;
+    border-radius: 4px;
+    cursor: pointer;
+
 }
