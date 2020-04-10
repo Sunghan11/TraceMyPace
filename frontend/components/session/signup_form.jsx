@@ -133,7 +133,8 @@ class SignUpForm extends React.Component {
                                             {DAYS.map(day => 
                                             <option key={day} value={day}>{day} </option>)}
                                         </select>
-                                        <span className="arrow-selector" id="day-arrow">v</span>
+                                        {/* <span className="arrow-selector" id="day-arrow">v</span> */}
+                                        <img src={window.downArrow} />
                                     </div>
                                 </div>
                                 <div className="month-group">
@@ -142,7 +143,8 @@ class SignUpForm extends React.Component {
                                             {MONTHS.map(month => 
                                             <option key={month} value={month}>{month}</option>)}
                                         </select>
-                                        <span className="arrow-selector" id="month-arrow">v</span>
+                                        {/* <span className="arrow-selector" id="month-arrow"></span> */}
+                                        <img src={window.downArrow} />
                                     </div>
                                 </div>
                                 <div className="year-group">
@@ -151,7 +153,8 @@ class SignUpForm extends React.Component {
                                             {YEARS.map(year => 
                                             <option key={year} value={year}>{year}</option>)}
                                         </select>
-                                        <span className="arrow-selector" id="year-arrow">v</span>
+                                        {/* <span className="arrow-selector" id="year-arrow">v</span> */}
+                                        <img src={window.downArrow} />
                                     </div>
                                 </div>
                             </div>
@@ -195,7 +198,8 @@ class SignUpForm extends React.Component {
                                             <option key={location} value={location}>{location}</option>)}
                                     </select>
               
-                                    <span className="arrow-country" id="country-arrow">V</span>
+                                    {/* <span className="arrow-country" id="country-arrow">V</span> */}
+                                    <img src={window.downArrow} />
                                 </div>
                             </label>
                         </div>

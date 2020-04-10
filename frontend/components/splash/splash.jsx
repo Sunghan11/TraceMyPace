@@ -20,7 +20,7 @@ class Splash extends React.Component {
     render() {
         return (
             <>
-                {/* <Nav /> */}
+                <Nav />
                 <div className="splash-main">
                     <div id="splash-background-top">
                         <div className="splash-first">

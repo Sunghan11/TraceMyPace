@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import NavContainer from '../nav/nav_container';
+import UserNav from '../nav/user_nav';
 
 class LogInForm extends React.Component {
     constructor(props) {
@@ -53,7 +53,8 @@ class LogInForm extends React.Component {
         // const link = this.props.formType === 'Sign Up' ? <Link to="/login">LOG IN</Link> : <Link to="/signup">SIGN UP</Link>
 
         return (      
-
+            <>
+                <UserNav />
             <div className="login-page">
                 <div className="login-form">
                     <div className="errors-session">{this.renderErrors()}</div>
@@ -79,6 +80,10 @@ class LogInForm extends React.Component {
                                 type="password"
                                 placeholder="Password" />
                         </div>
+                        
+                        <div className="form-group">
+                        <span className="forgot-password">Forgot Something? Too bad.</span>
+                        </div>
                 
                         <div className="session-form">
                             <input className="login-button"
@@ -90,6 +95,7 @@ class LogInForm extends React.Component {
                     </form>
                 </div>
             </div>
+            </>
 
         )
     }

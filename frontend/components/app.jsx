@@ -15,17 +15,17 @@ const App = () => (
     <>
     
         {/* <header> */}
-            <Nav />
+            {/* <Nav /> */}
             {/* <Route path='/' component={MyHomeContainer} /> */}
         {/* </header> */}
         {/* <div className="App">
             <Switch> */}
-                <ProtectedRoute path ="/" component={Nav} />
+                <ProtectedRoute exact path ="/" component={Nav} />
                 <AuthRoute exact path="/" component={Splash} />
                 <AuthRoute exact path="/login" component={LoginFormContainer} />
                 <AuthRoute exact path="/signup" component={SignupFormContainer} />
-                <ProtectedRoute exact path="my_home" component={NavContainer} />
-                {/* <ProtectedRoute exact path="/my_home" component={MyHomeContainer} /> */}
+                {/* <ProtectedRoute exact path="my_home" component={NavContainer} /> */}
+                <ProtectedRoute exact path="/my_home" component={MyHomeContainer} />
             {/* </Switch>
         </div> */}
     
