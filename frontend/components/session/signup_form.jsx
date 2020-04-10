@@ -217,8 +217,7 @@ class SignUpForm extends React.Component {
                                         {COUNTRIES.map(location =>
                                             <option key={location} value={location}>{location}</option>)}
                                     </select>
-              
-                                    {/* <span className="arrow-country" id="country-arrow">V</span> */}
+                                    
                                     <img src={window.downArrow} />
                                 </div>
                             </label>

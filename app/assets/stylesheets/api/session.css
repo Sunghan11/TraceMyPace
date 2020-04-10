@@ -7,7 +7,16 @@
     margin: auto;
 }
 
+.birth-date img {
+    display:flex;
+    margin-top: 17px;
+    width: 12px;
+    height: 12px;
+}
+
 .country-group img {
+    display:flex;
+    margin-top: 17px;
     width: 12px;
     height: 12px;
 }
@@ -15,6 +24,8 @@
 .date-selectors img {
     width: 12px;
     height: 12px;
+    margin-right: 10px;
+    z-index 10;
 }
 
 .dashed {
@@ -104,7 +115,18 @@ input[type="radio"] {
     justify-content: space-between;
     width: 100%;
     position: relative;
-    /* padding: 17px; */
+}
+
+input[type="text"]:focus {
+    background-color:white;
+}
+
+input[type="password"]:focus {
+    background-color: white;
+}
+
+#optC:focus {
+    background-color: white;
 }
 
 .gender-button input[type="radio"]:checked + label div {
@@ -127,8 +149,12 @@ input[type="radio"] {
 .input-group {
     width: 100%;
     height: 42px;
+    text-indent: 12px;
 }
 
+select {
+    text-indent: 12px;
+}
 .control-label {
     width: 100%;
 }
@@ -243,20 +269,39 @@ input {
 
 .country-group {
     display: flex;
+    /* justify-content: space-around; */
     background-color: #F0F0F0;
     border: solid 1px #9297A3;
-    padding-top: 12px;
-    padding-bottom: 12px;
-    padding-left:12px;
+    height: 45px;
+}
+
+.country-group select {
+    width:90%;
+    height: auto;
 }
 
 .day-group {
     display: flex;
-    position: relative;
-    justify-content: space-between;
+    flex-direction: row;
+    /* position: relative; */
+    /* justify-content: space-between; */
     background-color: #F0F0F0;
     border: solid 1px #9297A3;
     width: 22%;
+}
+
+
+
+.birth-date select {
+    height: 45px;
+    width: 90%;
+}
+
+.date-selectors {
+    display: flex;
+    flex-direction: row;
+    background-color: #F0F0F0;
+    width: 100%;
 }
 
 .month-group {
@@ -277,13 +322,6 @@ input {
     width: 27%;
 }
 
-.date-selectors {
-    display:flex;
-    justify-content: space-between;
-    padding-left: 12px;
-    padding-top: 12px;
-    padding-bottom: 12px;
-}
 
 #optC {
     display:flex;
