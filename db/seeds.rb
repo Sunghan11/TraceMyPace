@@ -8,14 +8,14 @@
 
 
 
-User.delete.all
+User.delete_all
 
-demouser = User.create!(
+demoUser = User.create(
     first_name: "demo",
     last_name: "user",
     email: "testUser@gmail.com",
     password: "password",
-    birth_date: Date.new(1988, 3, 26),
+    birth_date: "1988-03-26",
     gender: "Male",
     location: "United States"
 )

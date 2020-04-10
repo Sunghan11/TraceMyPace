@@ -22,6 +22,8 @@ const UserNav = () => (
 
         </nav>
 
+        <div className="line"></div>
+
 
     </>
 );

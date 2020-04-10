@@ -33,7 +33,8 @@ const MyHome = ({ currentUser, logout }) => (
 
                  {/* <Link to="/logout"><button className="home-logout-button">Logout</button></Link> */}
 
-             </nav>
+                </nav>
+                <div className="line"></div>
 
 
             </>

@@ -6,19 +6,33 @@
     max-width: 980px;
     background: white;
     margin: 0 auto;
+}
 
+.line {
+    border-bottom: solid 1px #9297A3;
+    width: 100%;
+}
+
+.nav-logo img {
+    max-width: 60%;
 }
 
 .nav-links {
-    width: 35%;
+    width: 25%;
     display: flex;
     justify-content: space-around;
     align-items: center;
+    position: absolute;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+    top: 15px;
     list-style: none;
     font-family: 'Heebo', sans-serif;
     color: rgb(131, 130, 130);
     font-weight: bold;
-    font-size: 13px;
+    font-size: 14px;
 }
 
 .forgot-password {
@@ -35,15 +49,21 @@
 }
 
 .home-nav-links {
-    width: 35%;
+    width: 25%;
     display: flex;
     justify-content: space-around;
     align-items: center;
+    position: absolute;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+    top: 15px;
     list-style: none;
     font-family: 'Heebo', sans-serif;
     color: rgb(131, 130, 130);
     font-weight: bold;
-    font-size: 13px;
+    font-size: 14px;
 }
 
 // .home-nav-profile {
@@ -70,14 +90,26 @@
 
 .profile-menu a {
     color: #9297A3;
-    
+    display: inline-block;
+    white-space: nowrap;
+    width: 100%;
     text-decoration: none;
+    box-shadow: solid 1px black;
 }
 
 .profile-menu {
     display: flex;
     flex-direction: column;
     position:relative;
+    align-items: center;
+    padding: 0;
+}
+
+.navLogSign {
+    display: flex;
+    justify-content: space-between;
+    width: 20%;
+    align-items: center;
 }
 
 .profile-menu a:hover {
@@ -85,16 +117,25 @@
 }
 
 .home-nav-profile button {
-    margin-top: 20px;
+    margin-top: 7px;
     background: white;
     background-image: image-url('avatar.jpg');
     background-size: contain;
-    width: 60px;
-    height: 60px;
-
+    width: 40px;
+    height: 40px;
 }
 
-.home-nav-profile button:hover {
+.home-nav-profile li:not(:last-child):after {
+    content: "";
+    display: block;
+    border-bottom: 1px solid black;
+    width: 130%;
+    left:0;
+    
     
 }
+
+// .home-nav-profile button:hover {
+    
+// }
 

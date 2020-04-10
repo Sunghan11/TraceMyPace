@@ -5,7 +5,7 @@ import UserNav from '../nav/user_nav';
 
 class SignUpForm extends React.Component {
     constructor(props) {
-        super(props)
+        super(props);
         this.state = {
             first_name: '',
             last_name: '',
@@ -18,6 +18,7 @@ class SignUpForm extends React.Component {
 
         // this.onChange = this.onChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
+        this.handleDemoLogin = this.handleDemoLogin.bind(this);
         // this.handleDemoLogin = this.handleDemoLogin(this);
 
     }
@@ -25,6 +26,11 @@ class SignUpForm extends React.Component {
     // onChange(e) {
     //     this.setState({ [e.target.name]: e.target.value })
     // } 
+
+    handleDemoLogin() {
+        // debugger;
+        this.props.login(this.props.demoUser)
+    }
 
     update(field) {
         return e => (
@@ -97,10 +103,10 @@ class SignUpForm extends React.Component {
                     <Link className="login-link" to="/login">LOG IN</Link>
                     <br/>
                     <br/>
-                    <input className="demoUser" type="submit" 
-                    // onClick={this.handleDemoLogin} 
-                    value="SIGN IN AS DEMO USER" />
-                            <br />
+                    <br/>
+                        <button onClick={this.handleDemoLogin}>
+                            <div className="demoUser">SIGN IN AS DEMO USER</div>
+                        </button> 
                             <br />
                             <br />
                     <div className="dashed">
@@ -149,7 +155,7 @@ class SignUpForm extends React.Component {
                             <div className="birth-date">
                                 <div className="day-group">
                                     <div className="date-selectors">
-                                        <select id="optC" onChange={this.update("day")}>
+                                        <select className="optC" onChange={this.update("day")}>
                                             {DAYS.map(day => 
                                             <option key={day} value={day}>{day} </option>)}
                                         </select>
@@ -159,7 +165,7 @@ class SignUpForm extends React.Component {
                                 </div>
                                 <div className="month-group">
                                     <div className="date-selectors">
-                                        <select id="optC" onChange={this.update("month")}>
+                                        <select className="optC" onChange={this.update("month")}>
                                             {MONTHS.map(month => 
                                             <option key={month} value={month}>{month}</option>)}
                                         </select>
@@ -169,7 +175,7 @@ class SignUpForm extends React.Component {
                                 </div>
                                 <div className="year-group">
                                     <div className="date-selectors">
-                                        <select id="optC" onChange={this.update("year")}>
+                                        <select className="optC" onChange={this.update("year")}>
                                             {YEARS.map(year => 
                                             <option key={year} value={year}>{year}</option>)}
                                         </select>
@@ -212,7 +218,7 @@ class SignUpForm extends React.Component {
                         <div className="form-group">
                             <label className="control-label">
                                 <div className="country-group">
-                                    <select id="optC"
+                                    <select className="optC"
                                         onChange={this.update("location")}>
                                         {COUNTRIES.map(location =>
                                             <option key={location} value={location}>{location}</option>)}
@@ -225,7 +231,7 @@ class SignUpForm extends React.Component {
 
                         <div className="statement">
                             <label className="checkbox-label">
-                                <input type="checkbox"/>
+                                <input type="checkbox" defaultChecked/>
                                 <span className="checkbox-custom"></span>
                             </label>
                             <p className="word-of-mouth">
