@@ -17,18 +17,38 @@
     height: 12px;
 }
 
-/* .login-form {
-    position: relative;
-    display: flex;
-    justify-content: space-evenly;
+.dashed {
+    border-bottom: 1px solid #9297A3;
+    text-align: center;
+    height: 10px;
+    margin-bottom: 10px;
+    z-index: -2;
+}
+
+.dashed span {
+    color: #9297A3;
     background-color: #F0F0F0;
-    margin: 80px auto 130px;;
-    padding: 0;
-    max-width: 320px;
+    padding: 10px;
+    font-family: 'Nunito', sans-serif;
+}
+
+.demoUser {
+    display: flex;
+    position: absolute;
+    justify-content: center;
+    background-color: #385998;
+    font-weight: 700;
+    color: white;
     width: 100%;
-    height: 745px;
-    vertical-align: baseline;
-} */
+    height: 45px;
+    border: none;
+    border-radius: 1px;
+    cursor: pointer;
+    font-family: 'Heebo', sans-serif;
+    letter-spacing: 2px;
+    font-size: 17px;
+}
+
 
 .signup-link, .login-link {
     text-decoration: none;

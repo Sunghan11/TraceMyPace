@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import COUNTRIES from './country_list';
+import UserNav from '../nav/user_nav';
 
 class SignUpForm extends React.Component {
     constructor(props) {
@@ -17,6 +18,7 @@ class SignUpForm extends React.Component {
 
         // this.onChange = this.onChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
+        // this.handleDemoLogin = this.handleDemoLogin(this);
 
     }
 
@@ -29,6 +31,12 @@ class SignUpForm extends React.Component {
             this.setState({ [field]: e.target.value})
         )
     };
+
+    // handleDemoLogin(e) {
+    //     e.preventDefault();
+    //     const user = {email: "testUser@gmail.com", password: "password" }
+    //     this.props.demoLogin(user)
+    // }
 
     handleSubmit(e) {
         e.preventDefault();
@@ -79,6 +87,8 @@ class SignUpForm extends React.Component {
 
         // if (this.props.formType === 'Log in') {
         return (
+            <>
+            <UserNav />
             <div className="signup-page">
                 <div className="signup-form">
                     <div className="errors-session">{this.renderErrors()}</div>
@@ -86,6 +96,16 @@ class SignUpForm extends React.Component {
                     {/* <div className="navLink">{link}</div> */}
                     <Link className="login-link" to="/login">LOG IN</Link>
                     <br/>
+                    <br/>
+                    <input className="demoUser" type="submit" 
+                    // onClick={this.handleDemoLogin} 
+                    value="SIGN IN AS DEMO USER" />
+                            <br />
+                            <br />
+                            <br />
+                    <div className="dashed">
+                        <span>OR</span>
+                    </div>
                     <br/>
                         <div className="form-group">
                             <label className="control-label"></label>
@@ -229,7 +249,7 @@ class SignUpForm extends React.Component {
                     </form>
                 </div>
             </div>
-
+        </>
             
         )
     }
