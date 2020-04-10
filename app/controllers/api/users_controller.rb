@@ -12,13 +12,13 @@ class Api::UsersController < ApplicationController
     end
 
     def index
-        @user = User.all
+        @users = User.all
         render :index
     end
-
+                        
     def show
         @user = User.find(params[:id])
-        render 'api/users/show'
+        render :show
     end
 
 

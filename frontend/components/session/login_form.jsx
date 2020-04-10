@@ -51,16 +51,17 @@ class LogInForm extends React.Component {
 
     render() {
         
-        const link = this.props.formType === 'Sign Up' ? <Link to="/login">LOG IN</Link> : <Link to="/signup">SIGN UP</Link>
+        // const link = this.props.formType === 'Sign Up' ? <Link to="/login">LOG IN</Link> : <Link to="/signup">SIGN UP</Link>
 
         return (
         
 
             <div className="login-page">
                 <div className="login-form">
-                    <div id="navLink">{link}</div>
                     <div className="errors-session">{this.renderErrors()}</div>
                     <form onSubmit={this.handleSubmit}>
+                    {/* <div id="navLink">{link}</div> */}
+                    <Link className="signup-link" to="/signup">SIGN UP</Link>
                         <div className="form-group">
                             <label className="control-label"></label>
                             <input
@@ -82,11 +83,11 @@ class LogInForm extends React.Component {
                         </div>
                 
                         <div className="session-form">
-                            <button className="btn btn-primary btn-lg">
-                                SIGN UP
-                            </button>
+                            <input className="login-button"
+                                type="submit"
+                                value="LOG IN" />
+                            <div className="error">{this.renderErrors()}</div>
                         </div>
-
 
                     </form>
                 </div>

@@ -1,16 +1,26 @@
+.splash-main {
+    max-width: 1320px;
+    display: flex;
+    justify-content: center;
+    margin: auto;
+    flex-direction: column;
+}
+
 #splash-background-top {
     background-image: 
     linear-gradient(to right, rgba(15, 80, 136, 1), rgba(0, 255, 231, .70)),
     image-url('background1.jpg');
     // max-width: 1320px;
     // height: 100%;
-    min-height: 400px;
-    background-size: auto 668px;
+    min-height: 550px;
+    background-size: auto 100%;
     padding: 15px 48px 125px;
     -webkit-background-size: cover;
     position: relative;
     overflow:hidden;
     align-self: center;
+    max-width: 1320px;
+    min-width: 90%;
 }
 
 #splash-background-top:after {
@@ -25,20 +35,51 @@
     transform: rotate(-5deg);
 }
 
+#splash-background-middle {
+    background-image: 
+    // linear-gradient(to right, rgba(15, 80, 136, 1), rgba(0, 255, 231, .70)),
+    image-url('background4.png');
+    max-width: 1320px;
+    min-width: 90%;
+    max-height: 500px;
+    background-size: auto 668px;
+    padding: 15px 48px 125px;
+    -webkit-background-size: cover;
+    position: relative;
+    overflow:hidden;
+    align-self: center;
+    border-bottom: dashed 1px rgb(163, 162, 162);
+}
 
+#splash-background-middle:after {
+    content: "";
+    position: absolute;
+    display: block;
+    top: -18%;
+    left: -5%;
+    height: 27%;
+    width: 110%;
+    background: white;
+    transform: rotate(-5deg);
+    border-bottom: dashed 1px rgb(163, 162, 162);    
+}
 
 .heading1 {
     color: white;
     font-size: 48px;                               
     letter-spacing: 2px;
     font-family: 'Heebo', sans-serif;
-    width: 100%;
+    width: 450px;
+    float: right;
+
 }
 
 .heading2 {
     color: black;
     font-size: 48px;
-    letter-spacing: 6px;
+    letter-spacing: 2px;
+    font-family: 'Heebo', sans-serif;
+    width: 100%;
 }
 
 .p-top {
@@ -84,6 +125,44 @@
     width: 87px;
 }
 
+.splash-second {
+    padding-top: 150px;
+    height: 420px;
+    width: 420px;
+    float: left;
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    justify-content: left;
+}
+
+.splash-second div span {
+    color: white;
+    font-family: 'Heebo', sans-serif;
+    font-style: italic;
+}
+
+
+.splash-second hr{
+    border-color: black;
+    border-top: solid 5.5px black;
+    width: 87px;
+}
+
+.splash-smartshoes-button {
+    color: black;
+    background-color: transparent;
+    border: solid 2px black;
+    padding: 6px 15px;
+    font-weight: 530;
+    min-width: 64px;
+    width: 150px;
+    height: 35px;
+    border-radius: 4px;
+    cursor: pointer;
+
+}
+
 .nav-signup-button {
     background-color: #1DDD7C;
     padding: 6px 15px;
@@ -94,8 +173,7 @@
     height: 35px;
     border: none;
     border-radius: 4px;
-    cursor: pointer;
-    
+    cursor: pointer;  
 
 }
 
@@ -124,6 +202,11 @@
     font-size: 19px;   
 }
 
+.second-splash {
+    display:flex;
+    flex-direction: row;
+}
+
 .top-description {
     float: right;
     display: flex;
@@ -146,7 +229,7 @@
 .splash-login-button {
     color: white;
     background-color: transparent;
-    border:2 px solid rgb(107, 107, 107);
+    border: solid 2px rgb(194, 194, 194);
     padding: 6px 15px;
     font-weight: 530;
     min-width: 64px;
@@ -155,4 +238,20 @@
     border-radius: 4px;
     cursor: pointer;
 
+}
+
+.ua-picture-container {
+    display:flex;
+    position: absolute;
+    top: 100px;
+    right: 6%;
+    height: auto;
+    width: 20%;
+    float: right;
+
+}
+
+.ua-picture-container img {
+    width:100%;
+    height: auto;
 }

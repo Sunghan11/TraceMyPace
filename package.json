@@ -1,5 +1,5 @@
 {
-  "name": "TraceMyPace",
+  "name": "tracemypace",
   "private": true,
   "dependencies": {
     "@babel/core": "^7.9.0",

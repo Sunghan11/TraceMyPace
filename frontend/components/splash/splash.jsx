@@ -19,7 +19,7 @@ class Splash extends React.Component {
     render() {
         return (
             <>
-                <section className="splash-main">
+                <div className="splash-main">
                     <div id="splash-background-top">
                         <div className="splash-first">
                             <hr align="right"/>
@@ -45,19 +45,28 @@ class Splash extends React.Component {
                             </div>
                         </div>
                     </div>
-                    <div>
-                        <h2 className="heading2">
-                        SYNCS WITH UNDER ARMOUR SMART SHOES
-                        </h2>
-                        <p className="p-mid">
-                            Track everything from pace, stride length,
-                            and cadence, plus get personalzied
-                            coaching tips along the way.
-                        </p>
-                        <a href="https://www.underarmour.com/en-us/hovr/g/33yb?cid=MMF%7CREF%7CMMFitness%7CSite%7Chome_page%7CHOVR"><button className="spash-smartshoes-button">LEARN MORE</button></a>
+                    <div id="splash-background-middle">
+                        <div className="second-splash">
+                            <div className="splash-second">
+                                <hr align="left" />
+                                <h2 className="heading2" align="left">
+                                SYNCS WITH UNDER ARMOUR SMART SHOES
+                                </h2>
+                                <hr align="left" />
+                                <div className="mid-description"></div>
+                                    <p className="p-mid">
+                                        Track everything from pace, stride length,
+                                        and cadence, plus get personalzied
+                                        coaching tips along the way.
+                                    </p>
+                                <a href="https://www.underarmour.com/en-us/hovr/g/33yb?cid=MMF%7CREF%7CMMFitness%7CSite%7Chome_page%7CHOVR"><button className="splash-smartshoes-button">LEARN MORE</button></a>
+                            </div>
+                            <div className="ua-picture-container">
+                                <img src={window.UAHoverapp}/>
+                            </div>
+                        </div>
                     </div>
-
-                </section>
+                </div>
             </>
         )
     }

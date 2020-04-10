@@ -107,9 +107,10 @@ class SignUpForm extends React.Component {
         // } else {
             <div className="signup-page">
                 <div className="signup-form">
-                    <div id="navLink">{link}</div>
                     <div className="errors-session">{this.renderErrors()}</div>
                     <form onSubmit={this.handleSubmit}>
+                    {/* <div className="navLink">{link}</div> */}
+                    <Link className="login-link" to="/login">LOG IN</Link>
                         <div className="form-group">
                             <label className="control-label"></label>
                             <input className="input-group"
@@ -164,14 +165,17 @@ class SignUpForm extends React.Component {
                                     {MONTHS.map(month => 
                                     <option key={month} value={month}>{month}</option>)}
                                 </select>
+                                <span className="arrow-selector" id="month-arrow">v</span>
                                 <select onChange={this.update("day")}>
                                     {DAYS.map(day => 
                                     <option key={day} value={day}>{day} </option>)}
                                 </select>
+                                <span className="arrow-selector" id="day-arrow">v</span>
                                 <select onChange={this.update("year")}>
                                     {YEARS.map(year => 
                                     <option key={year} value={year}>{year}</option>)}
                                 </select>
+                                <span className="arrow-selector" id="year-arrow">v</span>
                             </label>
                                 
 
@@ -180,38 +184,62 @@ class SignUpForm extends React.Component {
                         <div className="form-group">
                             <label className="control-label"></label>
                                 <div className="gender-button">
-                                    <input id="Male" 
+                                    <input id="optM" 
                                         value="Male"
                                         checked={this.state.gender === "Male"}
                                         onChange={this.update("gender")}
                                         type="radio" 
                                     />
-                                    <label htmlFor="Male"><span className="radioDiv"></span></label>
-                                    <label>Male ✔</label>
+                                    <label htmlFor="optM" className="radio">
+                                        <span className="gen-text">Male</span>
+                                        <div>✔</div>
+                                    </label>
                                 {/* </div>
 
                                 <div> */}
-                                    <input id="Female"
+
+                                    <input id="optF"
                                         value="Female"
                                         checked={this.state.gender === "Female"}
                                         onChange={this.update("gender")}
                                         type="radio"
                                     />
-                                    <label htmlFor="Female"><span className="radioDiv"></span></label>
-                                    <label>Female ✔</label>
+                                    <label htmlFor="optF" className="radio">
+                                        <span className="gen-text">Female</span>
+                                        <div>✔</div>
+                                    </label>
                                 </div>
                         </div>
 
                         <div className="form-group">
                             <label className="control-label">
-                                <div className="input-group"></div>
-                                <select onChange={this.update("location")}>
-                                    {COUNTRIES.map(location =>
-                                        <option key={location} value={location}>{location}</option>)}
-                                </select>
+                                <div className="country-group">
+                                    <select id="optC"
+                                        onChange={this.update("location")}>
+                                        {COUNTRIES.map(location =>
+                                            <option key={location} value={location}>{location}</option>)}
+                                    </select>
+                                    {/* <label htmlFor="optC" className="selector">
+                                    <span className="arrow-selector">Country</span>
+                                    <div>v</div> */}
+                                    <span className="arrow-selector" id="country-arrow"></span>
+                                </div>
                             </label>
                         </div>
 
+                        <div className="statement">
+                            <label className="checkbox-label">
+                                <input type="checkbox"/>
+                                <span className="checkbox-custom"></span>
+                            </label>
+                            <p className="word-of-mouth">
+                                Yes, I would like to receive by word of mouth the latest news, innovation updates, and offers from TraceMyPace. NOT guaranteed.
+                            </p>
+                        </div>
+
+                        <p className="privacy-policy">
+                            By signing up with TraceMyPace, you agree to be nice to the poor website.
+                        </p>
 
                         <div className="session-form">
                             <input className="signup-button"
