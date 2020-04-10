@@ -5,26 +5,41 @@
     width: 100%;
     height: 100%;
     margin: auto;
-
 }
 
-.login-link {
-    text-decoration: none;
-    text-align: right;
-    float: right;
+/* .login-page {
+    background-color: #F0F0F0;;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    margin:auto;
+
+} */
+
+.login-form {
+    display:flex;
+    justify-content: center;
+    width:100%;
+    height:100%
 }
 
-.signup-link{
+.signup-link, .login-link {
     text-decoration: none;
     text-align: right;
+    color: #929783;
+    font-size: 80%;
+    font-weight: bold;
     float: right;
+    font-family: 'Nunito', sans-serif;
 }
 
 .navlink:visited {
     text-decoration: none;;
 }
 
-.signup-form, .login-form {
+.signup-form {
     position: relative;
     display: flex;
     justify-content: space-evenly;
@@ -88,22 +103,24 @@ input[type="radio"] {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    width: 40%;
+    width: 39%;
     padding: 12px;
 }
 
 .birth-date {
     display: flex;
     justify-content: space-between;
+    
 }
 
 .arrow-selector {
-    border: solid rgb(122, 120, 120) 1px;
+    display:flex;
+    background-color: #F0F0F0;
     cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 12px;
+    position: absolute;
+    /* align-items: center; */
+    right: 12px;
+    bottom: 10px;
 }
 
 .gender-button input[type="radio"]:checked + label {
@@ -118,14 +135,13 @@ input[type="radio"] {
     position: absolute;
 }
 
-.session-form .signup-button {
+.session-form .signup-button, {
     display: flex;
     position: absolute;
     justify-content: center;
     background-color: #1DDD7C;
     font-weight: 700;
     color: white;
-    /* min-width: 150px; */
     width: 100%;
     height: 45px;
     border: none;
@@ -136,9 +152,33 @@ input[type="radio"] {
     font-size: 19px;   
 }
 
+.login-button {
+    display: flex;
+    position: absolute;
+    justify-content: center;
+    background-color: #1DDD7C;
+    font-weight: 700;
+    color: white;
+    width: 320px;
+    height: 45px;
+    border: none;
+    border-radius: 1px;
+    cursor: pointer;
+    font-family: 'Heebo', sans-serif;
+    letter-spacing: 2px;
+    font-size: 19px;   
+
+}
+
 .arrow-selector {
     color: rgb(110, 110, 110);
     font-family: 'Nunito', sans-serif;
+}
+
+.arrow-country {
+    color: rgb(110, 110, 110);
+    font-family: 'Nunito', sans-serif;
+    font-size: 80%;
 }
 
 select:focus {
@@ -152,15 +192,74 @@ input [type=text]:focus {
 input {
     background-color: #F0F0F0;
     border: solid 1px lightgrey;
-    padding-left: 15px;
 }
+
+
 
 .statement {
     display: flex;
+    justify-content: center;
+    flex-direction: row;
+    position: relative;
+}
+
+.country-group {
+    display: flex;
+    background-color: #F0F0F0;
+    border: solid 1px #9297A3;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    padding-left:12px;
+}
+
+.day-group {
+    display: flex;
+    position: relative;
+    justify-content: space-between;
+    background-color: #F0F0F0;
+    border: solid 1px #9297A3;
+    width: 22%;
+}
+
+.month-group {
+    display: flex;
+    position: relative;
+    justify-content: space-between;
+    background-color: #F0F0F0;
+    border: solid 1px #9297A3;
+    width: 39%;
+}
+
+.year-group {
+    display: flex;
+    position: relative;
+    justify-content: space-between;
+    background-color: #F0F0F0;
+    border: solid 1px #9297A3;
+    width: 27%;
+}
+
+.date-selectors {
+    display:flex;
+    justify-content: space-between;
+    padding-left: 12px;
+    padding-top: 12px;
+    padding-bottom: 12px;
+}
+
+#optC {
+    display:flex;
+    cursor:pointer;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    border: none;
+    background-color: #F0F0F0;
 }
 
 .checkbox-label {
     display: flex;
+    top: 40px;
     cursor: pointer;
     position: relative;
     justify-content: center;
@@ -204,5 +303,20 @@ input {
 }
 
 .word-of-mouth {
+    display: flex;
+    position: relative;
     font-family: 'Heebo', sans-serif;
+    left: 15px;
+}
+
+.privacy-policy {
+    font-family: 'Heebo', sans-serif;
+    color: #9297A3;
+    text-align: center;
+}
+
+.blue-text {
+    /* color: rgb(226, 0, 246); */
+    color: #0076C0;
+    /* font-weight: bold; */
 }

@@ -2,6 +2,7 @@ import React from 'react';
 import LoginFormContainer from '../session/login_form_container';
 import SignupFormContainer from '../session/signup_form_container';
 import {Link} from 'react-router-dom';
+import Nav from '../nav/nav';
 
 class Splash extends React.Component {
     // constructor(props) {
@@ -19,6 +20,7 @@ class Splash extends React.Component {
     render() {
         return (
             <>
+                {/* <Nav /> */}
                 <div className="splash-main">
                     <div id="splash-background-top">
                         <div className="splash-first">

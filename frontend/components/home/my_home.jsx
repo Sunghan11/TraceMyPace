@@ -1,10 +1,14 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
+import UserNav from '../nav/nav_container';
 
-const MyHome = ({ currentUser, logout }) => {
-    if (currentUser) {
-        render (
-            <h1>hello</h1>
+const MyHome = ({ currentUser, logout }) => (
+            <>
+ 
+                <button onClick={() => logout()}>
+                    Log Out
+                </button>
+            </>
             // <>
             //     <nav className="home-page">
             //         <Link to="/">
@@ -41,8 +45,7 @@ const MyHome = ({ currentUser, logout }) => {
 
 
             // </>
-        );
-    }
-}
+    );
+
 
 export default MyHome;

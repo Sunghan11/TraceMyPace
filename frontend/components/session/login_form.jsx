@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import NavContainer from '../nav/nav_container';
 
 class LogInForm extends React.Component {
     constructor(props) {
@@ -16,9 +17,7 @@ class LogInForm extends React.Component {
 
     }
 
-    onChange(e) {
-        this.setState({ [e.target.name]: e.target.value })
-    } 
+
 
     update(field) {
         return e => (
@@ -53,33 +52,32 @@ class LogInForm extends React.Component {
         
         // const link = this.props.formType === 'Sign Up' ? <Link to="/login">LOG IN</Link> : <Link to="/signup">SIGN UP</Link>
 
-        return (
-        
+        return (      
 
             <div className="login-page">
                 <div className="login-form">
                     <div className="errors-session">{this.renderErrors()}</div>
                     <form onSubmit={this.handleSubmit}>
-                    {/* <div id="navLink">{link}</div> */}
                     <Link className="signup-link" to="/signup">SIGN UP</Link>
+                    <br />
+                    <br />
+                        
                         <div className="form-group">
                             <label className="control-label"></label>
-                            <input
+                            <input className="input-group"
                                 value={this.state.email}
                                 onChange={this.update("email")}
                                 type="text"
                                 placeholder="Email" />
-
                         </div>
 
                         <div className="form-group">
                             <label className="control-label"></label>
-                            <input
+                            <input className="input-group"
                                 value={this.state.password}
                                 onChange={this.update("password")}
                                 type="password"
                                 placeholder="Password" />
-
                         </div>
                 
                         <div className="session-form">

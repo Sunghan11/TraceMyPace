@@ -79,38 +79,14 @@ class SignUpForm extends React.Component {
 
         // if (this.props.formType === 'Log in') {
         return (
-        //     <div className="session-form">
-        //         <div id="navLink">{link}</div>
-        //         <div className="errors-session">{this.renderErrors()}</div>
-        //         <form onSubmit={this.handleSubmit}>
-        //             <div className="form-group">
-        //                 <label className="control-label"></label>
-        //                 <input
-        //                     value={this.state.email}
-        //                     onChange={this.update("email")}
-        //                     type="text"
-        //                     placeholder="Email" />
-
-        //             </div>
-
-        //             <div className="form-group">
-        //                 <label className="control-label"></label>
-        //                 <input
-        //                     value={this.state.password}
-        //                     onChange={this.update("password")}
-        //                     type="password"
-        //                     placeholder="Password" />
-
-        //             </div>
-        //         </form>
-        //     </div>
-        // } else {
             <div className="signup-page">
                 <div className="signup-form">
                     <div className="errors-session">{this.renderErrors()}</div>
                     <form onSubmit={this.handleSubmit}>
                     {/* <div className="navLink">{link}</div> */}
                     <Link className="login-link" to="/login">LOG IN</Link>
+                    <br/>
+                    <br/>
                         <div className="form-group">
                             <label className="control-label"></label>
                             <input className="input-group"
@@ -118,7 +94,6 @@ class SignUpForm extends React.Component {
                                 onChange={this.update("first_name")}
                                 type="text"
                                 placeholder="First Name" />
-
                         </div>
 
                         <div className="form-group">
@@ -128,7 +103,6 @@ class SignUpForm extends React.Component {
                                 onChange={this.update("last_name")}
                                 type="text"
                                 placeholder="Last Name" />
-
                         </div>
 
                         <div className="form-group">
@@ -138,7 +112,6 @@ class SignUpForm extends React.Component {
                                 onChange={this.update("email")}
                                 type="text"
                                 placeholder="Email" />
-
                         </div>
 
                         <div className="form-group">
@@ -148,35 +121,40 @@ class SignUpForm extends React.Component {
                                 onChange={this.update("password")}
                                 type="password"
                                 placeholder="Password" />
-
                         </div>
 
 
 
                         <div className="form-group">
-                            {/* <label className="control-label"></label>
-                            <input
-                                value={this.state.birth_date}
-                                onChange={this.update("birth_date")}
-                                type="date"
-                                placeholder="Birth Date" /> */}
-                            <label className="birth-date">
-                                <select onChange={this.update("month")}>
-                                    {MONTHS.map(month => 
-                                    <option key={month} value={month}>{month}</option>)}
-                                </select>
-                                <span className="arrow-selector" id="month-arrow">v</span>
-                                <select onChange={this.update("day")}>
-                                    {DAYS.map(day => 
-                                    <option key={day} value={day}>{day} </option>)}
-                                </select>
-                                <span className="arrow-selector" id="day-arrow">v</span>
-                                <select onChange={this.update("year")}>
-                                    {YEARS.map(year => 
-                                    <option key={year} value={year}>{year}</option>)}
-                                </select>
-                                <span className="arrow-selector" id="year-arrow">v</span>
-                            </label>
+                            <div className="birth-date">
+                                <div className="day-group">
+                                    <div className="date-selectors">
+                                        <select id="optC" onChange={this.update("day")}>
+                                            {DAYS.map(day => 
+                                            <option key={day} value={day}>{day} </option>)}
+                                        </select>
+                                        <span className="arrow-selector" id="day-arrow">v</span>
+                                    </div>
+                                </div>
+                                <div className="month-group">
+                                    <div className="date-selectors">
+                                        <select id="optC" onChange={this.update("month")}>
+                                            {MONTHS.map(month => 
+                                            <option key={month} value={month}>{month}</option>)}
+                                        </select>
+                                        <span className="arrow-selector" id="month-arrow">v</span>
+                                    </div>
+                                </div>
+                                <div className="year-group">
+                                    <div className="date-selectors">
+                                        <select id="optC" onChange={this.update("year")}>
+                                            {YEARS.map(year => 
+                                            <option key={year} value={year}>{year}</option>)}
+                                        </select>
+                                        <span className="arrow-selector" id="year-arrow">v</span>
+                                    </div>
+                                </div>
+                            </div>
                                 
 
                         </div>
@@ -194,9 +172,6 @@ class SignUpForm extends React.Component {
                                         <span className="gen-text">Male</span>
                                         <div>✔</div>
                                     </label>
-                                {/* </div>
-
-                                <div> */}
 
                                     <input id="optF"
                                         value="Female"
@@ -219,10 +194,8 @@ class SignUpForm extends React.Component {
                                         {COUNTRIES.map(location =>
                                             <option key={location} value={location}>{location}</option>)}
                                     </select>
-                                    {/* <label htmlFor="optC" className="selector">
-                                    <span className="arrow-selector">Country</span>
-                                    <div>v</div> */}
-                                    <span className="arrow-selector" id="country-arrow"></span>
+              
+                                    <span className="arrow-country" id="country-arrow">V</span>
                                 </div>
                             </label>
                         </div>
@@ -238,7 +211,7 @@ class SignUpForm extends React.Component {
                         </div>
 
                         <p className="privacy-policy">
-                            By signing up with TraceMyPace, you agree to be nice to the poor website.
+                            By signing up with TraceMyPace, you agree to the <span className="blue-text">Terms of Use</span>... be <span className="blue-text">Nice</span>.
                         </p>
 
                         <div className="session-form">
