@@ -37,7 +37,7 @@
 
 #splash-background-middle {
     background-image: 
-    // linear-gradient(to right, rgba(15, 80, 136, 1), rgba(0, 255, 231, .70)),
+    linear-gradient(rgba(0, 0, 0, .05), rgba(0, 0, 0, .05)),
     image-url('background4.png');
     max-width: 1320px;
     min-width: 90%;
@@ -254,4 +254,6 @@
 .ua-picture-container img {
     width:100%;
     height: auto;
+    box-shadow: 4px 4px 4px grey;
+    border-radius: 5%;
 }
