@@ -9,22 +9,27 @@
 
 .birth-date img {
     display:flex;
-    margin-top: 17px;
+    /* position: absolute; */
+    /* right: 10px; */
     width: 12px;
     height: 12px;
 }
 
 .country-group img {
     display:flex;
-    margin-top: 17px;
+    top: 17px;
+    right: 10px;
     width: 12px;
     height: 12px;
+    position: absolute;
 }
 
 .date-selectors img {
     width: 12px;
     height: 12px;
-    margin-right: 10px;
+    position: absolute;
+    top: 17px;
+    right: 10px;
 }
 
 .dashed {
@@ -187,15 +192,14 @@ select {
     
 }
 
-.arrow-selector {
+/* .arrow-selector {
     display:flex;
     background-color: #F0F0F0;
     cursor: pointer;
     position: absolute;
-    /* align-items: center; */
     right: 12px;
     bottom: 10px;
-}
+} */
 
 .gender-button input[type="radio"]:checked + label {
     border: solid rgb(0, 81, 255) 1px;
@@ -281,6 +285,7 @@ input {
 
 .country-group {
     display: flex;
+    position: relative;
     /* justify-content: space-around; */
     background-color: #F0F0F0;
     border: solid 1px #9297A3;
@@ -288,7 +293,7 @@ input {
 }
 
 .country-group select {
-    width:90%;
+    width:100%;
     height: auto;
 }
 
@@ -304,7 +309,8 @@ input {
 
 .birth-date select {
     height: 45px;
-    width: 90%;
+    width: 100%;
+    position: relative;
 }
 
 .date-selectors {
@@ -312,6 +318,7 @@ input {
     flex-direction: row;
     background-color: #F0F0F0;
     width: 100%;
+    position: relative;
 }
 
 .month-group {

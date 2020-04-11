@@ -8,6 +8,7 @@ import NavContainer from './nav/nav_container'
 import Nav from './nav/nav';
 import UserNav from './nav/user_nav';
 import Splash from './splash/splash';
+import Footer from './footer/footer';
 import {AuthRoute, ProtectedRoute} from '../util/route_util';
 
 

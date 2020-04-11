@@ -1,0 +1,120 @@
+#footer-bar {
+    display:flex;
+    position: relative;
+    justify-content: center; 
+    max-width: 1320px; 
+    margin:auto;
+}
+
+#footer-iphone-img img{
+    width: 140px;
+    height:auto;
+    padding:0;
+    margin:0;
+    box-shadow: 3px 3px 3px grey;
+    border-radius:12%
+}
+
+#footer-iphone-img {
+    display: flex;
+    position:relative;
+    justify-content: space-between;
+    width: 140px;
+    height: 310px;
+}
+
+ul {
+    padding: 0;
+}
+
+.footer-bar-div {
+    margin-top: 65px;
+    width: 100%;
+    
+}
+#footer-first-bar img {
+    position: absolute;;
+    display:flex;    
+    height: 60px;
+    top:0;
+    border-right: solid 1px lightgrey;
+
+}
+
+#footer-first-bar ul {
+    display:flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+#footer-first-bar ul {
+    position:relative;
+    display:flex;
+    justify-content: space-between;
+    width: 30%;
+    left: 200px;
+    color: #666666;
+    font-family: 'Open Sans Condensed', sans-serif;
+    letter-spacing: 1px;
+    font-size: 18px;
+}
+
+#footer-first-bar {
+    display:flex;
+    background-color: #F0F2F4;
+    border: solid 1px rgb(215, 216, 218);
+    height: 60px;
+    position:relative;
+}
+
+#footer-second-bar {
+    display:flex;
+    position:relative;
+    max-width: 100%;
+    justify-content:space-between;
+    padding-left: 15px;
+    font-family: 'Open Sans', sans-serif;
+    background-color: rgb(56, 56, 56);
+    color: #FFFFFF;
+    padding-right:100px;
+}
+
+#footer-community img {
+    max-height: 45px;
+    max-width: 45px;
+}
+
+#footer-community ul {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+#footer-second-bar h4 {
+    font-weight: 900;
+}
+
+#UA-logo-img img{
+    position: relative;
+    display:flex;
+    // justify-content:center;
+    width: 250px;
+    height:auto;
+    top:15px;
+}
+
+#footer-third-bar {
+    display:flex;
+    position: relative;
+    // justify-content: center; 
+    max-width: 1320px; 
+    margin:auto;
+}
+
+#footer-third-bar p {
+    position:relative;
+    top:0;
+    left:20px;
+    font-family: 'Open Sans', sans-serif;
+}
+

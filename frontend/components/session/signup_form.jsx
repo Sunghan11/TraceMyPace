@@ -159,7 +159,6 @@ class SignUpForm extends React.Component {
                                             {DAYS.map(day => 
                                             <option key={day} value={day}>{day} </option>)}
                                         </select>
-                                        {/* <span className="arrow-selector" id="day-arrow">v</span> */}
                                         <img src={window.downArrow} />
                                     </div>
                                 </div>
@@ -169,7 +168,6 @@ class SignUpForm extends React.Component {
                                             {MONTHS.map(month => 
                                             <option key={month} value={month}>{month}</option>)}
                                         </select>
-                                        {/* <span className="arrow-selector" id="month-arrow"></span> */}
                                         <img src={window.downArrow} />
                                     </div>
                                 </div>
@@ -178,8 +176,7 @@ class SignUpForm extends React.Component {
                                         <select className="optC" onChange={this.update("year")}>
                                             {YEARS.map(year => 
                                             <option key={year} value={year}>{year}</option>)}
-                                        </select>
-                                        {/* <span className="arrow-selector" id="year-arrow">v</span> */}
+                                        </select>                                     
                                         <img src={window.downArrow} />
                                     </div>
                                 </div>
