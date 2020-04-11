@@ -53,10 +53,10 @@ const Footer = () => {
                     <div id="footer-community">
                         <h4>UA FITNESS COMMUNITY</h4>
                         <ul>
-                            <li><a href="https://itunes.apple.com/us/app/record-by-under-armour-connects/id895425891?mt=8"></a><img src={window.UArecordURL}/></li>
-                            <li><a href="https://itunes.apple.com/us/app/running-walking-biking-endomondo/id333210180?mt=8"></a><img src={window.UAgreenURL}/></li>
-                            <li><a href="https://itunes.apple.com/us/app/calorie-counter-diet-tracker/id341232718?mt=8"></a><img src={window.UAfitnessURL}/></li>
-                            <li><a href="https://itunes.apple.com/us/app/map-my-fitness-gps-workout/id298903147?mt=8"></a><img src={window.UAmmfURL}/></li>
+                                <li><a href="https://itunes.apple.com/us/app/record-by-under-armour-connects/id895425891?mt=8"><button><img src={window.UArecordURL} /></button></a></li>
+                                <li><a href="https://itunes.apple.com/us/app/running-walking-biking-endomondo/id333210180?mt=8"><button><img src={window.UAgreenURL} /></button></a></li>
+                                <li><a href="https://itunes.apple.com/us/app/calorie-counter-diet-tracker/id341232718?mt=8"><button><img src={window.UAfitnessURL} /></button></a></li>
+                            <li><a href="https://itunes.apple.com/us/app/map-my-fitness-gps-workout/id298903147?mt=8"><button><img src={window.UAmmfURL} /></button></a></li>
                         </ul>
                     </div>
 

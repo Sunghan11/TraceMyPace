@@ -39,6 +39,11 @@ const MyHome = ({ currentUser, logout }) => (
                 <div id="home-page-sign">
                     <h1>User Home Page being Worked on....</h1>
                 </div>
+                <br/>
+                <br />
+                <br />
+                <br />
+                <br />
                 <Footer/>
 
 
