@@ -70,6 +70,87 @@ class Splash extends React.Component {
                         </div>
                     </div>
                 </div>
+                <div className="splash-main">
+                    <div className="splash-background-mid-bottom">
+                        <div className="third-splash">
+                            <div id="third-splash-1"> 
+                                <div id="third-splash-1-1">
+                                    <ul>
+                                        <li>
+                                            <h4>TRACK EVERYTHING</h4>
+                                            <p>Log any kind of workout using just your phone.</p>
+                                        </li>
+                                        <li>
+                                            <h4>TAKE THE PLUNGE</h4>
+                                            <p>Don't hesitate to explore new challenges with friends and family.</p>
+                                        </li>
+                                        <li>
+                                            <h4>RUSHING TO APPOINTMENT?</h4>
+                                            <p>Plan your routes on the go, while going to appointments or on afternoon walks</p>
+                                        </li>
+                                    </ul> 
+                                </div>
+                                <div id="third-splash-1-2">
+                                    <div id="phones">
+                                        <img id="phn1" src={window.phone1}/>
+                                        <img id="phn2" src={window.phone2}/>
+                                        <img id="phn3" src={window.phone3}/>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div id="third-splash-2">
+                                <div id="third-splash-2-1">
+                                    <hr align="center"/>
+                                    <h2 className="heading3" align="center">
+                                        FIND YOUR PATH ANYWHERE
+                                    </h2>
+                                    <hr align="center"/>
+                                    <p id="mid-bottom-description">Create and discover new routes wherever you are. 
+                                        Save your favorites for the next time you're ready to run.</p>
+                                </div>
+                                <div id ="third-splash-2-2">
+                                    <ul>
+                                        <li>New York, NY</li>
+                                        <li>Manhattan, NY</li>
+                                        <li>San Francisco, CA</li>
+                                        <li>Austin, TX</li>
+                                        <li>Denver, CO</li>
+                                        <li>Seattle, WA</li>
+                                    </ul>
+                                    <ul>
+                                        <li>San Diego, CA</li>
+                                        <li>Portland OR</li>
+                                        <li>Chicago, IL</li>
+                                        <li>Honolulu, HI</li>
+                                        <li>Tallahassee, FL</li>
+                                        <li>Boston, MA</li>
+                                    </ul>
+                                    <ul>
+                                        <li>Dublin, Ireland</li>
+                                        <li>Paris, France</li>
+                                        <li>Toronto, Canada</li>
+                                        <li>Hobbiton, New Zealand</li>
+                                        <li>Geneva, Switzerland</li>
+                                        <li>Anywhere in the World</li>
+                                    </ul>
+
+                                </div>
+                                <div id="third-splash-2-3">
+                                    <div>
+                                        <img src={window.social}/>
+                                    </div>
+                                </div>
+                                <div id="third-splash-2-4">
+                                    <div id="third-splash-2-4-bg">
+                                        
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
                 <Footer />
             </>
         )

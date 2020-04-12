@@ -13,7 +13,7 @@ class SignUpForm extends React.Component {
             password: '',
             birth_date: '',
             gender: '',
-            location: '',
+            location: "United States",
         }
 
         // this.onChange = this.onChange.bind(this);
@@ -215,10 +215,10 @@ class SignUpForm extends React.Component {
                         <div className="form-group">
                             <label className="control-label">
                                 <div className="country-group">
-                                    <select className="optC"
+                                    <select value={this.state.location} className="optC"
                                         onChange={this.update("location")}>
                                         {COUNTRIES.map(location =>
-                                            <option key={location} value={location}>{location}</option>)}
+                                            <option key={location} value={location} >{location}</option>)}
                                     </select>
                                     
                                     <img src={window.downArrow} />

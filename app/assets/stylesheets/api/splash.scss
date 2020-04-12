@@ -44,6 +44,7 @@
     max-height: 500px;
     background-size: auto 668px;
     padding: 15px 48px 125px;
+    padding-bottom: 0;
     -webkit-background-size: cover;
     position: relative;
     overflow:hidden;
@@ -84,6 +85,19 @@ li {
     letter-spacing: 2px;
     font-family: 'Heebo', sans-serif;
     width: 100%;
+}
+
+.heading3 {
+    color: black;
+    font-size: 48px;
+    letter-spacing: 2px;
+    font-family: 'Heebo', sans-serif;
+    max-width: 50%;
+    text-align: center;
+    align-content: center;
+    margin: auto;
+    
+
 }
 
 .p-top {
@@ -261,4 +275,180 @@ li {
     height: auto;
     box-shadow: 4px 4px 4px grey;
     border-radius: 5%;
+}
+
+//**************************
+//Third section of Splash
+//**************************
+
+.splash-background-mid-bottom {
+    background-position: 0px 200px;
+    top:40px;
+    background-image: 
+    // linear-gradient(rgba(0, 0, 0, .05), rgba(0, 0, 0, .05)),
+    image-url('mmbackground.jpg');
+    background-size:cover;
+    background-repeat: no-repeat;
+    min-height: 550px;
+    // background-size: auto 100%;
+    padding: 15px 48px 125px;
+    // -webkit-background-size: contain;
+    // background-size: auto;
+    // background-repeat: no-repeat;
+    position: relative;
+    overflow:hidden;
+    align-self: center;
+    max-width: 1320px;
+    min-width: 90%;
+    overflow:hidden;   
+} 
+
+.third-splash {
+    display:flex;
+    flex-direction: column;
+    width: 100%;
+    justify-content: space-between;
+    font-family: 'Open Sans', sans-serif;
+}
+
+#third-splash-1 {
+    display:flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+#third-splash-1-1 {
+    display:flex;
+    flex-direction: column;
+    max-width: 30%;
+    margin-top: 80px;
+}
+
+#third-splash-1-1 h4 {
+    margin-bottom:0;
+}
+
+#third-splash-1-1 p {
+    margin-top:0;
+}
+
+#third-splash-1-2 {
+    position: absolute;
+    left:40%;
+    max-width: 60%;
+}
+
+#phones img {
+    border-radius: 7%;
+}
+
+#phn1 {
+    position: absolute;
+    z-index: 10;
+
+}
+
+#phn2 {
+    position: absolute;
+    top:35px;
+    left:170px;
+    z-index: 9;
+}
+
+#phn3 {
+    position: absolute;
+    top: 70px;
+    left: 340px;
+}
+
+#third-splash-2 {
+    margin-top: 150px;
+}
+
+#third-splash-2 hr {
+    border-color: black;
+    border-top: solid 5.5px black;
+    width: 87px;
+    padding-bottom:0;
+}
+
+#third-splash-2-1 p {
+    width: 285px;
+    margin: auto;
+    text-align: center;
+    font-family: 'Heebo', sans-serif;
+    font-weight: 400;
+}
+
+#third-splash-2-2 {
+    padding-top: 10px;
+    display: flex;
+    justify-content: space-between;
+    max-width: 55%;
+    margin: auto;
+    font-family: 'Heebo', sans-serif;
+    font-weight: bold;
+    color: rgb(0, 162, 255);
+    font-size: 80%;
+}
+
+#third-splash-2-2 li {
+    padding-bottom: 3px;
+}
+
+#third-splash-2-3{
+    background-position: 0px 200px;
+    top:40px;
+    background-image: 
+    // linear-gradient(rgba(0, 0, 0, .05), rgba(0, 0, 0, .05)),
+    image-url('bridgemapbg.png');
+    background-size:contain;
+    background-repeat: no-repeat;
+    min-height: 550px;
+    padding: 15px 48px 125px;
+    position: relative;
+    overflow:hidden;
+    align-self: center;
+    max-width: 1320px;
+    min-width: 90%;
+    overflow:hidden; 
+    position: relative; 
+    margin-top:0;
+    padding-top: 0;
+}
+
+#third-splash-2-3 img {
+    border-radius: 5%;
+    box-shadow: 4px 4px 4px 4px rgba(0, 0, 0, 0.4);
+    width: 20%;
+    height: auto;
+    position: absolute;
+    right: 6%;
+    top: 26%;
+}
+
+#third-splash-2-4 {
+    position:relative;
+}
+
+#third-splash-2-4-bg{
+    background-position: 0px 200px;
+    top:40px;
+    background-image: 
+    // linear-gradient(rgba(0, 0, 0, .05), rgba(0, 0, 0, .05)),
+    image-url('custbackground2.jpg');
+    background-size:contain;
+    background-repeat: no-repeat;
+    min-height: 550px;
+    padding: 15px 48px 125px;
+    position: relative;
+    overflow:hidden;
+    align-self: center;
+    max-width: 1320px;
+    min-width: 90%;
+    overflow:hidden; 
+    position: relative; 
+    margin-top:0;
+    padding-top: 0;
+    top:0;
 }

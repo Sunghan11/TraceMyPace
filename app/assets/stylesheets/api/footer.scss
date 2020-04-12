@@ -7,7 +7,7 @@
 }
 
 #footer-iphone-img img{
-    width: 140px;
+    width: 150px;
     height:auto;
     padding:0;
     margin:0;
@@ -19,7 +19,7 @@
     display: flex;
     position:relative;
     justify-content: space-between;
-    width: 140px;
+    width: 150px;
     height: 310px;
 }
 
@@ -62,9 +62,31 @@ ul {
 #footer-first-bar {
     display:flex;
     background-color: #F0F2F4;
-    border: solid 1px rgb(215, 216, 218);
+    border-top: solid 1px rgb(215, 216, 218);
+    border-bottom: solid 1px rgb(215, 216, 218);
     height: 60px;
     position:relative;
+}
+
+#footer-first-bar:before, #footer-first-bar:after {
+    content:"";
+    position: absolute;
+    top:0;
+    bottom:0;
+    width: 9600px;
+    right:100%;
+    background: #F0F2F4;
+    z-index: -2;
+    border-top: solid 1px rgb(215, 216, 218);
+    border-bottom: solid 1px rgb(215, 216, 218);
+}
+
+#footer-first-bar:after {
+    width: 320px;
+    left:100%;
+    background: #F0F2F4;
+    border-top: solid 1px rgb(215, 216, 218);
+    border-bottom: solid 1px rgb(215, 216, 218);
 }
 
 #footer-second-bar {
@@ -79,9 +101,36 @@ ul {
     padding-right:100px;
 }
 
+#footer-second-bar:before, #footer-second-bar:after {
+    content:"";
+    position: absolute;
+    top:0;
+    bottom:0;
+    width: 9600px;
+    right:100%;
+    background: rgb(56, 56, 56);
+    z-index: -2;
+    // border-top: solid 1px rgb(215, 216, 218);
+    // border-bottom: solid 1px rgb(215, 216, 218);
+}
+
+#footer-second-bar:after {
+    width: 320px;
+    left:100%;
+    background: rgb(56, 56, 56);
+    // border-top: solid 1px rgb(215, 216, 218);
+    // border-bottom: solid 1px rgb(215, 216, 218);
+}
 #footer-community img {
     max-height: 45px;
     max-width: 45px;
+    border-radius: 15%;
+}
+
+#footer-community button {
+    border:none;
+    padding:0;
+    background: none;
 }
 
 #footer-community ul {

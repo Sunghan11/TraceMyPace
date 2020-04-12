@@ -1,7 +1,6 @@
 import React from 'react';
 // List of all countries in a simple list / array.
 export default ["Country",
-    "United States of America",
     "Afghanistan",
     "Albania",
     "Algeria",
@@ -236,6 +235,7 @@ export default ["Country",
     "Ukraine",
     "United Arab Emirates (the)",
     "United Kingdom of Great Britain",
+    "United States",
     "United States Minor Outlying Islands",
     "Uruguay",
     "Uzbekistan",

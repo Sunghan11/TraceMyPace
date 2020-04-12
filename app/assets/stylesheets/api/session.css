@@ -5,6 +5,7 @@
     width: 100%;
     height: 100%;
     margin: auto;
+    color: #9297A3;
 }
 
 .birth-date img {
@@ -114,6 +115,7 @@
 .login-form .form-group {
 
     width: 100%;
+    color: #9297A3
 }
 
 input[type="radio"] {
@@ -177,7 +179,7 @@ select {
 }
 
 .radio {
-    border: solid rgb(122, 120, 120) 1px;
+    border: solid 1px lightgrey;
     cursor: pointer;
     display: flex;
     align-items: center;
@@ -251,12 +253,12 @@ select {
 }
 
 .arrow-selector {
-    color: rgb(110, 110, 110);
+    color: #9297A3;;
     font-family: 'Nunito', sans-serif;
 }
 
 .arrow-country {
-    color: rgb(110, 110, 110);
+    color: #9297A3;
     font-family: 'Nunito', sans-serif;
     font-size: 80%;
 }
@@ -288,7 +290,7 @@ input {
     position: relative;
     /* justify-content: space-around; */
     background-color: #F0F0F0;
-    border: solid 1px #9297A3;
+    border: solid 1px lightgrey;
     height: 45px;
 }
 
@@ -301,7 +303,7 @@ input {
     display: flex;
     flex-direction: row;
     background-color: #F0F0F0;
-    border: solid 1px #9297A3;
+    border: solid 1px lightgrey;
     width: 22%;
 }
 
@@ -326,7 +328,7 @@ input {
     position: relative;
     justify-content: space-between;
     background-color: #F0F0F0;
-    border: solid 1px #9297A3;
+    border: solid 1px lightgrey;
     width: 39%;
 }
 
@@ -335,7 +337,7 @@ input {
     position: relative;
     justify-content: space-between;
     background-color: #F0F0F0;
-    border: solid 1px #9297A3;
+    border: solid 1px lightgrey;
     width: 27%;
 }
 
@@ -370,7 +372,7 @@ input {
     -moz-appearance: none;
     -o-appearance: none;
     appearance: none;
-    border: 1px solid #D3D6DC;
+    border: 1px solid lightgrey;
     outline: none;
     transition-duration: 0.3s;
     background-color: #F0F0F0;
