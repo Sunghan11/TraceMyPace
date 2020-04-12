@@ -10,6 +10,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@900&display=swap" rel="stylesheet">
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
+    <%= javascript_include_tag "https://maps.googlesapis.com/maps/api/js?key=#{Rails.application.credentials.google[:api_key]}"%>
 
     <script type="text/javascript">
       window.logoURL = "<%= image_url('logo.png') %>";
@@ -27,7 +28,7 @@
       window.phone2 = "<%= image_url('manjumpingiphone.png') %>";
       window.phone3 = "<%= image_url('workmaniphone.png') %>";
       window.social = "<%= image_url('socialpicture.jpg') %>";
-      <%- window.googleAPIKey = "<%= Rails.application.credentials.google[:api_key] %>"; -%>
+      window.googleAPIKey = "<%= Rails.application.credentials.google[:api_key] %>"
     </script>
 
   </head>
