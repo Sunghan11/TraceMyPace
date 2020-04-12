@@ -137,8 +137,11 @@ class Splash extends React.Component {
 
                                 </div>
                                 <div id="third-splash-2-3">
-                                    <div>
-                                        <img src={window.social}/>
+                                    <div id="third-splash-2-3-bg">
+
+                                        <div>
+                                            <img src={window.social}/>
+                                        </div>
                                     </div>
                                 </div>
                                 <div id="third-splash-2-4">

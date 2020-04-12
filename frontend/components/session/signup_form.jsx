@@ -15,6 +15,8 @@ class SignUpForm extends React.Component {
             gender: '',
             location: "United States",
         }
+        
+        // this.errors = {};
 
         // this.onChange = this.onChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
@@ -59,18 +61,21 @@ class SignUpForm extends React.Component {
         this.props.submitForm(user);
     }
 
+    // componentDidMount(){
+    //     this.props.removeErrors(this.props.errors);
+    // }
+
 
 
     renderErrors() {
-        if (this.props.errors.session) {
+        // debugger;
             return (
                 <ul>
                     {this.props.errors.map((error) => (
-                        <li>{error}</li>
+                        <li> {error}</li>
                     ))}
                 </ul>
             );
-        }
     }
 
     render () {
@@ -97,8 +102,8 @@ class SignUpForm extends React.Component {
             <UserNav />
             <div className="signup-page">
                 <div className="signup-form">
-                    <div className="errors-session">{this.renderErrors()}</div>
                     <form onSubmit={this.handleSubmit}>
+                    <div className="errors">{this.renderErrors()}</div>
                     {/* <div className="navLink">{link}</div> */}
                     <Link className="login-link" to="/login">LOG IN</Link>
                     <br/>
@@ -244,7 +249,6 @@ class SignUpForm extends React.Component {
                             <input className="signup-button"
                                 type="submit"
                                 value="SIGN UP" />
-                            <div className="error">{this.renderErrors()}</div>
                         </div>
                         
 

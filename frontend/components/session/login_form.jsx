@@ -37,15 +37,13 @@ class LogInForm extends React.Component {
     }
 
     renderErrors() {
-        if (this.props.errors.session) {
-            return (
-                <ul>
-                    {this.props.errors.map((error) => (
-                        <li>{error}</li>
-                    ))}
-                </ul>
-            );
-        }
+        return (
+            <ul>
+                {this.props.errors.map((error) => (
+                    <li> {error}</li>
+                ))}
+            </ul>
+        );
     }
 
     render() {
@@ -89,7 +87,6 @@ class LogInForm extends React.Component {
                             <input className="login-button"
                                 type="submit"
                                 value="LOG IN" />
-                            <div className="error">{this.renderErrors()}</div>
                         </div>
 
                     </form>

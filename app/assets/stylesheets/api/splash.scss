@@ -41,8 +41,9 @@
     image-url('background4.png');
     max-width: 1320px;
     min-width: 90%;
-    max-height: 500px;
-    background-size: auto 668px;
+    height: 650px;
+    max-height:650px;
+    background-size: auto 650px;
     padding: 15px 48px 125px;
     padding-bottom: 0;
     -webkit-background-size: cover;
@@ -291,7 +292,7 @@ li {
     background-repeat: no-repeat;
     min-height: 550px;
     // background-size: auto 100%;
-    padding: 15px 48px 125px;
+    padding: 15px 48px;
     // -webkit-background-size: contain;
     // background-size: auto;
     // background-repeat: no-repeat;
@@ -396,16 +397,23 @@ li {
     padding-bottom: 3px;
 }
 
-#third-splash-2-3{
-    background-position: 0px 200px;
+#third-splash-2-3 {
+    display:inline-block;
+    width: 100%;
+}
+
+#third-splash-2-3-bg{
+    background-position: 0px 0px;
     top:40px;
     background-image: 
     // linear-gradient(rgba(0, 0, 0, .05), rgba(0, 0, 0, .05)),
     image-url('bridgemapbg.png');
     background-size:contain;
     background-repeat: no-repeat;
+    max-height: auto;
     min-height: 550px;
-    padding: 15px 48px 125px;
+    height:auto;
+    padding: 15px 48px;
     position: relative;
     overflow:hidden;
     align-self: center;
@@ -416,6 +424,28 @@ li {
     margin-top:0;
     padding-top: 0;
 }
+//         // background-position: 0px;
+//     background-image: 
+//     // linear-gradient(rgba(0, 0, 0, .05), rgba(0, 0, 0, .05)),
+//     image-url('bridgemapbg.png');
+//     background-size:contain;
+//     background-repeat: no-repeat;
+//     max-height: auto;
+//     min-height:550px;
+//     // min-height: auto;
+//     padding: 15px 48px 50px;
+//     position: relative;
+//     overflow:hidden;
+//     align-self: center;
+//     max-width: 1320px;
+//     min-width: 90%;
+//     height: auto;
+//     overflow:hidden; 
+//     position: relative; 
+//     margin-top:0;
+//     padding-top: 0;
+//     top:0;
+// }
 
 #third-splash-2-3 img {
     border-radius: 5%;
@@ -424,28 +454,31 @@ li {
     height: auto;
     position: absolute;
     right: 6%;
-    top: 26%;
+    top: 2%;
 }
 
 #third-splash-2-4 {
     position:relative;
+    padding-top: 100px;
 }
 
 #third-splash-2-4-bg{
-    background-position: 0px 200px;
-    top:40px;
+    // background-position: 0px;
     background-image: 
     // linear-gradient(rgba(0, 0, 0, .05), rgba(0, 0, 0, .05)),
     image-url('custbackground2.jpg');
     background-size:contain;
     background-repeat: no-repeat;
-    min-height: 550px;
-    padding: 15px 48px 125px;
+    max-height: auto;
+    min-height:550px;
+    // min-height: auto;
+    padding: 15px 48px 50px;
     position: relative;
     overflow:hidden;
     align-self: center;
     max-width: 1320px;
     min-width: 90%;
+    height: auto;
     overflow:hidden; 
     position: relative; 
     margin-top:0;
