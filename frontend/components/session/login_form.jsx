@@ -25,6 +25,10 @@ class LogInForm extends React.Component {
         )
     };
 
+    componentDidMount() {
+        return this.props.clearErrors();
+    };
+
 
     handleSubmit(e) {
         e.preventDefault();

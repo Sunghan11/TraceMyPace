@@ -56,6 +56,18 @@ class SignUpForm extends React.Component {
 
 
 
+    renderError(message) {
+        let allErrors = this.props.errors.concat(this.state.errors)
+        if (allErrors.includes(message)) {
+            return (
+                <div>
+                    <span>{message}</span>
+                </div>
+            )
+        }
+    }
+
+
     renderErrors() {
         // debugger;
             return (
