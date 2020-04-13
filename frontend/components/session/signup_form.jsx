@@ -16,18 +16,13 @@ class SignUpForm extends React.Component {
             location: "United States",
         }
         
-        // this.errors = {};
+        this.errors = {};
 
-        // this.onChange = this.onChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
         this.handleDemoLogin = this.handleDemoLogin.bind(this);
-        // this.handleDemoLogin = this.handleDemoLogin(this);
 
     }
 
-    // onChange(e) {
-    //     this.setState({ [e.target.name]: e.target.value })
-    // } 
 
     handleDemoLogin() {
         // debugger;
@@ -39,12 +34,6 @@ class SignUpForm extends React.Component {
             this.setState({ [field]: e.target.value})
         )
     };
-
-    // handleDemoLogin(e) {
-    //     e.preventDefault();
-    //     const user = {email: "testUser@gmail.com", password: "password" }
-    //     this.props.demoLogin(user)
-    // }
 
     handleSubmit(e) {
         e.preventDefault();
@@ -61,18 +50,18 @@ class SignUpForm extends React.Component {
         this.props.submitForm(user);
     }
 
-    // componentDidMount(){
-    //     this.props.removeErrors(this.props.errors);
-    // }
+    componentDidMount(){
+     return this.props.clearErrors();
+    }
 
 
 
     renderErrors() {
         // debugger;
             return (
-                <ul>
-                    {this.props.errors.map((error) => (
-                        <li> {error}</li>
+                <ul className="display-errors">
+                    {this.props.errors.map((error, i) => (
+                        <li key={`error-${i}`}> {error}</li>
                     ))}
                 </ul>
             );
