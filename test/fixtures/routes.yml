@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  user_id: 1
+  activity: MyString
+  route_mapstring: MyString
+  distance: 
+  polyline: MyString
+
+two:
+  name: MyString
+  user_id: 1
+  activity: MyString
+  route_mapstring: MyString
+  distance: 
+  polyline: MyString

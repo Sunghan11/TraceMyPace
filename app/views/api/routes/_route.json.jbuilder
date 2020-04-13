@@ -1,0 +1,1 @@
+json.extract! route, :id, :name, :user_id, :activity, :route_map, :distance, :polyline
