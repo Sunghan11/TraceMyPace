@@ -9,7 +9,7 @@ const routesReducer = (state = {}, action) => {
         case RECEIVE_ROUTE:
             return Object.assign({}, state, {[action.route.id]: action.route});
         default:
-            returnstate;
+            return state;
     }
 };
 
