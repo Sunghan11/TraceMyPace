@@ -2,6 +2,8 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 // import UserNav from '../nav/nav_container';
 
+// const avatar = <img src={avatar.jpg}/>
+
 const UserNav = () => (
     <>
 
@@ -19,6 +21,9 @@ const UserNav = () => (
                 <li>Challenges</li>
                 <li>UA Shop</li>
             </ul>
+
+            
+    
 
         </nav>
 

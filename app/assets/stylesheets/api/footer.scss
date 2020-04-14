@@ -2,7 +2,7 @@
     display:flex;
     position: relative;
     justify-content: center; 
-    max-width: 1320px; 
+    max-width: 980px; 
     margin:auto;
 }
 
@@ -38,6 +38,7 @@ ul {
     height: 60px;
     top:0;
     border-right: solid 1px lightgrey;
+    cursor:pointer;
 
 }
 
@@ -98,7 +99,7 @@ ul {
     font-family: 'Open Sans', sans-serif;
     background-color: rgb(56, 56, 56);
     color: #FFFFFF;
-    padding-right:100px;
+    // padding-right:100px;
 }
 
 #footer-second-bar:before, #footer-second-bar:after {

@@ -1,12 +1,130 @@
-#home-page-sign {
-    display:flex;
-    justify-content: center;
-    position:relative;
-    max-width: 1320px;
-    margin:auto;
-
-}
-
 #home-page-sign h1 {
     color: rgb(18, 63, 63)
+}
+
+.home-nav-links {
+    width: 25%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    position: absolute;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+    top: 15px;
+    list-style: none;
+    font-family: 'Heebo', sans-serif;
+    color: rgb(131, 130, 130);
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.home-nav-profile img {
+    // margin-top: 7px;
+    top: -2px;
+    line-height: 70px;
+    // display: inline-block;
+    width: 34px;
+    height: 34px;
+    position: relative;
+    background: rgba(0, 0, 0, 0.7)
+}
+
+.home-nav-profile {
+    position: relative;
+}
+
+.profile-menu {
+    display: none;
+    position: absolute;
+    min-width: 90px;
+    top:65px;
+    right: -5px;
+}
+
+.home-nav-profile:hover > .profile-menu {
+    display: block;
+}
+
+.profile-menu > li {
+    display:inline-block;
+    width: 70px;
+    background: white;
+    border-top: 1px solid #d3d6dc;
+    text-align: center;
+    box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.4);
+    padding: 10px;
+    line-height: 3;
+    padding: 0 24px;
+    right: 30px; 
+    cursor:pointer;
+    font-family: 'Heebo', sans-serif;
+    font-weight: bold;
+    font-size: 14px;
+    color: #9297A3;
+}
+
+.profile-menu li a {
+    color: #9297A3;
+    text-decoration: none;
+}
+
+.home-nav-profile ul {
+    list-style: none;
+    padding: 0px;
+    margin: 0px;
+    z-index:10;
+}
+
+.home-nav-profile button {
+    cursor: pointer;
+    background-color: transparent;
+    width: 35px;
+    height: 65px;
+    border: 0;
+}
+
+.home-nav-bar-2 {
+    position:relative;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 100%;
+    height: 42px;
+    background: #F0F2F4;
+    border-bottom: 3px solid #d3d6dc;
+}
+
+.shortcuts {
+    position:absolute;
+    max-width: 980px;
+    top:0;
+    width: 100%;
+    align-content: center;
+    text-align: center;
+    height: 100%;
+    border-left: 1px solid #d3d6dc;
+    border-bottom: 3px solid #9297A3;
+    // border-right: 1px solid #9297A3;
+}
+
+.shortcuts {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.shortcuts > div {
+    width: 25%;
+    height:100%;
+}
+
+.shortcuts > div > button {
+    display:block;
+    width: 100%;
+    height: 105%;
+    text-align: center;
+    cursor: pointer;
+    border-right: 1px solid #d3d6dc;    
 }

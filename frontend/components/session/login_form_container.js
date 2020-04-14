@@ -7,6 +7,10 @@ import LogInForm from './login_form';
 const msp = ({ errors }) => ({
     errors: errors.session,
     formType: "Log In",
+    demoUser: {
+        email: "testUser@gmail.com",
+        password: "password"
+    }
     // navLink: <Link to="/signup">SIGN UP</Link>
 });
 

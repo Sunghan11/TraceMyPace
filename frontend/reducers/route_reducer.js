@@ -1,4 +1,4 @@
-import {RECEIVE_ROUTES, RECEIVE_ROUTE, REMOVE_ROUTE} from '../actions/route_action'
+import {RECEIVE_ROUTES, RECEIVE_ROUTE, REMOVE_ROUTE} from '../actions/route_actions'
 
 const routesReducer = (state = {}, action) => {
     Object.freeze(state);

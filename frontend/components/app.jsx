@@ -6,6 +6,7 @@ import MyHomeContainer from './home/my_home_container'
 // import SignUpForm from './sessions/signup_form';;
 import NavContainer from './nav/nav_container'
 import Nav from './nav/nav';
+import RouteIndexContainer from './route/route_index_container';
 import UserNav from './nav/user_nav';
 import Splash from './splash/splash';
 import Footer from './footer/footer';

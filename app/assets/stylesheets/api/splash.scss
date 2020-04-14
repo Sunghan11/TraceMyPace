@@ -177,7 +177,7 @@ li {
     font-weight: 530;
     min-width: 64px;
     width: 150px;
-    height: 35px;
+    height: 50px;
     border-radius: 4px;
     cursor: pointer;
 
@@ -185,6 +185,7 @@ li {
 
 .nav-signup-button {
     background-color: #1DDD7C;
+    margin-left: 16px;
     padding: 6px 15px;
     font-weight: 700;
     color: white;
@@ -194,14 +195,35 @@ li {
     border: none;
     border-radius: 4px;
     cursor: pointer;  
-
 }
+
+.nav-signup-button:hover { 
+    background-color: rgb(20,154,86);
+}
+
+.splash-signup-button:hover {
+    background-color: #18D073;
+}
+
+.nav-login-button:hover {
+    background-color: #d5d5d5;
+}
+
+.splash-login-button:hover, .splash-smartshoes-button:hover {
+    border-color: #C1C4C9;
+    background-color: rgba(255,255,255, 0.3);
+}
+
+
 
 .nav-login-button {
     background-color: white;
     border:none;
     font-weight: 700;
     min-width: 64px;
+    width: 100px;
+    height: 35px;
+    border-radius: 4px;
     cursor: pointer;
 
 }
@@ -424,33 +446,11 @@ li {
     margin-top:0;
     padding-top: 0;
 }
-//         // background-position: 0px;
-//     background-image: 
-//     // linear-gradient(rgba(0, 0, 0, .05), rgba(0, 0, 0, .05)),
-//     image-url('bridgemapbg.png');
-//     background-size:contain;
-//     background-repeat: no-repeat;
-//     max-height: auto;
-//     min-height:550px;
-//     // min-height: auto;
-//     padding: 15px 48px 50px;
-//     position: relative;
-//     overflow:hidden;
-//     align-self: center;
-//     max-width: 1320px;
-//     min-width: 90%;
-//     height: auto;
-//     overflow:hidden; 
-//     position: relative; 
-//     margin-top:0;
-//     padding-top: 0;
-//     top:0;
-// }
 
 #third-splash-2-3 img {
     border-radius: 5%;
     box-shadow: 4px 4px 4px 4px rgba(0, 0, 0, 0.4);
-    width: 20%;
+    width: 24%;
     height: auto;
     position: absolute;
     right: 6%;

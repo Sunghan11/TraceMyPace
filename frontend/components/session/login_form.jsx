@@ -13,7 +13,7 @@ class LogInForm extends React.Component {
 
         // this.onChange = this.onChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
-        this.handleDemo = this.handleDemo.bind(this);
+        this.handleDemoLogin = this.handleDemoLogin.bind(this);
 
     }
 
@@ -36,8 +36,9 @@ class LogInForm extends React.Component {
         this.props.submitForm(user);
     }
 
-    handleDemo(e) {
-        const user = {email: ""}
+    handleDemoLogin() {
+        // debugger;
+        this.props.login(this.props.demoUser)
     }
 
     renderErrors() {
@@ -59,11 +60,21 @@ class LogInForm extends React.Component {
                 <UserNav />
             <div className="login-page">
                 <div className="login-form">
-                    <div className="errors-session">{this.renderErrors()}</div>
+                    {/* <div className="errors-session">{this.renderErrors()}</div> */}
                     <form onSubmit={this.handleSubmit}>
                     <Link className="signup-link" to="/signup">SIGN UP</Link>
                     <br />
                     <br />
+                    <br />
+                        <button onClick={this.handleDemoLogin}>
+                            <div className="demoUser2">SIGN IN AS DEMO USER</div>
+                        </button>
+                        <br />
+                        <br />
+                        <div className="dashed">
+                            <span>OR</span>
+                        </div>
+                        <br />
                         
                         <div className="form-group">
                             <label className="control-label"></label>
