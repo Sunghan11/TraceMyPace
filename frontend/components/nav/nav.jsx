@@ -8,7 +8,7 @@ function Nav() {
         <>
             <nav className="nav-bar">
                 {/* <div> */}
-                    <Link to="/">
+                    <Link to=".">
                         <div className="nav-logo">
                             <img src={window.logoBigURL} />
                         </div>

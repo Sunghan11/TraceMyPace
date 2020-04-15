@@ -235,6 +235,11 @@ select {
     
 }
 
+.errors-session {
+    color:red;
+    font-size: 14px;
+}
+
 /* .arrow-selector {
     display:flex;
     background-color: #F0F0F0;

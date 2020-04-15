@@ -22,7 +22,15 @@ const UserNav = () => (
                 <li>UA Shop</li>
             </ul>
 
-            
+            <div className="home-nav-profile">
+                <button className="dropdown-btn"><img src={window.avatarURL} /></button>
+                <ul className="profile-menu">
+                    <li>Friends</li>
+                    <li>
+                        <Link className="logout-btn" onClick={() => logout()} to="/">Logout</Link>
+                    </li>
+                </ul>
+            </div>
     
 
         </nav>

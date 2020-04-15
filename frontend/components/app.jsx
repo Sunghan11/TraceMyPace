@@ -6,6 +6,7 @@ import MyHomeContainer from './home/my_home_container'
 // import SignUpForm from './sessions/signup_form';;
 import NavContainer from './nav/nav_container'
 import Nav from './nav/nav';
+import RouteMapContainer from './route/route_map/route_map_container';
 import RouteIndexContainer from './route/route_index_container';
 import UserNav from './nav/user_nav';
 import Splash from './splash/splash';
@@ -26,7 +27,7 @@ const App = () => (
                 <AuthRoute exact path="/" component={Splash} />
                 <AuthRoute exact path="/login" component={LoginFormContainer} />
                 <AuthRoute exact path="/signup" component={SignupFormContainer} />
-                {/* <ProtectedRoute exact path="my_home" component={NavContainer} /> */}
+                <ProtectedRoute path="/routes/create" component={RouteMapContainer}/>                {/* <ProtectedRoute exact path="my_home" component={NavContainer} /> */}
                 <ProtectedRoute exact path="/my_home" component={MyHomeContainer} />
             {/* </Switch>
         </div> */}

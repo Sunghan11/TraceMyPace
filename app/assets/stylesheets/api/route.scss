@@ -1,0 +1,81 @@
+#map-main {
+    position:relative;
+    max-height: 100%;
+    width: 100%;
+    top:0px;
+    bottom: 10px;
+    margin:0;
+    padding:0;
+
+}
+
+#map-container {
+    position:absolute;
+    width: 100%;
+    height: 100%;
+    top:0;
+    bottom: 0;
+}
+
+.routes-main {
+    width: 450px;
+    height: 100%;
+    background: #F0F0F0;
+
+}
+
+.routes-title-1 {
+
+}
+
+.routes-map {
+    position: absolute;
+    top: 75px;
+    display:flex;
+    flex: row;
+    width:100%;
+    bottom:10px;
+    font-family: 'Heebo', sans-serif;
+}
+
+#map-tools {
+    position:absolute;
+    right: 20px;
+    top:100px;
+    width: 200px;    
+    z-index: 10;
+    background: #F0F0F0;
+    border: 1px solid black;
+    box-shadow: 1px 1px 1px 1px rgba(0,0,0,.4)
+}
+
+#map-tools-distance {
+    background-color: rgba(0,0,0,.4);
+    color: white;
+}
+
+#map-tools-control {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    padding-bottom: 5px;
+}
+
+#map-tools-control button {
+    width: 60px;
+    height: 40px;
+    font-size: 8px;
+    font-family: 'Heebo', sans-serif;
+}
+
+#map-tools-control #first {
+    color: green;
+}
+
+#map-tools-control #second {
+    color: red;
+}
+
+#map-tools-control #third {
+    color: green;
+}

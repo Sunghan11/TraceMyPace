@@ -16,7 +16,9 @@ const MyHome = ({ currentUser, logout }) => (
 
                     <ul className="home-nav-links">
                         <li>Training</li>
-                        <li>Routes</li>
+                        <li>
+                            <Link className="home-nav-btn" to="/routes/create">Route</Link>
+                        </li>
                         <li>Challenges</li>
                         <li>UA Shop</li>
                     </ul>
@@ -39,19 +41,21 @@ const MyHome = ({ currentUser, logout }) => (
                     <div className="shortcuts">
                         {/* <ul> */}
                             <div>
-                                <button className="shortcuts-1">My Dashboard</button>
+                                <Link className="shortcuts-1" to=".">Dashboard</Link>
                             </div>
                             <div>
-                                <button className="shortcuts-1">Create Route</button>
+                                <Link className="shortcuts-1" to="/routes/create">Create Route</Link>
                             </div>
                             <div>
-                                <button className="shortcuts-1">Log Workout</button>
+                                <Link className="shortcuts-1" to=".">Log Workout</Link>
                             </div>
                             <div>
-                                <button className="shortcuts-1">Create a goal</button>
+                                <Link className="shortcuts-1" to=".">Create a Goal</Link>
                             </div>
                         {/* </ul> */}
                     </div>
+
+                    
                 </nav>
                 <div className="line"></div>
                 <div id="home-page-sign">

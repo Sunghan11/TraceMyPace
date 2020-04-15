@@ -38,14 +38,43 @@ class LogInForm extends React.Component {
 
     handleDemoLogin() {
         // debugger;
-        this.props.login(this.props.demoUser)
+        this.props.submitForm(this.props.demoUser)
     }
 
+
+    // renderError(message) {
+    //     let allErrors = this.props.errors.concat(this.state.errors)
+    //     if (allErrors.includes(message)) {
+    //         if (message === "Email can't be blank") {
+    //             return (
+    //                 <div>
+    //                     <span>Email is required.</span>
+    //                 </div>
+    //             )
+    //         } else if (message === "Incorrect username or password. Please try again") {
+    //             // debugger;
+    //             if (this.state.password.length > 0) {
+    //                 return (
+    //                     <div>
+    //                         <span>Incorrect username or password. Please try again.</span>
+    //                     </div>
+    //                 )
+    //             } else {
+    //                 return (
+    //                     <div>
+    //                         <span>Password is required.</span>
+    //                     </div>
+    //                 )
+    //             }
+    //         }
+    //     }
+    // }
     renderErrors() {
+        // debugger;
         return (
-            <ul>
-                {this.props.errors.map((error) => (
-                    <li> {error}</li>
+            <ul className="display-errors">
+                {this.props.errors.map((error, i) => (
+                    <li key={`error-${i}`}> {error}</li>
                 ))}
             </ul>
         );
@@ -60,7 +89,6 @@ class LogInForm extends React.Component {
                 <UserNav />
             <div className="login-page">
                 <div className="login-form">
-                    {/* <div className="errors-session">{this.renderErrors()}</div> */}
                     <form onSubmit={this.handleSubmit}>
                     <Link className="signup-link" to="/signup">SIGN UP</Link>
                     <br />
@@ -74,7 +102,7 @@ class LogInForm extends React.Component {
                         <div className="dashed">
                             <span>OR</span>
                         </div>
-                        <br />
+                    <div className="errors-session">{this.renderErrors()}</div>
                         
                         <div className="form-group">
                             <label className="control-label"></label>

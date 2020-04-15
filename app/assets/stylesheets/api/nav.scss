@@ -8,6 +8,11 @@
     margin: 0 auto;
 }
 
+.home-nav-links a {
+    text-decoration: none;
+    color: #9297A3;
+}
+
 .nav-bar > a{
     max-width: 185px;
 }
@@ -39,7 +44,7 @@
     top: 15px;
     list-style: none;
     font-family: 'Heebo', sans-serif;
-    color: rgb(131, 130, 130);
+    color: #6D717A;
     font-weight: bold;
     font-size: 14px;
 }

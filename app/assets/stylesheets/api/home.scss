@@ -15,7 +15,7 @@
     top: 15px;
     list-style: none;
     font-family: 'Heebo', sans-serif;
-    color: rgb(131, 130, 130);
+    color: #9297A3;
     font-weight: bold;
     font-size: 14px;
 }
@@ -118,13 +118,27 @@
 .shortcuts > div {
     width: 25%;
     height:100%;
+    // vertical-align: baseline;
 }
 
-.shortcuts > div > button {
+.shortcuts > div > a {
     display:block;
     width: 100%;
     height: 105%;
     text-align: center;
     cursor: pointer;
     border-right: 1px solid #d3d6dc;    
+    text-decoration: none;
+    color: #9297A3;
+    font-family: 'Heebo', sans-serif;
+    font-weight: 500;
+    
+    
+    
+}
+
+.shortcuts a{
+    
+    text-decoration: none;
+
 }
