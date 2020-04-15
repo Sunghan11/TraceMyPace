@@ -52,6 +52,7 @@ class RouteMap extends React.Component {
         let map = new 
         google.maps.Map(this.refs.map, options);
         this.setCurrentPosition(map);
+        this.dirRend.setMap(map);
         this.map = map;
 
 
@@ -84,10 +85,10 @@ class RouteMap extends React.Component {
     clearRoutes() {
         this.markers = [];
         this.setState({ distance: 0 })
-        this.dirRend.initMap(null);
+        this.dirRend.setMap(null);
         this.dirRend = null;
         this.dirRend = new google.maps.DirectionsRenderer({ preserveViewport: true});
-        this.dirRend.initMap(this.map); 
+        this.dirRend.setMap(this.map); 
     }
 
     undoMarker(e) {
@@ -184,26 +185,32 @@ class RouteMap extends React.Component {
                     <div className="routes-main">
                         <div className="routes-title-1">
                             <h2 className="routes-title-1-1">MY ROUTES</h2>
+                            <span id="route-header">Route Details</span>
                             <div className="route-details">
-                                <h4>Route Details</h4>
-                                <div>
+                                <div id="route-details-1">
                                     <input
                                         value={this.state.name}
                                         onChange={this.update("name")}
                                         type="text"
                                         placeholder="Name this map"
                                     />
+                                    <span>*</span>
                                 </div>
-                                <div>
+                                <div id="route-details-2">
                                     <select value={this.state.activity}
                                         className="optA"
                                         onChange={this.update("activity")}>
                                         {ACTIVITIES.map(activity =>
                                             <option key={activity} value={activity}>{activity}</option>)}
                                     </select>
+                                    <span>*</span>
                                 </div>
-                                <button className="create-route-btn">SAVE ROUTE</button>
+                                <div id="save-routes">
+                                    <span id="save-routes-1">Save to Routes</span>
+                                    <button className="create-route-btn">SAVE ROUTE</button>
+                                </div>
                             </div>
+                            <span id="route-footer">No Advertisements</span>
 
                         </div>
                     </div>
@@ -214,12 +221,26 @@ class RouteMap extends React.Component {
                         <div id="map-tools">
                             <div id="map-tools-distance">
                                 <label>DISTANCE</label>
-                                <h2>{this.distance} MI </h2>
+                                <h2>{this.state.distance} MI </h2>
                             </div>
                             <div id="map-tools-control">
-                                <button onClick={this.undoMarker}><i id="first" class="fas fa-undo fa-2x"></i><br/> UNDO</button>
-                                <button onClick={this.clearRoutes}><i id="second" class="fas fa-times fa-2x"></i><br/>CLEAR</button>
-                                <button onClick={this.centerRoute}><i id="third" class="fas fa-compress-arrows-alt fa-2x"></i><br/>CENTER</button>
+                                <button onClick={this.undoMarker}><i id="first" className="fas fa-undo fa-2x"></i><br/> UNDO</button>
+                                <button onClick={this.clearRoutes}><i id="second" className="fas fa-times fa-2x"></i><br/>CLEAR</button>
+                                <button onClick={this.centerRoute}><i id="third" className="fas fa-compress-arrows-alt fa-2x"></i><br/>CENTER</button>
+                            </div>
+                            <div id ="map-tools-control2">
+                                <div>
+                                    <input type="radio" readOnly name="activity" value="WALK" checked/>
+                                    <i className="fas fa-walking fa-2x"></i><br/>WALK
+                                </div>
+                                <div>
+                                    <input type="radio" readOnly name="activity" value="HIKE"/>
+                                    <i className="fas fa-hiking fa-2x"></i><br/>HIKE
+                                </div>
+                                <div>
+                                    <input type="radio" name="activity" value="BIKE" />
+                                    <i className="fas fa-biking fa-2x"></i><br/>BIKE
+                                </div>
                             </div>
                         </div>
                         
