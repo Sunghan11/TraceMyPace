@@ -9,6 +9,7 @@ class RouteMap extends React.Component {
             name: "",
             activity: "",
             distance: 0,
+            location: "",
         }
 
         this.initMap = this.initMap.bind(this);
@@ -20,6 +21,9 @@ class RouteMap extends React.Component {
         this.undoMarker = this.undoMarker.bind(this);
         this.dirServ = new google.maps.DirectionsService();
         this.dirRend = new google.maps.DirectionsRenderer({ preserveViewport: true});
+        this.updateCenter = this.updateCenter.bind(this);
+        this.autoComplete = null;
+        this.searchAutoComplete = this.searchAutoComplete.bind(this);
         
     }
     
@@ -55,6 +59,7 @@ class RouteMap extends React.Component {
         this.dirRend.setMap(map);
         this.map = map;
 
+        this.searchAutoComplete();
 
         this.map.addListener('click',
             event => {
@@ -81,6 +86,19 @@ class RouteMap extends React.Component {
         this.markers.push(marker);
 
     }
+
+    updateCenter(e) {
+        e.preventDefault();
+        this.geocoder.geocode({ 'address': this.state.location}, results => {
+        //google Api to get center.
+        //formatted_Address is string containing the human-readable address location;
+        //geometry is google library that provide util func for geometric data.
+        //ex, spherical, encoding, poly
+        this.map.setCenter(results[0].geometry.location);
+        //google api to set map distance view
+        this.map.setZoom(13);
+        })
+    };
 
     clearRoutes() {
         this.markers = [];
@@ -130,16 +148,36 @@ class RouteMap extends React.Component {
                 //legs give access to object info of each leg.
                 //ex. steps[] containers array of objects of each sep leg
                 //distance indicates total distance of leg.
-                //.value of distance gives distance in meters.
                 let totalDistance = 0; //in METERS
                 response.routes[0].legs.forEach((leg) => 
+                //.value gives distance in meters
                     totalDistance += leg.distance.value);
                 let distanceInMiles = totalDistance * .000621371
                 this.setState({distance: (distanceInMiles.toFixed(2))})
             }
-        })
+        });
     }
 
+    searchAutoComplete() {
+        // this.marker.setVisible(false);
+        let searchInput = document.getElementById('search-input');
+        //built in google libraries function that has google api
+        //auto complete user input addresses
+        this.autoComplete = new google.maps.places.Autocomplete(searchInput);
+        //developers.google.com/maps/documentation/javascript/examples/places-autocomplete
+        this.autoComplete.addListener('place_changed', this.searchUpdate);
+    }
+
+    searchUpdate() {
+        let place = this.autoComplete.getPlace();
+        if (!place.geometry) {
+            //User entered the name of place that was not suggested and
+            //pressed the Enter Key.
+            window.alert("No details available for input: '" + place.name + "'");
+        } else {
+            this.setState({ location: place.formatted_address });
+        }
+    }
 
 
         // let poly = new google.maps.PolyLine({
@@ -157,6 +195,17 @@ class RouteMap extends React.Component {
             this.setState({ [field]: e.target.value })
         )
     };
+
+    saveRoute(e) {
+        e.preventDefault();
+
+        if (this.markers.length > 1) {
+            this.props.createRoute(this.newRouteParams())
+            .then(data => this.props.history.push(`/routes/view/${data.route.id}`))
+        } else {
+            alert('You must have at least two points on the map to save a route');
+        }
+    }
 
     handleSubmit(e) {
         e.preventDefault();
@@ -185,6 +234,20 @@ class RouteMap extends React.Component {
                     <div className="routes-main">
                         <div className="routes-title-1">
                             <h2 className="routes-title-1-1">MY ROUTES</h2>
+                            <div id="search-bar" onSubmit={this.updateCenter}>
+                                <label>Choose a map location
+                                    <div>
+                                        <input
+                                            type="search"
+                                            className="search-form-input"
+                                            id="search-input"
+                                            value={this.state.location}
+                                            onChange={this.update('location')}
+                                            placeholder="Address"
+                                        />
+                                    </div>
+                                </label>
+                            </div>
                             <span id="route-header">Route Details</span>
                             <div className="route-details">
                                 <div id="route-details-1">
