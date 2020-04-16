@@ -39,7 +39,6 @@ class RouteIndex extends React.Component {
                     <div id="route-index-city">
                         <span>City</span>
                     </div>
-                <
 
 
                 </div>
