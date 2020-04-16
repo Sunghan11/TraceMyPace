@@ -2,6 +2,7 @@ import React from 'react';
 import {Link} from 'react-router-dom';
 // import UserNav from '../nav/nav_container';
 import Footer from '../footer/footer';
+import DashNav from '../dashboard/dashboard';
 
 const MyHome = ({ currentUser, logout }) => (
             <>
@@ -13,7 +14,7 @@ const MyHome = ({ currentUser, logout }) => (
                             <img src={window.logoBigURL} />
                         </div>
                     </Link>
-
+                    {/* {currentUser.first_name} */}
                     <ul className="home-nav-links">
                         <li>Training</li>
                         <li>
@@ -61,6 +62,8 @@ const MyHome = ({ currentUser, logout }) => (
                 <div id="home-page-sign">
                     <h1>User Home Page being Worked on....</h1>
                 </div>
+
+                <DashNav />
                 <br/>
                 <br />
                 <br />

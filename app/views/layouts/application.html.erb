@@ -11,13 +11,10 @@
     <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@900&display=swap" rel="stylesheet">
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
-            <%= javascript_include_tag "https://maps.googleapis.com/maps/api/js?key=#{Rails.application.credentials.google[:api_key]}&libraries=geometry,drawing,places"%>
+    <%= javascript_include_tag "https://maps.googleapis.com/maps/api/js?key=#{Rails.application.credentials.google[:api_key]}&libraries=geometry,directions,places,visualization,drawing  "%>
     
 
     <script src="https://kit.fontawesome.com/75b747f87d.js" crossorigin="anonymous"></script>
-    <script type="text/javascript">
-      window.googleAPIKey= "<%= Rails.application.credentials.google[:api_key] %>"
-    </script>
         
 
     <script type="text/javascript">

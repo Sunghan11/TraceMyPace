@@ -13,7 +13,7 @@ class RouteMap extends React.Component {
         }
 
         this.initMap = this.initMap.bind(this);
-        this.handleSubmit = this.handleSubmit.bind(this);
+        // this.handleSubmit = this.handleSubmit.bind(this);
         this.map = null;
         this.markers = [];
         this.addMarker= this.addMarker.bind(this);
@@ -24,9 +24,12 @@ class RouteMap extends React.Component {
         this.updateCenter = this.updateCenter.bind(this);
         this.autoComplete = null;
         this.searchAutoComplete = this.searchAutoComplete.bind(this);
+        this.encodeMarkers = this.encodeMarkers.bind(this);
+        this.searchUpdate = this.searchUpdate.bind(this);
+        this.saveRoute = this.saveRoute.bind(this);
+        this.geocoder = new google.maps.Geocoder();
         
     }
-    
     componentDidMount() {
         this.initMap();
     }
@@ -42,7 +45,7 @@ class RouteMap extends React.Component {
                     };
                     map.setCenter(pos)
                 }
-            )
+            );
         }
     }
 
@@ -59,12 +62,14 @@ class RouteMap extends React.Component {
         this.dirRend.setMap(map);
         this.map = map;
 
-        this.searchAutoComplete();
-
+        
         this.map.addListener('click',
-            event => {
-                this.addMarker({lat: event.latLng.lat(), lng: event.latLng.lng() });
+        event => {
+            this.addMarker({lat: event.latLng.lat(), lng: event.latLng.lng() });
+            //creates route on click;
+            this.showRoute(this.dirServ, this.dirRend);
         })
+        this.searchAutoComplete();
     }
     addMarker(coords) {
         let marker = new google.maps.Marker({
@@ -84,36 +89,68 @@ class RouteMap extends React.Component {
             infoWindow.open(map, marker);
         });
         this.markers.push(marker);
+        if (marker && marker.setMap) {
+            marker.setMap(null)
+        }
 
     }
 
     updateCenter(e) {
         e.preventDefault();
-        this.geocoder.geocode({ 'address': this.state.location}, results => {
         //google Api to get center.
+        const searchInput = document.getElementById('search-input');
         //formatted_Address is string containing the human-readable address location;
         //geometry is google library that provide util func for geometric data.
         //ex, spherical, encoding, poly
-        this.map.setCenter(results[0].geometry.location);
-        //google api to set map distance view
-        this.map.setZoom(13);
+        this.geocoder.geocode({ 'address': this.state.location }, results => {
+            this.map.setCenter(results[0].geometry.location);
+            //google api to set map distance view
+            this.map.setZoom(13);
         })
     };
 
+    encodeMarkers() {
+        let markerString = '';
+        this.markers.forEach(marker => {
+            let latitude = marker.getPosition().lat();
+            let longitude = marker.getPosition().lng();
+            markerString += `${latitude},${longitude},`;
+        })
+
+        return markerString.slice(0,-1);
+    }
+
+    newRouteParams() {
+        return {
+            user_id: this.state.user_id,
+            distance: this.state.distance,
+            name: this.state.name,
+            encoded_markers: this.encodeMarkers(),
+        };
+    }
+
+    
+
     clearRoutes() {
+        for (let i = 0 ; i < this.markers.length; i++) {
+            this.markers[i].setMap(null)
+        }
         this.markers = [];
-        this.setState({ distance: 0 })
         this.dirRend.setMap(null);
         this.dirRend = null;
+        
+        this.setState({ distance: 0 })
         this.dirRend = new google.maps.DirectionsRenderer({ preserveViewport: true});
         this.dirRend.setMap(this.map); 
     }
 
-    undoMarker(e) {
-        e.preventDefault();
-        this.markers.pop;
 
-        if(this.markers.length > 1) {
+    undoMarker(e) {
+        // debugger;
+        e.preventDefault();
+        this.markers.pop().setMap(null);
+// debugger;
+        if(this.markers.length > 0) {
             // this.showRoute({
             //     new google.maps.DirectionsService(), new google.maps.DirectionsRenderer({preserveViewport: true})
             // })
@@ -124,23 +161,25 @@ class RouteMap extends React.Component {
     }
 
     showRoute(dirServ, dirRend) {
+        // debugger;
         let start = this.markers[0].position;
         let finish = this.markers[this.markers.length-1].position;
         let waypoints = []
         for (let i = 1; i < this.markers.length - 1; i++) {
             waypoints.push({
                 location: this.markers[i].position,
+                stopover: false,
             });
         }
 
-        const marks = {
+        const request = {
             origin: start,
             waypoints: waypoints,
             destination: finish,
             travelMode: google.maps.DirectionsTravelMode.WALKING,
         };
 
-        this.dirServ.route(marks, (response, status) => {
+        this.dirServ.route(request, (response, status) => {
             if (status === "OK") {
                 this.dirRend.setDirections(response);
 
@@ -152,8 +191,9 @@ class RouteMap extends React.Component {
                 response.routes[0].legs.forEach((leg) => 
                 //.value gives distance in meters
                     totalDistance += leg.distance.value);
-                let distanceInMiles = totalDistance * .000621371
-                this.setState({distance: (distanceInMiles.toFixed(2))})
+                // let distanceInMiles = totalDistance * .000621371
+                // this.setState({distance: (distanceInMiles.toFixed(2))})
+                this.setState({ distance: (totalDistance * .000621371).toFixed(2)});
             }
         });
     }
@@ -170,12 +210,19 @@ class RouteMap extends React.Component {
 
     searchUpdate() {
         let place = this.autoComplete.getPlace();
-        if (!place.geometry) {
-            //User entered the name of place that was not suggested and
-            //pressed the Enter Key.
-            window.alert("No details available for input: '" + place.name + "'");
-        } else {
+        // if (!place.geometry) {
+        //     //User entered the name of place that was not suggested and
+        //     //pressed the Enter Key.
+        //     window.alert("No details available for input: '" + place.name + "'");
+        // } else {
+        //     this.setState({ location: place.formatted_address });
+        // }
+        if (place.geometry) {
             this.setState({ location: place.formatted_address });
+        } else {
+            const searchInput = document.getElementById('search-input');
+            searchInput.value = '';
+            alert('Address Not Found')
         }
     }
 
@@ -207,18 +254,6 @@ class RouteMap extends React.Component {
         }
     }
 
-    handleSubmit(e) {
-        e.preventDefault();
-        this.props.createRoute({
-            name: this.state.name,
-            activity: this.state.activity,
-            distance: this.state.distance,
-            polyline: this.state.polyline,
-            user_id: this.props.currentUserId,
-            route_map: this.state.route_map
-
-        })
-    }
 
     render() {
         const ACTIVITIES = ["Choose an Actitivity",
@@ -233,9 +268,9 @@ class RouteMap extends React.Component {
                 <div className="routes-map">
                     <div className="routes-main">
                         <div className="routes-title-1">
-                            <h2 className="routes-title-1-1">MY ROUTES</h2>
-                            <div id="search-bar" onSubmit={this.updateCenter}>
-                                <label>Choose a map location
+                            {/* <h2 className="routes-title-1-1">MY ROUTES</h2> */}
+                            <form id="search-bar" onSubmit={this.updateCenter}>
+                                <label id="search-label">Choose a map location
                                     <div>
                                         <input
                                             type="search"
@@ -245,11 +280,14 @@ class RouteMap extends React.Component {
                                             onChange={this.update('location')}
                                             placeholder="Address"
                                         />
-                                    </div>
+                                    <button
+                                        type="submit"
+                                        className="location-search">SEARCH</button>
+                                        </div>
                                 </label>
-                            </div>
+                            </form>
                             <span id="route-header">Route Details</span>
-                            <div className="route-details">
+                            <form className="route-details" on Submit={this.saveRoute}>
                                 <div id="route-details-1">
                                     <input
                                         value={this.state.name}
@@ -270,9 +308,12 @@ class RouteMap extends React.Component {
                                 </div>
                                 <div id="save-routes">
                                     <span id="save-routes-1">Save to Routes</span>
-                                    <button className="create-route-btn">SAVE ROUTE</button>
+                                    <button 
+                                        type="submit"
+                                        className="create-route-btn"
+                                        id="route-submit">SAVE ROUTE</button>
                                 </div>
-                            </div>
+                            </form>
                             <span id="route-footer">No Advertisements</span>
 
                         </div>

@@ -65,6 +65,32 @@
     border-radius: 5px;
     padding-left: 6px;
 }
+#search-label div{
+    display: flex;
+    justify-content: space-between;
+    width: 90%;
+    padding-left: 11px;
+}
+
+#search-bar button {
+    background: grey;
+    color:white;
+    font-family: 'Heebo', sans-serif;
+    font-weight: bold;
+    border-radius: 5px;
+    height: 28px;
+    width: 86px;
+}
+
+#search-input {
+    width: 70%;
+}
+
+#search-label {
+    font-family: 'Heebo', sans-serif;
+    size: 14px;
+    padding-left: 11px;
+}
 
 #save-routes {
     display:flex;
@@ -72,6 +98,15 @@
     align-items: center;
     width: 80%;
     justify-content: space-between;
+}
+
+.search-form-input {
+        display: block;
+    width: 90%;
+    height:36px;
+    background-color: #FFFFFF;
+    border-radius: 5px;
+    padding-left: 6px;
 }
 
 .route-details select {

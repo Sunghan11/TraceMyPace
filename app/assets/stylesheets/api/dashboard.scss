@@ -1,0 +1,178 @@
+#dash-main {
+    position: relative;
+    width: 980px;
+    margin: auto;
+    margin-top: 40px;
+    margin-bottom: 20px;
+    color:#046AB2;
+    border-bottom: 1px solid #d3d2d1;
+}
+#dash-nav {
+    display:flex;
+    position: relative;
+    height: 42px;
+}
+
+.dash-nav-container {
+    border-right: 1px solid #d3d2d1;
+    border-top:1px solid #d3d2d1;
+    border-left: 1px solid #d3d2d1;
+    border-bottom: 3px solid #FFFFFF;
+    width: 206px;
+    padding: 7px 23px 5px;
+    background: #f9f9f9;
+    color: #046AB2
+}
+
+#dash-bottom-half {
+    display: flex;
+    justify-content: space-between;
+    max-width: 980px;
+    width: 100%;
+    margin: auto;
+
+}
+
+#left-main-dash {
+    max-width: 630px;
+    width: 64%;
+}
+
+#dash-profile-pic img {
+    width: 105px;
+    height: 105px;
+}
+
+#right-main-dash {
+    max-width: 300px;
+    display: flex;
+    flex-direction: column;
+    right:0;
+    width: 30%;
+}
+
+#dash-profile-image {
+    display: block;
+    box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.4);
+    background-color: #f9f9f9;
+    
+}
+
+#dash-profile-pic {
+    display:flex;
+    flex-direction: rows;
+    max-width: 300px;
+    max-height: 130px;
+    width: 300px;
+    height: 110px;
+    
+}
+
+#dash-profile-info {
+    display:flex;
+    flex-direction: column;
+    padding-left: 5px;
+    
+}
+
+// #dash-profile-info div{
+//     display:flex;
+//     flex-direction: column;
+// }
+
+#dash-right-section {
+    display:flex;
+    flex-direction: columns;
+}
+
+#profile-edit {
+    display:flex;
+    justify-content: space-around;
+}
+
+#dash-profile-greeting{
+    display:flex;
+    flex-direction: column;
+    height: 40px;
+    font-size: 14px;
+    padding-top: 10px;
+    border-bottom: 1px solid #d3d2d1;
+    font-family: 'Heebo', sans-serif;
+    width: 160px;
+}
+
+#total-distance {
+    display:flex;
+}
+
+#total-distance > :first-child{
+    font-size: 30px;
+    font-weight: bold;
+    margin: 0px 4px 0px 0px;
+}
+
+#total-miles {
+    display:flex;
+    flex-direction: column;
+    font-size:12px;
+    align-content: center;
+    align-items: top;
+    vertical-align: bottom;
+    font-family: 'Heebo', sans-serif;
+}
+
+
+#profile-edit span {
+    display: block;
+    width: 50%;
+    text-align: center;
+    border: 1px solid #d3d2d1;
+    font-family: 'Heebo', sans-serif;
+    color: #046AB2
+}
+
+#dash-nav a {
+    text-decoration: none;
+}
+
+.active {
+    border-top: 3px solid #2AA5EF;
+    border-bottom: 0px;
+}
+
+#dash-nav {
+    text-align: center;
+    font-family: 'Heebo', sans-serif;
+    font-weight: 500;
+    font-size: 18px;
+}
+
+#dash-ua {
+    display: flex;
+    width: 300px;
+    height: 105px;
+    margin-top: 15px;
+    box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.4)
+}
+
+#dash-ua-shop, #dash-me {
+    // padding-top: 5px;
+    display:flex;
+    flex-direction: column;
+    align-items:center;
+    justify-content: space-around;
+    width: 150px;
+    height: 105px;
+    border: 1px solid #d3d2d1;
+    font-size: 9px;
+}
+
+#dash-me  div {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100px;
+    padding-bottom: 20px;
+}
+
+

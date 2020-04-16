@@ -17,7 +17,7 @@ const msp = ({ errors }) => ({
 const mdp = dispatch => ({
     submitForm: user => dispatch(signup(user)),
     clearErrors: () => dispatch(clearErrors()),
-    // login: demoUser => dispatch(login(demoUser))
+    login: demoUser => dispatch(login(demoUser))
 });
 
 export default connect(msp, mdp)(SignUpForm);

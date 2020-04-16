@@ -115,19 +115,28 @@
     align-items: center;
 }
 
+
 .shortcuts > div {
+    position: relative;
     width: 25%;
     height:100%;
+    // top: 10px;
+    align-items: center;
+    // align-content: center;
     // vertical-align: baseline;
+    border-right: 1px solid #d3d6dc;    
 }
 
 .shortcuts > div > a {
     display:block;
+    position: absolute;
+    padding-top: 10px;
     width: 100%;
     height: 105%;
     text-align: center;
+    align-items: center;
     cursor: pointer;
-    border-right: 1px solid #d3d6dc;    
+    
     text-decoration: none;
     color: #9297A3;
     font-family: 'Heebo', sans-serif;
