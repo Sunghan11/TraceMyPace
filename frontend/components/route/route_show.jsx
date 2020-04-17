@@ -52,16 +52,3 @@ class RouteShow extends React.Component {
 }
 
 export default RouteShow;
-
-
-    //     this.markers=[];
-    //     this.map=null;
-    //     this.dirServ = new google.maps.DirectionsService();
-    //     this.dirRend = new google.maps.DirectionsRenderer({
-    //         supressMarkers: true,
-    //         polylineOptions: {
-    //             strokeColor: '#8B008B',
-    //             strokeWeight: 4,
-    //         },
-    //     });    
-    // }
