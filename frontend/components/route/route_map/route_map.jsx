@@ -330,7 +330,7 @@ class RouteMap extends React.Component {
         //     alert('Invalid Route. Please choose at least 2 waypoints.');
         // }
         e.preventDefault();
-        debugger;
+        // debugger;
         this.props.createRoute({
             name: this.state.name,
             user_id: this.props.currentUser.id,

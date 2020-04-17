@@ -73,13 +73,15 @@ class LogInForm extends React.Component {
     // }
     renderErrors() {
         // debugger;
-        return (
-            <ul className="display-errors">
+        // if (this.props.errors.session) {
+            return (
+                <ul className="display-errors">
                 {this.props.errors.map((error, i) => (
                     <li key={`error-${i}`}> {error}</li>
-                ))}
-            </ul>
-        );
+                    ))}
+                </ul>
+            );
+        // }
     }
 
     render() {

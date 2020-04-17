@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import COUNTRIES from './country_list';
-import UserNav from '../nav/user_nav';
+import UserNavContainer from '../nav/user_nav_container';
 
 class SignUpForm extends React.Component {
     constructor(props) {
@@ -68,6 +68,7 @@ class SignUpForm extends React.Component {
 
 
     renderError(message) {
+        // debugger;
         let allErrors = this.props.errors.concat(this.state.errors)
         if (allErrors.includes(message)) {
             if (message === "First name can't be blank") {
@@ -179,7 +180,7 @@ class SignUpForm extends React.Component {
         // if (this.props.formType === 'Log in') {
         return (
             <>
-            <UserNav />
+            <UserNavContainer />
             <div className="signup-page">
                 <div className="signup-form">
                     <form onSubmit={this.handleSubmit}>
