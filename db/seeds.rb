@@ -11,15 +11,15 @@
 User.delete_all
 Route.delete_all
 
-# demoUser = User.create(
-#     first_name: "demo",
-#     last_name: "user",
-#     email: "testUser@gmail.com",
-#     password: "password",
-#     birth_date: "1988-03-26",
-#     gender: "Male",
-#     location: "United States"
-# )
+demoUser = User.create(
+    first_name: "demo",
+    last_name: "user",
+    email: "testUser@gmail.com",
+    password: "password",
+    birth_date: "1988-03-26",
+    gender: "Male",
+    location: "United States"
+)
 
 users = User.create([
     {first_name: "Demo", last_name: "User", email: "testUser@gmail.com", password:"password", birth_date:"2000-12-20", gender: "Male", location: "United States"},

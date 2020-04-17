@@ -59376,3 +59376,34 @@ Completed 200 OK in 607ms (Views: 36.7ms | ActiveRecord: 277.1ms)
 Completed 200 OK in 621ms (Views: 25.8ms | ActiveRecord: 32.4ms)
 
 
+Started GET "/" for ::1 at 2020-04-17 13:06:03 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (27.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "V2qLM-1-m8z1hlneEtgN3w"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "routes"."id" FROM "routes" WHERE "routes"."user_id" = $1[0m  [["user_id", 5]]
+  ↳ app/views/api/users/_user.json.jbuilder:1
+  Rendered api/users/_user.json.jbuilder (5.7ms)
+  Rendered static_pages/root.html.erb within layouts/application (45.8ms)
+  Rendered api/users/_user.json.jbuilder (0.5ms)
+Completed 200 OK in 540ms (Views: 509.3ms | ActiveRecord: 28.2ms)
+
+
+Started DELETE "/api/session" for ::1 at 2020-04-17 13:06:06 -0400
+Processing by Api::SessionsController#destroy as JSON
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "V2qLM-1-m8z1hlneEtgN3w"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:45
+  [1m[36mUser Exists (1.6ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "kobe@gmail.com"], ["id", 5], ["LIMIT", 1]]
+  ↳ app/models/user.rb:45
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["session_token", "3F6WeSIBSV-IzKus2c4u9w"], ["id", 5], ["LIMIT", 1]]
+  ↳ app/models/user.rb:45
+  [1m[36mUser Update (1.5ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "3F6WeSIBSV-IzKus2c4u9w"], ["updated_at", "2020-04-17 17:06:06.631540"], ["id", 5]]
+  ↳ app/models/user.rb:45
+  [1m[35m (16.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:45
+No template found for Api::SessionsController#destroy, rendering head :no_content
+Completed 204 No Content in 263ms (ActiveRecord: 21.2ms)
+
+
