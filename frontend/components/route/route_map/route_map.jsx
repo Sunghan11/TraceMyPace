@@ -333,7 +333,7 @@ class RouteMap extends React.Component {
         debugger;
         this.props.createRoute({
             name: this.state.name,
-            user_id: this.props.currentUserId,
+            user_id: this.props.currentUser.id,
             activity: this.state.activity,
             route_map: this.state.polyline,
             distance: this.state.distance,

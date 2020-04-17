@@ -13,7 +13,7 @@ const RouteIndexItem = props => {
                     </Link>
                 </td>
                 <td className="route-tag" id="route-tag-created">
-                    {formatDate(props.route.createdAt)}
+                    <span> 4/17/2020</span>
                 </td>
                 <td className="route-tag" id="route-tag-distance">
                     {(props.route.distance).toFixed(2)} miles
@@ -22,7 +22,13 @@ const RouteIndexItem = props => {
                     {props.route.name}
                 </td>
                 <td className="route-tag" id="route-tag-city">
-                    {props.route.location}
+                    {props.route.city}
+                </td>
+                <td className="route-tag" id="route-tag-friends">
+                    <i class="fas fa-user-friends"></i>
+                </td>
+                <td className="route-tag" id="route-tag-delete">
+                    Delete
                 </td>
             </tr>
         )

@@ -9,7 +9,7 @@ import {fetchRoutes, deleteRoute} from '../../actions/route_actions';
 const msp = state => {
     // debugger;
     const routes = state.entities.routes;
-    return ({ routes})
+    return ({ routes })
 }
 
 const mdp = dispatch => ({

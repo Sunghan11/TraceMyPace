@@ -50,7 +50,7 @@ class DashNav extends React.Component {
                                         <div id="total-distance">
                                             <div>0</div>
                                             <div id="total-miles">
-                                                <span>0</span>
+                                                <span>TOTAL</span>
                                                 <span>MILES</span>
                                             </div>
                                         </div>

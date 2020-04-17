@@ -9,11 +9,11 @@ const routesReducer = (state = {}, action) => {
         case RECEIVE_ROUTES:
             return action.routes;
         case RECEIVE_ROUTE:
-            newState = merge({}, state);
+            newState = Object.assign({}, state);
             newState[action.route.id] = action.route;
             return newState;
         case REMOVE_ROUTE:
-            newState = merge({}, state);
+            newState = Object.assign({}, state);
             delete newState[action.routeId];
             return newState
         default:
