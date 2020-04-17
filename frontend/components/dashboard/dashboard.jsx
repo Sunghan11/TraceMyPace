@@ -1,19 +1,23 @@
-import React from'react';
+import React from 'react';
 import {Link, NavLink} from 'react-router-dom';
+import MyDashboard from './my_dashboard/my_dashboard';
 
-// class DashNav extends React.Component {
-//     constructor(props) {
-//         super(props);
-//     }
+class DashNav extends React.Component {
+    constructor(props) {
+        super(props);
+        // debugger
+    }
     
-//     render () {
+    render () {
+        // debugger;
 
-const DashNav = ({ currentUser }) => {
+// const DashNav = ({ currentUser }) => {
     // debugger;
         return (
             <div id="dash-wrapper">
                 <div id="dash-main">
                     <div id="dash-nav">
+                        {/* <button>{this.props.logout}</button> */}
                         <NavLink to="/my_home/activity_feed" activeClassName="active">
                             <div className="dash-nav-container"
                                 id="dash-nav-box">ACTIVITY FEED</div>
@@ -30,7 +34,7 @@ const DashNav = ({ currentUser }) => {
                 </div>
                 <div id="dash-bottom-half">
                     <div id="left-main-dash">
-
+                        <MyDashboard />
                     </div>
                     <div id="right-main-dash">
                         <div id="dash-right-section">
@@ -39,14 +43,14 @@ const DashNav = ({ currentUser }) => {
                                     <img src={window.avatarURL} />
                                     <div id="dash-profile-info">
                                         <div id="dash-profile-greeting">
-                                            <span>Name</span>
+                                            <span>{this.props.currentUser.first_name} {this.props.currentUser.last_name}</span>
                                             <span>Location</span>
                                         </div>
                                         <br/>
                                         <div id="total-distance">
                                             <div>0</div>
                                             <div id="total-miles">
-                                                <span>TOTAL</span>
+                                                <span>0</span>
                                                 <span>MILES</span>
                                             </div>
                                         </div>
@@ -83,6 +87,6 @@ const DashNav = ({ currentUser }) => {
             </div>
         )
     }
-// }
+}
 
 export default DashNav;

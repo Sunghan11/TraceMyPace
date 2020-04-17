@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-// import UserNav from '../nav/nav_container';
+import UserNavContainer from '../nav/nav_container';
 
 // const avatar = <img src={avatar.jpg}/>
 

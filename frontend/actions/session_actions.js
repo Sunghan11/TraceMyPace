@@ -52,7 +52,7 @@ export const logout = () => dispatch => (
         .then(() => (dispatch(logoutCurrentUser())))
 );
 
-// export const fetchUsers = () => dispatch => (
-//     APIUtil.fetchUsers()
-//         .then(users => dispatch(receiveUsers(users)))
-// );
+export const fetchUser = (id) => dispatch => (
+    APIUtil.fetchUser(id)
+        .then(user => dispatch(receiveUser(user)))
+);

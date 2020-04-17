@@ -8,7 +8,8 @@ import NavContainer from './nav/nav_container'
 import Nav from './nav/nav';
 import RouteMapContainer from './route/route_map/route_map_container';
 import RouteIndexContainer from './route/route_index_container';
-import UserNav from './nav/user_nav';
+import RouteShowContainer from './route/route_show_container';
+import UserNavContainer from './nav/user_nav_container';
 import Splash from './splash/splash';
 import Footer from './footer/footer';
 import {AuthRoute, ProtectedRoute} from '../util/route_util';
@@ -29,6 +30,9 @@ const App = () => (
                 <AuthRoute exact path="/signup" component={SignupFormContainer} />
                 <ProtectedRoute path="/routes/create" component={RouteMapContainer}/>                {/* <ProtectedRoute exact path="my_home" component={NavContainer} /> */}
                 <ProtectedRoute exact path="/my_home" component={MyHomeContainer} />
+                <ProtectedRoute exact path="/routes/my_routes" component={RouteIndexContainer} />
+                <ProtectedRoute exact path="/routes/view/:routeId" component={RouteShowContainer} />
+
             {/* </Switch>
         </div> */}
     

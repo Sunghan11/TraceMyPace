@@ -13,9 +13,7 @@
     <%= javascript_include_tag 'application' %>
     <%= javascript_include_tag "https://maps.googleapis.com/maps/api/js?key=#{Rails.application.credentials.google[:api_key]}&libraries=geometry,directions,places,visualization,drawing  "%>
     
-
-    <script src="https://kit.fontawesome.com/75b747f87d.js" crossorigin="anonymous"></script>
-        
+    <script src="https://kit.fontawesome.com/d344ed52f8.js" crossorigin="anonymous"></script>     
 
     <script type="text/javascript">
       window.logoURL = "<%= image_url('logo.png') %>";
@@ -36,6 +34,14 @@
       window.social = "<%= image_url('socialpicture.jpg') %>";
       window.googleAPIKey = "<%= Rails.application.credentials.google[:api_key] %>";
     </script>
+
+    <% if logged_in? %>
+      <script type="text/javascript">
+      window.currentUser = <%= render(
+        "api/users/user.json.jbuilder",
+        user: current_user).html_safe%>
+        </script>
+    <% end %>
 
   </head>
 

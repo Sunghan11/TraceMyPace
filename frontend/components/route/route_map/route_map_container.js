@@ -1,16 +1,19 @@
 import {connect} from 'react-redux';
 import RouteMap from './route_map';
-import {createRoute} from '../../../actions/route_actions';
+import {createRoute, fetchRoutes} from '../../../actions/route_actions';
+
 
 const msp = state => ({
-    // route: state.entities.route,
+    routes: state.entities.routes,
     // currentUserId: state.session.currentUserId,
     currentUser: state.entities.users[state.session.id],
     errors: state.errors.routes,
 });
 
 const mdp = dispatch => ({
-    createRoute: route => dispatch(createRoute(route))
+    createRoute: route => dispatch(createRoute(route)),
+    fetchRoute: () => dispatch(fetchRoutes())
+
 });
 
 export default connect(msp, mdp)(RouteMap)

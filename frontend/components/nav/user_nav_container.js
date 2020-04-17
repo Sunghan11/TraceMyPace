@@ -1,9 +1,8 @@
 import {connect} from 'react-redux';
+import UserNav from './user_nav';
 import {logout} from '../../actions/session_actions';
-import {receiveUser} from '../../actions/user_actions';
-import DashNav from './dashboard';
 
-const msp = (state, ownProps) => ({
+const msp = state => ({
     currentUser: state.entities.users[state.session.id],
 });
 
@@ -11,4 +10,4 @@ const mdp = dispatch => ({
     logout: () => dispatch(logout())
 });
 
-export default connect(msp, mdp)(DashNav);
+export default connect(msp, mdp)(UserNav);

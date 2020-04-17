@@ -32,8 +32,8 @@ export const fetchRoutes = () => (
     ), err => (dispatch(receiveRouteErrors(err.responseJSON)))
 );
 
-export const fetchRoute = (route) => (
-    APIUtil.fetchRoute(route)
+export const fetchRoute = (routeId) => (
+    APIUtil.fetchRoute(routeId)
     .then(route => dispatch(receiveRoute(route))
     ), err => dispatch(receiveRouteErrors(err.responseJSON))
 );

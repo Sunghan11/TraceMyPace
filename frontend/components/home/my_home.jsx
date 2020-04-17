@@ -2,9 +2,11 @@ import React from 'react';
 import {Link} from 'react-router-dom';
 // import UserNav from '../nav/nav_container';
 import Footer from '../footer/footer';
-import DashNav from '../dashboard/dashboard';
+import DashboardContainer from '../dashboard/dashboard_container'
 
-const MyHome = ({ currentUser, logout }) => (
+const MyHome = ({ currentUser, logout }) => {
+    // debugger;
+    return (
             <>
  
                      
@@ -17,9 +19,13 @@ const MyHome = ({ currentUser, logout }) => (
                     {/* {currentUser.first_name} */}
                     <ul className="home-nav-links">
                         <li>Training</li>
-                        <li>
-                            <Link className="home-nav-btn" to="/routes/create">Route</Link>
-                        </li>
+                        <div className="home-nav-create">
+                            Routes
+                            <ul className="home-nav-create-opt">
+                                <li><Link to="/routes/create">Create Route</Link></li>
+                                <li><Link to="/routes/my_routes">My Routes</Link></li>
+                            </ul>
+                        </div>
                         <li>Challenges</li>
                         <li>UA Shop</li>
                     </ul>
@@ -60,10 +66,10 @@ const MyHome = ({ currentUser, logout }) => (
                 </nav>
                 <div className="line"></div>
                 <div id="home-page-sign">
-                    <h1>User Home Page being Worked on....</h1>
+                <h4><i className="fas fa-running fa"></i> Changes are coming soon to this website!</h4>
                 </div>
 
-                <DashNav />
+                <DashboardContainer />
                 <br/>
                 <br />
                 <br />
@@ -73,7 +79,8 @@ const MyHome = ({ currentUser, logout }) => (
 
 
             </>
-    );
+    )
+}
 
 
 export default MyHome;

@@ -1,5 +1,5 @@
 import React from 'react';
-import UserNav from '../../nav/user_nav';
+import UserNavContainer from '../../nav/user_nav';
 
 class RouteMap extends React.Component {
     constructor(props) {
@@ -9,10 +9,16 @@ class RouteMap extends React.Component {
             name: "",
             activity: "",
             distance: 0,
-            location: "",
+            city: "New York",
+            polyline: "",
+            // elevations: 0,
+            // snapToRoads: true,
         }
+        
 
+        this.createTime = this.createTime.bind(this);
         this.initMap = this.initMap.bind(this);
+        this.createdAt = "",
         // this.handleSubmit = this.handleSubmit.bind(this);
         this.map = null;
         this.markers = [];
@@ -24,10 +30,11 @@ class RouteMap extends React.Component {
         this.updateCenter = this.updateCenter.bind(this);
         this.autoComplete = null;
         this.searchAutoComplete = this.searchAutoComplete.bind(this);
-        this.encodeMarkers = this.encodeMarkers.bind(this);
+        // this.stringMarkers = this.stringMarkers.bind(this);
         this.searchUpdate = this.searchUpdate.bind(this);
         this.saveRoute = this.saveRoute.bind(this);
         this.geocoder = new google.maps.Geocoder();
+        this.updateCenter2 = this.updateCenter2.bind(this);
         
     }
     componentDidMount() {
@@ -47,6 +54,17 @@ class RouteMap extends React.Component {
                 }
             );
         }
+    }
+
+
+    createTime(e) {
+        e.preventDefault();
+        dt = new Date();
+        yr = dt.getFullYear()
+        mth = (dt.getMonth() + 1) % 13;
+        dy = dt.getDate();
+        let nwDate = mth + "/" + dy + "/" + yr;
+        this.createdAt = nwDate;
     }
 
     initMap() {
@@ -103,33 +121,41 @@ class RouteMap extends React.Component {
         //geometry is google library that provide util func for geometric data.
         //ex, spherical, encoding, poly
         this.geocoder.geocode({ 'address': this.state.location }, results => {
+            this.setState({city: results[0].formatted_address});
             this.map.setCenter(results[0].geometry.location);
             //google api to set map distance view
             this.map.setZoom(13);
         })
     };
 
-    encodeMarkers() {
-        let markerString = '';
-        this.markers.forEach(marker => {
-            let latitude = marker.getPosition().lat();
-            let longitude = marker.getPosition().lng();
-            markerString += `${latitude},${longitude},`;
-        })
+    updateCenter2(e) {
+        // debugger;
+        e.preventDefault();
+        let latlng = [];
+        for (let i = 0; i < this.markers.length-1; i++) {
+            let lati = this.markers[i].position.lat();
+            let longi = this.markers[i].position.lng()
+            let maps = new google.maps.LatLng(lati,longi)
+            latlng.push(maps)
+        }
 
-        return markerString.slice(0,-1);
+        var latlngbounds = new google.maps.LatLngBounds();
+        for (let j = 0; j < latlng.length; j++) {
+            latlngbounds.extend(latlng[j]);
+        }
+        this.map.fitBounds(latlngbounds);        
     }
 
-    newRouteParams() {
-        return {
-            user_id: this.state.user_id,
-            distance: this.state.distance,
-            name: this.state.name,
-            encoded_markers: this.encodeMarkers(),
-        };
-    }
+    // stringMarkers() {
+    //     let markerString = '';
+    //     this.markers.forEach(marker => {
+    //         let latitude = marker.getPosition().lat();
+    //         let longitude = marker.getPosition().lng();
+    //         markerString += `${latitude},${longitude},`;
+    //     })
 
-    
+    //     return markerString.slice(0,-1);
+    // }
 
     clearRoutes() {
         for (let i = 0 ; i < this.markers.length; i++) {
@@ -234,26 +260,87 @@ class RouteMap extends React.Component {
         // });
         // poly.setMap(map);
         
-
+    // getElevationAlongPath = () => {
+    //     if (this.markers.length > 1) {
+    //         const ele = new window.google.maps.ElevationService();
+    //         const latLngs = this.markers.map(marker => ({
+    //             lat: marker.getPosition().lat(),
+    //             lng: marker.getPosition().lng()
+    //         }))
+    //         const {distances } = latLngs.reduce(
+    //             (acc, curr, i, arr) => {
+    //                 if (i === arr.length-1) return acc;
+    //                 const distances = acc.distances.concat(
+    //                     calcDistance(
+    //                         {lat: curr.lat, lng: curr.lng },
+    //                         {lat: arr[i + 1].lat, lng: arr[i + 1].lng }
+    //                     )
+    //                 )
+    //                 return distances
+    //             },
+    //             { distances: [] }
+    //         )
+    //         // API request to get our elevation samples:
+    //         ele.getElevationAlongPath({
+    //             path: latLngs,
+    //             samples:100
+    //         },
+    //         results => {
+    //             this.setState({
+    //                 elevations: results.map(result => result)
+    //             })
+    //         }
+                
+    //         )
+    //     }
+    // }
 
 
     update(field) {
-        return e => (
-            this.setState({ [field]: e.target.value })
-        )
+        return e => this.setState({ 
+            [field]: e.target.value })
     };
 
+    
+
+    // newRouteParams() {
+    //     // let encodeString = google.maps.geometry.encoding.encodePath(path);
+    //     // this.setState({
+    //     //     polyline: encodeString
+    //     // })
+    //     return {
+    //         name: this.state.name,
+    //         user_id: this.props.currentUserId,
+    //         activity: this.state.activity,
+    //         route_map: this.state.polyline,
+    //         distance: this.state.distance,
+    //         city: this.state.city,
+    //     };
+    // }
+
     saveRoute(e) {
+        // e.preventDefault();
+        // debugger;
+
+        // if (this.markers.length > 1) {
+        //     this.props.createRoute(this.newRouteParams());
+        //     this.props.history.push('/routes/my_routes');
+        //     // .then(data => this.props.history.push(`/routes/my_routes`))
+        // } else {
+        //     alert('Invalid Route. Please choose at least 2 waypoints.');
+        // }
         e.preventDefault();
-
-        if (this.markers.length > 1) {
-            this.props.createRoute(this.newRouteParams())
-            .then(data => this.props.history.push(`/routes/view/${data.route.id}`))
-        } else {
-            alert('You must have at least two points on the map to save a route');
-        }
+        debugger;
+        this.props.createRoute({
+            name: this.state.name,
+            user_id: this.props.currentUserId,
+            activity: this.state.activity,
+            route_map: this.state.polyline,
+            distance: this.state.distance,
+            city: this.state.city,
+        })
+        this.props.history.push('/routes/my_routes')
     }
-
 
     render() {
         const ACTIVITIES = ["Choose an Actitivity",
@@ -264,7 +351,7 @@ class RouteMap extends React.Component {
         // const routes = Object.values(this.props.routes);
         return (
             <>
-                <UserNav />
+                <UserNavContainer />
                 <div className="routes-map">
                     <div className="routes-main">
                         <div className="routes-title-1">
@@ -287,7 +374,7 @@ class RouteMap extends React.Component {
                                 </label>
                             </form>
                             <span id="route-header">Route Details</span>
-                            <form className="route-details" on Submit={this.saveRoute}>
+                            <form className="route-details" onSubmit={this.saveRoute}>
                                 <div id="route-details-1">
                                     <input
                                         value={this.state.name}
@@ -306,6 +393,15 @@ class RouteMap extends React.Component {
                                     </select>
                                     <span>*</span>
                                 </div>
+                                {/* <div id="route-created-date">
+                                    <input id="create-date"
+                                        type="button"
+                                        value="GET DATE"
+                                        onClick="createTime();"
+                                        placeholder="GET DATE"
+                                        />
+
+                                </div> */}
                                 <div id="save-routes">
                                     <span id="save-routes-1">Save to Routes</span>
                                     <button 
@@ -330,7 +426,7 @@ class RouteMap extends React.Component {
                             <div id="map-tools-control">
                                 <button onClick={this.undoMarker}><i id="first" className="fas fa-undo fa-2x"></i><br/> UNDO</button>
                                 <button onClick={this.clearRoutes}><i id="second" className="fas fa-times fa-2x"></i><br/>CLEAR</button>
-                                <button onClick={this.centerRoute}><i id="third" className="fas fa-compress-arrows-alt fa-2x"></i><br/>CENTER</button>
+                                <button onClick={this.updateCenter2}><i id="third" className="fas fa-compress-arrows-alt fa-2x"></i><br/>CENTER</button>
                             </div>
                             <div id ="map-tools-control2">
                                 <div>

@@ -5,11 +5,11 @@ class ApplicationController < ActionController::Base
 
 
     def current_user
-        @current_user = User.find_by(session_token: session[:session_token])
+        @current_user ||= User.find_by(session_token: session[:session_token])
     end
 
     def ensure_logged_in
-        redirect_to new_session_url unless logged_in?
+        render json: ["Not logged in"], status:401 unless logged_in?
     end
 
     def logged_in?
@@ -17,8 +17,8 @@ class ApplicationController < ActionController::Base
     end
 
     def login!(user)
-        @current_user = user
         session[:session_token] = user.reset_session_token!
+        @current_user = user
     end
 
     def logout!

@@ -1,0 +1,31 @@
+.my-dashboard-headings {
+    display:flex;
+    justify-content:space-evenly
+
+}
+
+#my-dashboard-headings-distance {
+    display: flex;
+    flex-direction: column;
+    border-right: 1px solid #c3c2c2;
+    border-top: 1px solid #c3c2c2;
+    border-bottom: 1px solid #c3c2c2;
+    width: 155px;
+    height: 100px;
+    font-family: 'Heebo', sans-serif;
+    justify-content: center;
+    text-align: center;
+    color: rgb(92, 92, 92);
+}
+
+.my-dashboard-headings:first-child {
+    border-left: 1px solid #c3c2c2;
+}
+
+#my-dashboard-headings-distance span {
+    font-size: 12px;
+}
+
+#my-dashboard-headings-distance div {
+    font-size: 28px;
+}

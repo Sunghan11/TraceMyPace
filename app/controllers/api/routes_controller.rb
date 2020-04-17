@@ -14,10 +14,6 @@ class Api::RoutesController < ApplicationController
         end
     end
 
-    def show
-        @route = Route.find(params[:id])
-        render :show
-    end
     
     def update
         @route = Route.find(params[:id])
@@ -32,7 +28,7 @@ class Api::RoutesController < ApplicationController
     private
 
     def route_params
-        params.require(:route).permit(:name, :user_id, :activity, :route_map, :distance, :polyline)
+        params.require(:route).permit(:name, :user_id, :activity, :route_map, :distance, :city)
     end
 
 end

@@ -4,6 +4,7 @@ import UserNav from '../nav/user_nav';
 
 class LogInForm extends React.Component {
     constructor(props) {
+        // debugger;
         super(props)
         this.state = {
             email: '',
@@ -16,6 +17,7 @@ class LogInForm extends React.Component {
         this.handleDemoLogin = this.handleDemoLogin.bind(this);
 
     }
+
 
 
 
@@ -123,7 +125,7 @@ class LogInForm extends React.Component {
                         </div>
                         
                         <div className="form-group">
-                        <span className="forgot-password">Forgot Something? Too bad.</span>
+                        <span className="forgot-password">Please do not forget your password</span>
                         </div>
                 
                         <div className="session-form">

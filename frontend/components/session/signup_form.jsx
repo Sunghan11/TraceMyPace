@@ -244,7 +244,7 @@ class SignUpForm extends React.Component {
                             <div className="birth-date">
                                 <div className="day-group">
                                     <div className="date-selectors">
-                                        <select className="optC" onChange={this.update("day")}>
+                                        <select className="optC" onSubmit={this.update("day")}>
                                             {DAYS.map(day => 
                                             <option key={day} value={day}>{day} </option>)}
                                         </select>
@@ -253,7 +253,7 @@ class SignUpForm extends React.Component {
                                 </div>
                                 <div className="month-group">
                                     <div className="date-selectors">
-                                        <select className="optC" onChange={this.update("month")}>
+                                        <select className="optC" onSubmit={this.update("month")}>
                                             {MONTHS.map(month => 
                                             <option key={month} value={month}>{month}</option>)}
                                         </select>
@@ -262,7 +262,7 @@ class SignUpForm extends React.Component {
                                 </div>
                                 <div className="year-group">
                                     <div className="date-selectors">
-                                        <select className="optC" onChange={this.update("year")}>
+                                        <select className="optC" onSubmit={this.update("year")}>
                                             {YEARS.map(year => 
                                             <option key={year} value={year}>{year}</option>)}
                                         </select>                                     
