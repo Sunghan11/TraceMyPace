@@ -15,7 +15,8 @@ class LogInForm extends React.Component {
         // this.onChange = this.onChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
         this.handleDemoLogin = this.handleDemoLogin.bind(this);
-
+        // this.props.errors = [];
+        this.errors ={};
     }
 
 
@@ -75,15 +76,15 @@ class LogInForm extends React.Component {
         // debugger;
         
         // if (this.props.errors) {
-            return (
-                <ul className="display-errors">
-                {this.props.errors.map((error, i) => (
-                    <li key={`error-${i}`}> {error}</li>
-                    ))}
-                </ul>
-            );
-        // }
+        return (
+            <ul className="display-errors">
+            {this.props.errors.map((error, i) => (
+                <li key={`error-${i}`}> {error}</li>
+                ))}
+            </ul>
+        );
     }
+    
 
     render() {
         

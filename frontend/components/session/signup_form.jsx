@@ -14,7 +14,6 @@ class SignUpForm extends React.Component {
             birth_date: '',
             gender: '',
             location: "United States",
-
             // touched: {
             // first_name: false,
             // last_name: false,
@@ -25,9 +24,10 @@ class SignUpForm extends React.Component {
             // location: false,
             // }
         }
-        
+        // debugger;
+        // this.props.errors = [];
         this.errors = {};
-
+        // this.renderError = this.renderError.bind(this)
         this.handleSubmit = this.handleSubmit.bind(this);
         this.handleDemoLogin = this.handleDemoLogin.bind(this);
         // this.renderError = this.renderError.bind(this);
@@ -68,9 +68,18 @@ class SignUpForm extends React.Component {
 
 
     renderError(message) {
-        
+        // let allErrors = [];
+        // let allErrors = this.props.errors;
+        // if(this.state.errors)
+        // if (this.props.errors.length > 0) {
+        //     allErrors = this.props.errors.concat(this.state.errors)
+        // }
+        // }
         // debugger;
-        let allErrors = this.props.errors.concat(this.state.errors)
+        let allErrors = this.props.errors.concat(this.state.errors);
+        
+    // }
+        // debugger;
         if (allErrors.includes(message)) {
             if (message === "First name can't be blank") {
                 return (
@@ -132,12 +141,6 @@ class SignUpForm extends React.Component {
             return (<span>Country is required.</span>)
         }
     }
-
-    // handleBlur = (field) => (e) => {
-    //     this.setState({
-    //         touched: { ...this.state.touched, [field]: true },
-    //     });
-    // }
 
     // renderLocationErr () {
     //     if (this.state.location === "") {
@@ -246,7 +249,7 @@ class SignUpForm extends React.Component {
                             <div className="birth-date">
                                 <div className="day-group">
                                     <div className="date-selectors">
-                                        <select className="optC" onSubmit={this.update("day")}>
+                                        <select className="optC" onChange={this.update("day") }>
                                             {DAYS.map(day => 
                                             <option key={day} value={day}>{day} </option>)}
                                         </select>
@@ -255,7 +258,7 @@ class SignUpForm extends React.Component {
                                 </div>
                                 <div className="month-group">
                                     <div className="date-selectors">
-                                        <select className="optC" onSubmit={this.update("month")}>
+                                        <select className="optC" onChange={this.update("month")}>
                                             {MONTHS.map(month => 
                                             <option key={month} value={month}>{month}</option>)}
                                         </select>
@@ -264,7 +267,7 @@ class SignUpForm extends React.Component {
                                 </div>
                                 <div className="year-group">
                                     <div className="date-selectors">
-                                        <select className="optC" onSubmit={this.update("year")}>
+                                        <select className="optC" onChange={this.update("year")}>
                                             {YEARS.map(year => 
                                             <option key={year} value={year}>{year}</option>)}
                                         </select>                                     
