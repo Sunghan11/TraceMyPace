@@ -1,10 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import UserNavContainer from '../nav/nav_container';
+
 
 // const avatar = <img src={avatar.jpg}/>
 
-const UserNav = () => (
+const UserNav = ({logout}) => (
     <>
 
 
@@ -14,12 +14,18 @@ const UserNav = () => (
                     <img src={window.logoBigURL} />
                 </div>
             </Link>
-
+            {/* {currentUser.first_name} */}
             <ul className="home-nav-links">
-                <li>Training</li>
-                <li>Routes</li>
-                <li>Challenges</li>
-                <li>UA Shop</li>
+                <div>Training</div>
+                <div className="home-nav-create">
+                    Routes
+                    <ul className="home-nav-create-opt">
+                        <li><Link to="/routes/create">Create Route</Link></li>
+                        <li><Link to="/routes/my_routes">My Routes</Link></li>
+                    </ul>
+                </div>
+                <div>Challenges</div>
+                <div><a href="https://www.underarmour.com/en-us/hovr/g/33yb?cid=MMF%7CREF%7CMMFitness%7CSite%7Chome_page%7CHOVR">UA Shop</a></div>
             </ul>
 
             <div className="home-nav-profile">
@@ -31,7 +37,28 @@ const UserNav = () => (
                     </li>
                 </ul>
             </div>
-    
+
+            {/* <Link to="/logout"><button className="home-logout-button">Logout</button></Link> */}
+
+        </nav>
+        <nav className="home-nav-bar-2">
+            <div className="shortcuts">
+                {/* <ul> */}
+                <div>
+                    <Link className="shortcuts-1" to=".">Dashboard</Link>
+                </div>
+                <div>
+                    <Link className="shortcuts-1" to="/routes/create">Create Route</Link>
+                </div>
+                <div>
+                    <Link className="shortcuts-1" to=".">Log Workout</Link>
+                </div>
+                <div>
+                    <Link className="shortcuts-1" to=".">Create a Goal</Link>
+                </div>
+                {/* </ul> */}
+            </div>
+
 
         </nav>
 

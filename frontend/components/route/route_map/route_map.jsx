@@ -1,5 +1,5 @@
 import React from 'react';
-import UserNavContainer from '../../nav/user_nav';
+import RouteNavContainer from '../../nav/route_nav';
 
 class RouteMap extends React.Component {
     constructor(props) {
@@ -9,7 +9,9 @@ class RouteMap extends React.Component {
             name: "",
             activity: "",
             distance: 0,
-            city: "New York",
+            city: "",
+            state: "",
+            country: "",
             polyline: "",
             // elevations: 0,
             // snapToRoads: true,
@@ -90,6 +92,7 @@ class RouteMap extends React.Component {
         this.searchAutoComplete();
     }
     addMarker(coords) {
+        debugger;
         let marker = new google.maps.Marker({
             position: coords,
             map: this.map
@@ -339,6 +342,8 @@ class RouteMap extends React.Component {
             distance: this.state.distance,
             city: this.state.city,
         })
+        // .then(data => this.props.history.push(`/routes/view/${data.route.id}`))
+
         this.props.history.push('/routes/my_routes')
     }
 
@@ -351,7 +356,7 @@ class RouteMap extends React.Component {
         // const routes = Object.values(this.props.routes);
         return (
             <>
-                <UserNavContainer />
+                <RouteNavContainer />
                 <div className="routes-map">
                     <div className="routes-main">
                         <div className="routes-title-1">

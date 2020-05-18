@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import UserNavContainer from '../nav/user_nav_container';
+import SessionNav from '../nav/session_nav';
 
 class LogInForm extends React.Component {
     constructor(props) {
@@ -104,7 +104,7 @@ class LogInForm extends React.Component {
 
         return (      
             <>
-                <UserNavContainer />
+                <SessionNav />
             <div className="login-page">
                 <div className="login-form">
                     <form onSubmit={this.handleSubmit}>

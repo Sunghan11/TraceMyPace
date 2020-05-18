@@ -249,6 +249,73 @@
     color: #FFFFFF;
     font-weight: bold;
     font-family: 'Heebo', sans-serif;
-    font-size: 13px;
-    
+    font-size: 13px;    
+}
+
+#show-map {
+    max-width: 1320px;
+    height: 785px;
+    width: vw;
+}
+
+.route-show-main {
+    position: relative;
+    max-width: 1320px;
+    width: vw;
+    margin: 0 auto;
+}
+
+.route-show-info {
+    display: flex;
+    flex-direction: column;
+    background-color: rgba(255,255,255,.7);
+    height: 180px;
+    max-width: 1320px;
+    width: 1320px;
+    z-index: 20;
+    position: absolute;
+    backdrop-filter: blur(4px);
+}
+
+#route-show-top {
+    height: 115px;
+    max-width: 960px;
+    margin-left: 13%;
+    margin-top: 15px;
+}
+
+#route-show-info-info {
+    display: flex;
+    max-width: 550px;
+    width: vw;
+    // justify-content: space-between;
+}
+
+#route-show-info-info p {
+    display: inline-block;
+    color: #fff;
+    height: 22px;
+    font-size: 12px;
+    font-family: 'Heebo', sans-serif;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    background-color: #15a8e6;
+    border-radius: 16px;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 3px;
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+#route-show-username {
+    font-family: 'Heebo', sans-serif;
+    // font-weight: bold;
+}
+
+#route-show-name {
+    font-size: 38px;
+    font-weight: bold;
+    font-family: 'Heebo', sans-serif;
+    text-transform: uppercase;
 }

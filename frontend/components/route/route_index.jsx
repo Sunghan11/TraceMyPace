@@ -2,6 +2,7 @@ import React from 'react';
 import {Link} from 'react-router-dom';
 import RouteIndexItem from './route_index_item';
 import UserNav from '../nav/user_nav';
+import Footer from '../footer/footer';
 
 
 class RouteIndex extends React.Component {
@@ -74,6 +75,11 @@ class RouteIndex extends React.Component {
 
 
                 </div>
+                <br/>
+                <br/>
+                <br/>
+                <br/>
+                <Footer />
             </>
         )
     }

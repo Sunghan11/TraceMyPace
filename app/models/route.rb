@@ -1,5 +1,5 @@
 class Route < ApplicationRecord
-    validates :name, :route_map, :activity, :distance, :city, presence: true
+    validates :name, :route_map, :activity, :distance, :city, :user_id, presence: true
     # validates :city
 
     belongs_to :user,

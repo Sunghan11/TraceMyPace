@@ -26,31 +26,31 @@ export const receiveRouteErrors = (errors) => ({
     errors
 });
 
-export const fetchRoutes = () => (
+export const fetchRoutes = () => dispatch => (
     APIUtil.fetchRoutes()
     .then( routes => dispatch(receiveRoutes(routes))
     ), err => (dispatch(receiveRouteErrors(err.responseJSON)))
 );
 
-export const fetchRoute = (routeId) => (
+export const fetchRoute = (routeId) => dispatch => (
     APIUtil.fetchRoute(routeId)
     .then(route => dispatch(receiveRoute(route))
     ), err => dispatch(receiveRouteErrors(err.responseJSON))
 );
 
-export const createRoute = (route) => (
+export const createRoute = route => dispatch => (
     APIUtil.createRoute(route)
     .then(route => dispatch(receiveRoute(route))
     ), err => dispatch(receiveRouteErrors(err.responseJSON))
 );
 
-export const updateRoute = (route) => (
+export const updateRoute = (route) => dispatch => (
     APIUtil.updateRoute(route)
     .then(route => dispatch(receiveRoute(route))
     ), err => dispatch(receiveRouteErrors(err.responseJSON))
 );
 
-export const deleteRoute = (routeId) => (
+export const deleteRoute = (routeId) => dispatch => (
     APIUtil.deleteRoute(routeId)
     .then(() => dispatch(removeRoute(routeId))
     ), err => dispatch(receiveRouteErrors(err.responseJSON))

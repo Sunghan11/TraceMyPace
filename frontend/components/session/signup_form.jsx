@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import COUNTRIES from './country_list';
 import UserNavContainer from '../nav/user_nav_container';
+import SessionNav from '../nav/session_nav';
 
 class SignUpForm extends React.Component {
     constructor(props) {
@@ -184,7 +185,7 @@ class SignUpForm extends React.Component {
         // if (this.props.formType === 'Log in') {
         return (
             <>
-            <UserNavContainer />
+            <SessionNav />
             <div className="signup-page">
                 <div className="signup-form">
                     <form onSubmit={this.handleSubmit}>
