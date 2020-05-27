@@ -276,13 +276,7 @@ class RouteMap extends React.Component {
             if (dirs !== null) {
                 
         
-                let routeMap=`https://maps.googleapis.com/maps/api/staticmap?size=75x75&markers=label:S%7C${oPath[0].lat()},${oPath[0].lng()}&markers=label:E%7C${oPath[oPath.length - 1].lat()},${oPath[oPath.length - 1].lng()}&path=color:0x8B008B|weight:2|enc:${dirs.routes[0].overview_polyline}&key=${window.googleAPIKey}&zoom=12`;
-                // let routeMap = `https://maps.googleapis.con/maps/api/staticmap?size=75x75&markers=label:S%7C${oPath[0].lat()},${oPath[0].lng()}&markers=label:E%7C${oPath[oPath.length - 1].lat()},${oPath[oPath.length - 1].lng()}`;
-    
-                // let routeMap = "testingmap";
-    
-                
-                
+                let routeMap=`https://maps.googleapis.com/maps/api/staticmap?size=75x75&markers=label:S%7C${oPath[0].lat()},${oPath[0].lng()}&markers=label:E%7C${oPath[oPath.length - 1].lat()},${oPath[oPath.length - 1].lng()}&path=color:0x8B008B|weight:2|enc:${dirs.routes[0].overview_polyline}&key=${window.googleAPIKey}&zoom=12`;                
         
                 this.setState({ route_map: routeMap })
                 debugger;
