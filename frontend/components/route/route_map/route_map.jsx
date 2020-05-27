@@ -9,15 +9,16 @@ class RouteMap extends React.Component {
             name: "",
             activity: "",
             distance: 0,
-            city: "",
+            city: "NY",
             state: "",
             country: "",
             polyline: "",
+            route_map: "",
             // elevations: 0,
             // snapToRoads: true,
         }
         
-
+        // this.formCity = "";
         this.createTime = this.createTime.bind(this);
         this.initMap = this.initMap.bind(this);
         this.createdAt = "",
@@ -37,10 +38,13 @@ class RouteMap extends React.Component {
         this.saveRoute = this.saveRoute.bind(this);
         this.geocoder = new google.maps.Geocoder();
         this.updateCenter2 = this.updateCenter2.bind(this);
-        
+        this.getCity = this.getCity.bind(this);     
+        this.createRouteMap = this.createRouteMap.bind(this);
     }
     componentDidMount() {
         this.initMap();
+        
+
     }
 
     setCurrentPosition(map) {
@@ -124,7 +128,22 @@ class RouteMap extends React.Component {
         //geometry is google library that provide util func for geometric data.
         //ex, spherical, encoding, poly
         this.geocoder.geocode({ 'address': this.state.location }, results => {
-            this.setState({city: results[0].formatted_address});
+            debugger;
+            const formAdd = [];
+            for (var i = 0; i < results[0].address_components.length; i++) {
+                var address = results[0].address_components[i];
+                if (address.types[0] === "locality") {
+                    formAdd.push(address.short_name)
+                } else if (address.types[0] === "administrative_area_level_1") {
+                    formAdd.push(address.short_name)
+                }
+            }
+
+
+            const formCity = formAdd.join(", ");
+            debugger;
+            // let addressArr = results[6].formatted_address.split(',');
+            this.setState({city: formCity});
             this.map.setCenter(results[0].geometry.location);
             //google api to set map distance view
             this.map.setZoom(13);
@@ -147,6 +166,33 @@ class RouteMap extends React.Component {
             latlngbounds.extend(latlng[j]);
         }
         this.map.fitBounds(latlngbounds);        
+    }
+
+    getCity() {
+        // e.preventDefault();
+        debugger;
+        let myLat = this.markers[0].position.lat();
+        let myLng = this.markers[0].position.lng();
+        let myLatLng = {lat: myLat, lng: myLng}
+        debugger;
+        const formAdd = [];
+        // let formCity;
+
+        this.geocoder.geocode({'location': myLatLng }, results => {
+            debugger;
+            for (var i = 0; i < results[0].address_components.length; i++) {
+                var address = results[0].address_components[i];
+                debugger;
+                if (address.types[0] === "locality") {
+                    formAdd.push(address.short_name)
+                } else if (address.types[0] === "administrative_area_level_1") {
+                    formAdd.push(address.short_name)
+                }
+            }
+            const formCity = formAdd.join(", ");
+            debugger;
+            this.setState({ city: formCity });
+        })
     }
 
     // stringMarkers() {
@@ -190,7 +236,7 @@ class RouteMap extends React.Component {
     }
 
     showRoute(dirServ, dirRend) {
-        // debugger;
+        debugger;
         let start = this.markers[0].position;
         let finish = this.markers[this.markers.length-1].position;
         let waypoints = []
@@ -224,9 +270,28 @@ class RouteMap extends React.Component {
                 // this.setState({distance: (distanceInMiles.toFixed(2))})
                 this.setState({ distance: (totalDistance * .000621371).toFixed(2)});
             }
+            let dirs = this.dirRend.getDirections();
+            const oPath = dirs.routes[0].overview_path;
+            console.log(oPath);
+            if (dirs !== null) {
+                
+        
+                let routeMap=`https://maps.googleapis.com/maps/api/staticmap?size=75x75&markers=label:S%7C${oPath[0].lat()},${oPath[0].lng()}&markers=label:E%7C${oPath[oPath.length - 1].lat()},${oPath[oPath.length - 1].lng()}&path=color:0x8B008B|weight:2|enc:${dirs.routes[0].overview_polyline}&key=${window.googleAPIKey}&zoom=12`;
+                // let routeMap = `https://maps.googleapis.con/maps/api/staticmap?size=75x75&markers=label:S%7C${oPath[0].lat()},${oPath[0].lng()}&markers=label:E%7C${oPath[oPath.length - 1].lat()},${oPath[oPath.length - 1].lng()}`;
+    
+                // let routeMap = "testingmap";
+    
+                
+                
+        
+                this.setState({ route_map: routeMap })
+                debugger;
+    
+            }
         });
-    }
 
+    }
+    
     searchAutoComplete() {
         // this.marker.setVisible(false);
         let searchInput = document.getElementById('search-input');
@@ -298,6 +363,14 @@ class RouteMap extends React.Component {
     //     }
     // }
 
+    createRouteMap(directions) {
+        // const route = directions.routes[0];
+        const oPath = directions.routes[0].overview_path;
+
+        let routeMap = `https://maps.googleapis.con/maps/api/staticmap?size=75x75&markers=label:S%7C${oPath[0].lat()},${oPath[0].lng()}&markers=label:E%7C${oPath[oPath.length - 1].lat()},${oPath[oPath.length-1].lng()}&path=color:0x8B008B|weight:2|enc:${directions.route[0].overview_polyline}&key=${window.googleAPIKey}`;
+
+        this.setState({routeMap : routeMap})
+    }
 
     update(field) {
         return e => this.setState({ 
@@ -306,52 +379,61 @@ class RouteMap extends React.Component {
 
     
 
-    // newRouteParams() {
-    //     // let encodeString = google.maps.geometry.encoding.encodePath(path);
-    //     // this.setState({
-    //     //     polyline: encodeString
-    //     // })
-    //     return {
-    //         name: this.state.name,
-    //         user_id: this.props.currentUserId,
-    //         activity: this.state.activity,
-    //         route_map: this.state.polyline,
-    //         distance: this.state.distance,
-    //         city: this.state.city,
-    //     };
-    // }
+    newRouteParams() {
+        
 
-    saveRoute(e) {
-        // e.preventDefault();
-        // debugger;
-
-        // if (this.markers.length > 1) {
-        //     this.props.createRoute(this.newRouteParams());
-        //     this.props.history.push('/routes/my_routes');
-        //     // .then(data => this.props.history.push(`/routes/my_routes`))
-        // } else {
-        //     alert('Invalid Route. Please choose at least 2 waypoints.');
-        // }
-        e.preventDefault();
-        // debugger;
-        this.props.createRoute({
+        // let encodeString = google.maps.geometry.encoding.encodePath(path);
+        // this.setState({
+        //     polyline: encodeString
+        debugger;
+        return {
             name: this.state.name,
             user_id: this.props.currentUser.id,
             activity: this.state.activity,
             route_map: this.state.polyline,
             distance: this.state.distance,
             city: this.state.city,
-        })
-        // .then(data => this.props.history.push(`/routes/view/${data.route.id}`))
-
-        this.props.history.push('/routes/my_routes')
+            route_map: this.state.route_map,
+        }
     }
 
+    saveRoute(e) {
+        e.preventDefault();        
+        // debugger;
+        
+        // if (this.markers.length > 1) {
+            this.getCity();
+            debugger;
+            this.props.createRoute(this.newRouteParams())
+                // .then(this.props.history.push(`/routes/view/${this.props.route.id}`))
+                .then(this.props.history.push('/routes/my_routes'));
+        // } else {
+        //     alert('Invalid Route. Please choose at least 2 waypoints.');
+        // }
+        // e.preventDefault();
+        // debugger;
+        // this.props.createRoute({
+        //     name: this.state.name,
+        //     user_id: this.props.currentUser.id,
+        //     activity: this.state.activity,
+        //     route_map: this.state.polyline,
+        //     distance: this.state.distance,
+        //     city: this.getCity,
+        // })
+        // debugger;
+        // // // .then(data => this.props.history.push(`/routes/view/${data.route.id}`))
+
+        // this.props.history.push('/routes/my_routes')
+    }
+
+
     render() {
+        
         const ACTIVITIES = ["Choose an Actitivity",
             "Walk", "Winter Sport/Activity", "Bike Ride", "Swim",
             "Run", "Sport/ Other Activity", "Hike"
         ];
+        debugger;
 
         // const routes = Object.values(this.props.routes);
         return (
@@ -382,9 +464,9 @@ class RouteMap extends React.Component {
                             <form className="route-details" onSubmit={this.saveRoute}>
                                 <div id="route-details-1">
                                     <input
+                                        type="text"
                                         value={this.state.name}
                                         onChange={this.update("name")}
-                                        type="text"
                                         placeholder="Name this map"
                                     />
                                     <span>*</span>
@@ -409,7 +491,8 @@ class RouteMap extends React.Component {
                                 </div> */}
                                 <div id="save-routes">
                                     <span id="save-routes-1">Save to Routes</span>
-                                    <button 
+                                    <button
+                                        // onClick={this.getCity}
                                         type="submit"
                                         className="create-route-btn"
                                         id="route-submit">SAVE ROUTE</button>

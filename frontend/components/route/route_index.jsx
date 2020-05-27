@@ -8,10 +8,24 @@ import Footer from '../footer/footer';
 class RouteIndex extends React.Component {
     constructor(props) {
         super(props);
+        debugger;
+
+        this.totalDistance = 0;
+
+        this.deleteRoute = this.deleteRoute.bind(this);
+        this.updateRoute = this.updateRoute.bind(this);
     }
 
     componentDidMount() {
         this.props.fetchRoutes()
+    }
+
+    componentWillMount() {
+        this.props.fetchRoutes();
+    }
+
+    updateRoute() {
+        this.props.history.push(`routes/edit/${this.props.route.id}`)
     }
 
     update(field) {
@@ -20,9 +34,19 @@ class RouteIndex extends React.Component {
         )
     };
 
+    deleteRoute() {
+        this.props.deleteRoute(this.props.route.id)
+    }
+
     render () {
+        debugger;
 
         const routes = Object.values(this.props.routes);
+
+
+        routes.forEach((route) => {
+            this.totalDistance += route.distance
+        })
         return (
             <>  
                 <UserNav />
@@ -39,7 +63,7 @@ class RouteIndex extends React.Component {
                                 <th>Distance</th>
                                 <th>Name</th>
                                 <th>City</th>
-                                <th>Privacy</th>
+                                <th>Edit</th>
                                 <th>Options</th>
                             </tr>
                         </thead>

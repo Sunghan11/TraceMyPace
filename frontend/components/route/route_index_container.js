@@ -3,18 +3,18 @@ import RouteIndex from './route_index';
 import {fetchRoutes, deleteRoute} from '../../actions/route_actions';
 
 // const msp = state => ({
-//     routes: state.entitites.routes,
-//     users: state.entities.users
+    // routes: state.entitites.routes,
+    // users: state.entities.users
 // });
 const msp = state => {
-    // debugger;
+    debugger;
     const routes = state.entities.routes;
     return ({ routes })
 }
 
 const mdp = dispatch => ({
     fetchRoutes: () => dispatch(fetchRoutes()),
-    deleteRoute: id => dispatch(deleteRoute(id))
+    deleteRoute: routeId => dispatch(deleteRoute(routeId))
 });
 
 export default connect(msp, mdp)(RouteIndex);

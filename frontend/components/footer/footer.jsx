@@ -24,30 +24,18 @@ const Footer = () => {
                 </div>
                 <div id="footer-second-bar">
                     <div id="footer-social">
-                        <h4>SOCIAL</h4>
-                        <ul>
-                            <li>Github</li>
-                            <li>LinkedIn</li>
-                            <li>Nothing</li>
-                        </ul>
+                            <h4><a href="https://sunghan11.github.io/">Portfolio</a></h4>
                     </div>
 
                     <div id="footer-help">
-                        <h4>HELP</h4>
-                        <ul>
-                            <li>Account</li>
-                            <li><a href="www.google.com"></a>Support</li>
-                            <li><a href="www.appacademy.com"></a>Developer</li>
-                        </ul>
+                            <h4><a href="https://www.linkedin.com/in/elijah-nam-6a412b25/">LinkedIn</a></h4>
                     </div>
 
                     <div id="footer-about">
-                        <h4>ABOUT ME</h4>
-                        <ul>
-                            <li></li>
-                            <li>Email</li>
-                            <li>Shop Under Armour</li>
-                        </ul>
+                            <h4><a href="https://angel.co/u/elijah-nam">AngelList</a></h4>
+                    </div>
+                    <div id="footer-about">
+                            <h4><a href="https://github.com/Sunghan11">Github</a></h4>
                     </div>
 
                     <div id="footer-community">

@@ -52,6 +52,5 @@ export const updateRoute = (route) => dispatch => (
 
 export const deleteRoute = (routeId) => dispatch => (
     APIUtil.deleteRoute(routeId)
-    .then(() => dispatch(removeRoute(routeId))
-    ), err => dispatch(receiveRouteErrors(err.responseJSON))
+    .then(() => dispatch(removeRoute(routeId)))
 );

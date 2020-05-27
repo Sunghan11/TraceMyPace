@@ -132,7 +132,7 @@ class RouteShow extends React.Component {
 
     handleClick() {
         // debugger;
-        this.props.deleteRun(this.props.route.id)
+        this.props.deleteRoute(this.props.route.id)
         this.props.history.push('/routes/my_routes')
     }
 
@@ -154,6 +154,7 @@ class RouteShow extends React.Component {
                                 <p>{route.activity}</p>
                                 <p><i class="fas fa-map-marker-alt"></i>   {route.city}</p>
                                 <p><i class="fas fa-route"></i>   {route.distance} MI</p>
+                                <p></p>
                             </div>
                             <div id="route-show-name">{route.name}</div>
                         </div>
