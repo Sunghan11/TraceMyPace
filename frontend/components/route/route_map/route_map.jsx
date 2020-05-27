@@ -17,8 +17,11 @@ class RouteMap extends React.Component {
             // elevations: 0,
             // snapToRoads: true,
         }
+
+        this.cDate = {}
         
         // this.formCity = "";
+    
         this.createTime = this.createTime.bind(this);
         this.initMap = this.initMap.bind(this);
         this.createdAt = "",
@@ -391,11 +394,25 @@ class RouteMap extends React.Component {
         }
     }
 
+    createdDate() {
+        let currentDate = new Date()
+        let dString = currentDate.toString();
+        let dSplit = dString.split(" ");
+
+        let newDateTime = `${dSplit[1]}/${dSplit[2]}/${dSplit[3]}`
+
+        this.setState({cDate: newDateTime})
+    
+    }
+
+
+
     saveRoute(e) {
         e.preventDefault();        
         // debugger;
         
         // if (this.markers.length > 1) {
+            this.createdDate();
             this.getCity();
             debugger;
             this.props.createRoute(this.newRouteParams())

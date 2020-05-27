@@ -10,6 +10,8 @@ class RouteIndexItem extends React.Component {
         this.state = {
             modalOpen: false
         }
+
+        this.creationDate = "";
         this.showModal = this.showModal.bind(this);
         this.hideModal = this.hideModal.bind(this);
         // this.handleDeleteRoute = this.handleDeleteRoute.bind(this);
@@ -25,15 +27,15 @@ class RouteIndexItem extends React.Component {
         this.setState({ modalOpen: false });
     }
 
-    createdDate() {
-        let currentDate = new Date()
-        let dString = currentDate.toString();
-        let dSplit = dString.split(" ");
+    // createdDate() {
+    //     let currentDate = new Date()
+    //     let dString = currentDate.toString();
+    //     let dSplit = dString.split(" ");
         
-        let newDateTime = `${dSplit[1]}/${dSplit[2]}/${dSplit[3]}` 
+    //     let newDateTime = `${dSplit[1]}/${dSplit[2]}/${dSplit[3]}` 
 
-        return newDateTime;
-    }
+    //     return newDateTime;
+    // }
 
     // handleDeleteRoute(e) {
     //     debugger;
@@ -45,6 +47,13 @@ class RouteIndexItem extends React.Component {
 
     // }
 
+    createdDate() {
+        const createdDate = this.props.route.createdAt.split('-');
+        const cDate = `${createdDate[1]}/${createdDate[2].slice(0,2)}/${createdDate[0]}`;
+
+        this.creationDate = cDate;
+    }
+
     handleClick() {
         this.props.deleteRoute(this.props.route.id)
         // this.props.history.push("/routes/my_routes")
@@ -55,7 +64,7 @@ class RouteIndexItem extends React.Component {
         // const _deleteRoute = this.props.deleteRoute;
         // const routeId = this.props.route.id
         debugger;
-        let cDate = this.createdDate();
+        this.createdDate();
 
         if (!this.props.route) {
             return null;
@@ -69,7 +78,7 @@ class RouteIndexItem extends React.Component {
                     {/* </Link> */}
                 </td>
                 <td className="route-tag" id="route-tag-created">
-                    <span>{cDate}</span>
+                    <span>{this.creationDate}</span>
                 </td>
                 <td className="route-tag" id="route-tag-distance">
                     {(this.props.route.distance).toFixed(2)} miles
