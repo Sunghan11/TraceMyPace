@@ -1,0 +1,34 @@
+.status-index {
+    display: flex;
+    justify-content: space-between;
+}
+
+#status-index-icon img {
+    width: 52px;
+    height: 52px;
+}
+
+#status-form textArea {
+    display:block;
+    box-sizing: border-box;
+    width: 556px;
+    height: 80px;
+    padding: 6px 8px;
+    border-radius: 5px;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: bold;
+}
+
+#status-form button {
+    background: #ff8714;
+    color: white;
+    font-weight: bold;
+    font-size: 14px;
+    right: 0;
+    border:0;
+    padding: 6px 45px;
+    border-radius: 5px;
+    box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.4);
+    cursor: pointer;
+    font-family: 'Open Sans', sans-serif;
+}

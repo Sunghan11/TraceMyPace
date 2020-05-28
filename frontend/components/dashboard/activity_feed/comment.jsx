@@ -23,11 +23,11 @@ class Comment extends React.Component {
         e.preventDefault();
 
         if(this.state.body.length > 0) {
-            const comment = {
+            const cmt = {
                 body: this.state.body,
                 author_id: this.props.user.id,
             }
-            this.props.createComment(comment)
+            this.props.createComment(cmt)
             this.setState({ //reset
                 body: ""
             })

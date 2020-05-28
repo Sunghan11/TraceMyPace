@@ -1,9 +1,9 @@
 import {connect } from 'react-redux';
-import CommentIndex from './comment_index';
+import ActivityFeed from './activity_feed';
 import {fetchComments, deleteComment} from '../../../actions/comment_actions';
 
 const msp = state => ({
-    comments: Object.values(state.entitites.comments),
+    comments: Object.values(state.entities.comments),
     currentUser: state.entities.users[state.session.id]
 });
 
@@ -12,4 +12,4 @@ const mdp = dispatch => ({
     deleteComment: commentId => dispatch(deleteComment(commentId))
 });
 
-export default connect(msp, mdp)(CommentIndex);
+export default connect(msp, mdp)(ActivityFeed);

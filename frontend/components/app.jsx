@@ -13,8 +13,8 @@ import UserNavContainer from './nav/user_nav_container';
 import Splash from './splash/splash';
 import Footer from './footer/footer';
 import {AuthRoute, ProtectedRoute} from '../util/route_util';
-import CommentIndexContainer from './dashboard/activity_feed/comment_index_container';
-// import ActivityFeedContainer from './dashboard/activity_feed/activity_feed_container';
+// import CommentIndexContainer from './dashboard/activity_feed/comment_index_container';
+import ActivityFeedContainer from './dashboard/activity_feed/activity_feed_container';
 
 
 const App = () => (
@@ -32,8 +32,9 @@ const App = () => (
                 <AuthRoute exact path="/signup" component={SignupFormContainer} />
                 <ProtectedRoute path="/routes/create" component={RouteMapContainer}/>                {/* <ProtectedRoute exact path="my_home" component={NavContainer} /> */}
                 {/* <ProtectedRoute exact path="/my_home" component={MyHomeContainer} /> */}
-                <ProtectedRoute exact path="/my_home/activity_feed" component={CommentIndexContainer} />
+                <ProtectedRoute exact path="/my_home/activity_feed" component={ActivityFeedContainer} />
                 <ProtectedRoute exact path="/my_home/user_dashboard" component={MyHomeContainer} />                
+        <ProtectedRoute exact path="/my_home/my_home/user_dashboard" component={MyHomeContainer} />                
                 <ProtectedRoute exact path="/routes/my_routes" component={RouteIndexContainer} />
                 <ProtectedRoute exact path="/routes/view/:routeId" component={RouteShowContainer} />
 
