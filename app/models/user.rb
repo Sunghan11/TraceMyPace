@@ -16,6 +16,13 @@ class User < ApplicationRecord
         foreign_key: :user_id,
         class_name: :Route
 
+    has_many :comments,
+        foreign_key: :author_id,
+        class_name: :Comment
+
+    has_many :statuses,
+        foreign_key: :author_id,
+        class_name: :Status
 
     def self.find_by_credentials(email, password)
         user = User.find_by(email: email)

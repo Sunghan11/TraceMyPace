@@ -1,6 +1,7 @@
 import {connect} from 'react-redux';
 import RouteMap from './route_map';
 import {createRoute, fetchRoutes} from '../../../actions/route_actions';
+import {createLocation, fetchLocations} from '../../../actions/location_actions';
 
 
 const msp = state => ({
@@ -12,7 +13,9 @@ const msp = state => ({
 
 const mdp = dispatch => ({
     createRoute: route => dispatch(createRoute(route)),
-    fetchRoute: () => dispatch(fetchRoutes())
+    fetchRoute: () => dispatch(fetchRoutes()),
+    // createLocation: location => dispatch(createLocation(location)),
+    // fetchLocations: () => dispatch(fetchLocations())
 
 });
 

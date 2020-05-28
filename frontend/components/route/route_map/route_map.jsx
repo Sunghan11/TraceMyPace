@@ -14,6 +14,7 @@ class RouteMap extends React.Component {
             country: "",
             polyline: "",
             route_map: "",
+            // locationArr: [], save: false
             // elevations: 0,
             // snapToRoads: true,
         }
@@ -279,9 +280,9 @@ class RouteMap extends React.Component {
             if (dirs !== null) {
                 
         
-                let routeMap=`https://maps.googleapis.com/maps/api/staticmap?size=75x75&markers=label:S%7C${oPath[0].lat()},${oPath[0].lng()}&markers=label:E%7C${oPath[oPath.length - 1].lat()},${oPath[oPath.length - 1].lng()}&path=color:0x8B008B|weight:2|enc:${dirs.routes[0].overview_polyline}&key=${window.googleAPIKey}&zoom=12`;                
+                let routeMap=`https://maps.googleapis.com/maps/api/staticmap?size=75x75&markers=label:S%7C${oPath[0].lat()},${oPath[0].lng()}&markers=label:E%7C${oPath[oPath.length - 1].lat()},${oPath[oPath.length - 1].lng()}&path=color:0x8B008B|weight:2|enc:${dirs.routes[0].overview_polyline}&key=${window.googleAPIKey}&zoom=12`; 
         
-                this.setState({ route_map: routeMap })
+                this.setState({ route_map: routeMap})
                 debugger;
     
             }
@@ -391,6 +392,7 @@ class RouteMap extends React.Component {
             distance: this.state.distance,
             city: this.state.city,
             route_map: this.state.route_map,
+            // locationsArr: this.markers,
         }
     }
 
@@ -408,16 +410,31 @@ class RouteMap extends React.Component {
 
 
     saveRoute(e) {
-        e.preventDefault();        
-        // debugger;
+        e.preventDefault();  
+        const that = this;      
+        debugger;
         
         // if (this.markers.length > 1) {
             this.createdDate();
             this.getCity();
             debugger;
             this.props.createRoute(this.newRouteParams())
+            // .then(res => {
+            //     this.markers.forEach(coordinate => {
+            //         this.props.createLocation({
+            //             route_id: res.route.id,
+            //             order: coordinate.order,
+            //             latitude: coordinate.latitude,
+            //             longitude: coordinate.longitude
+            //         })
+            //     })
+            //     return res;
+            // }).then(res => this.props.history.push(`/routes/my_routes`));
+
+
                 // .then(this.props.history.push(`/routes/view/${this.props.route.id}`))
                 .then(this.props.history.push('/routes/my_routes'));
+ 
         // } else {
         //     alert('Invalid Route. Please choose at least 2 waypoints.');
         // }

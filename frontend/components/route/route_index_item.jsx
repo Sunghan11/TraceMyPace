@@ -72,13 +72,15 @@ class RouteIndexItem extends React.Component {
         return (
             <tr>
                 <td className="route-tag" id="route-tag-map">
-                    {/* <Link to={`/routes/view/${this.props.route.id}`}> */}
+                    <Link to={`/routes/view/${this.props.route.id}`}>
                         {/* <img src={`https://maps.googleapis.com/maps/api/staticmap?size=75x75&path=color:0x0000FF80|weight:5|enc:${this.props.route.route_map}key=${window.googleAPIKey}`}/> */}
                         <img className="index-map" src={this.props.route.routeMap} />
-                    {/* </Link> */}
+                    </Link>
                 </td>
                 <td className="route-tag" id="route-tag-created">
-                    <span>{this.creationDate}</span>
+                    <Link to={`/routes/view/${this.props.route.id}`}>
+                        <span>{this.creationDate}</span>
+                    </Link>
                 </td>
                 <td className="route-tag" id="route-tag-distance">
                     {(this.props.route.distance).toFixed(2)} miles

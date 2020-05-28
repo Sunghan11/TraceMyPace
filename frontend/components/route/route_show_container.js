@@ -4,12 +4,12 @@ import {fetchRoute, deleteRoute} from '../../actions/route_actions'
 import {fetchUser} from '../../actions/session_actions';
 
 const msp = (state, ownProps) => {
-    debugger;
     const route = state.entities.routes[ownProps.match.params.routeId];
+    debugger;
     let user = {};
 
     if (route) {
-        user = state.entities.users[route.user_id];
+        user = state.entities.users[route.userId];
     }
     return {
         currentUser: state.entities.users,

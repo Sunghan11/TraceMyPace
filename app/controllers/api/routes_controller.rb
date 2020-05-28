@@ -7,7 +7,6 @@ class Api::RoutesController < ApplicationController
 
     def create
         @route = Route.new(route_params)
-        # @route.route_map = "abc"
         if @route.save
             render :show
         else

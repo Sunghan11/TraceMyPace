@@ -3,7 +3,7 @@ import MyHome from './my_home';
 import {logout} from "../../actions/session_actions";
 
 const msp = state => ({
-    user: state.entities.users[state.session.id]
+    currentUser: state.entities.users[state.session.id]
 });
 
 const mdp = dispatch => ({

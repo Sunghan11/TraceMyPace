@@ -2,13 +2,14 @@ import React from 'react';
 import {Link} from 'react-router-dom';
 import UserNavContainer from '../nav/user_nav_container';
 import Footer from '../footer/footer';
+import SmallMap from './route_map/small_map';
 
 class RouteShow extends React.Component {
     constructor(props) {
         super(props);
         
         this.map = null;
-        this.markers = [];
+        this.markersArr = [];
         this.dirServ = new google.maps.DirectionsService();
         this.dirRend = new google.maps.DirectionsRenderer({
             polylineOptions: {
@@ -33,7 +34,7 @@ class RouteShow extends React.Component {
         // this.map = map;
 
         this.props.fetchRoute(this.props.match.params.routeId)
-        this.initMap();
+        // this.initMap();
         debugger;
     }
 
@@ -63,15 +64,22 @@ class RouteShow extends React.Component {
 
     initMap() {
 
+        let rmSplit = this.props.route.routeMap.split("S%7C")
+        let splitAgain = rmSplit[1].split("&")
+        let splitLatLng = splitAgain[0].split(",")
+
         const options = {
-            center: { lat: 40.736436, lng: -73.994061 },
+            // center: { lat: splitLatLng[0].toFloat(), lng: splitLatLng[1].toFloat() },
+            center: {lat: 40, lng: 40},
             zoom: 15,
         }
 
         let map = new google.maps.Map(this.refs.map, options);
         this.dirRend.setMap(map);
         this.map = map;
-        // this.showRoute(dirServ, dirRend)
+
+        
+        // this.showRoute(this.dirServ, this.dirRend)
     }
 
     addMarker(location) {
@@ -93,6 +101,7 @@ class RouteShow extends React.Component {
     }
 
     // decodeMarkers() {
+    //     debugger;
     //     let coords = this.props.route.encodedMarkers.split(',').map(Number);
 
     //     for(let i = 0; i < coords.length; i += 2) {
@@ -102,33 +111,33 @@ class RouteShow extends React.Component {
     //             map: this.map,
     //         });
 
-    //         this.markers.push(marker);
+    //         this.markersArr.push(marker);
     //     }
     // }
 
-    showRoute(dirServ, dirRend) {
-        let start = this.markers[0].position;
-        let finish = this.markers[this.markers.length-1].position;
-        let waypoints = []
-        for (let i = 1; i < this.markers.length - 1; i++) {
-            waypoints.push({
-                location: this.markers[i].position,
-                stopover: false,
-            });
-        }
+    // showRoute(dirServ, dirRend) {
+    //     let start = this.markersArr[0].position;
+    //     let finish = this.markersArr[this.markersArr.length-1].position;
+    //     let waypoints = []
+    //     for (let i = 1; i < this.markersArr.length - 1; i++) {
+    //         waypoints.push({
+    //             location: this.markersArr[i].position,
+    //             stopover: false,
+    //         });
+    //     }
 
-        const request = {
-            origin: start,
-            waypoints: waypoints,
-            destination: finish,
-            travelMode: google.maps.DirectionsTravelMode.WALKING,
-        }
-        this.dirServ.route(request, (response, status) => {
-            if (status === "OK") {
-                this.dirRend.setDirections(response);
-            }
-        });
-    }
+    //     const request = {
+    //         origin: start,
+    //         waypoints: waypoints,
+    //         destination: finish,
+    //         travelMode: google.maps.DirectionsTravelMode.WALKING,
+    //     }
+    //     this.dirServ.route(request, (response, status) => {
+    //         if (status === "OK") {
+    //             this.dirRend.setDirections(response);
+    //         }
+    //     });
+    // }
 
     handleClick() {
         // debugger;
@@ -137,9 +146,20 @@ class RouteShow extends React.Component {
     }
 
     render () {
+
+        const routeMapCopy = this.props.route.routeMap;
+        const rMSplit = routeMapCopy.split("75");
+        const rMJoin1 = `${rMSplit[0]}1320${rMSplit[1]}780${rMSplit[2]}`;
+        let newRouteMap = rMJoin1.slice(0,-1).concat("5");
+        
+        
+
         debugger;
         const route = this.props.route;
-        const user = this.props.currentUser;
+
+        // if (!this.props.route) {
+        //     return null;
+        // }
         // const person = {first_name = "",
         return (
             <>
@@ -149,17 +169,19 @@ class RouteShow extends React.Component {
 
                     <div className="route-show-info">
                         <div id="route-show-top">
-                            <div id="route-show-username">{user[route.userId].first_name} {user[route.userId].last_name}</div>
+                            <div id="route-show-username">{this.props.user.first_name} {this.props.user.last_name}</div>
                             <div id="route-show-info-info">
                                 <p>{route.activity}</p>
-                                <p><i class="fas fa-map-marker-alt"></i>   {route.city}</p>
-                                <p><i class="fas fa-route"></i>   {route.distance} MI</p>
+                                <p><i className="fas fa-map-marker-alt"></i>   {route.city}</p>
+                                <p><i className="fas fa-route"></i>   {route.distance} MI</p>
                                 <p></p>
                             </div>
                             <div id="route-show-name">{route.name}</div>
                         </div>
                     </div>
                     <div id="route-show-map">
+                        {/* <SmallMap /> */}
+                        <img className="route-show-map" src={newRouteMap} />
                         <div id="show-map" ref="map"></div>
                     </div>
                     <div id="route-show-buttons">

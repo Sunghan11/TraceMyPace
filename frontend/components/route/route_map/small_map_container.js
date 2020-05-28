@@ -1,9 +1,15 @@
-import {connect} from 'react-redux';
-import {fetchRoute} from '../../../actions/route_actions';
-import SmallMap from './small_map';
+// import { connect } from 'react-redux';
+// import SmallMap from './small_map';
+// import { fetchRoute } from '../../../actions/route_actions'
+// import { fetchLocations } from '../../../actions/location_actions;
 
-const mdp = dispatch => ({
-    fetchRoute: routeId => dispatch(fetchRoute(routeId))
-})
+// const msp = (state, ownProps) => {
+//     return null;
+// }
 
-export default connect(null, mdp)(SmallMap);
+// const mdp = dispatch => ({
+//     fetchRoute: routeId => dispatch(fetchRoute(routeId)),
+//     fetchLocations: () => dispatch(fetchLocations()),
+// })
+
+// export default connect(msp, mdp)(SmallMap);
