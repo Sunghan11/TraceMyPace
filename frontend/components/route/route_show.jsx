@@ -154,9 +154,27 @@ class RouteShow extends React.Component {
         
         
 
-        debugger;
         const route = this.props.route;
+        debugger;
+        const steps = Math.floor(route.distance * 2210)
+        let activity;
 
+        if (route.activity === "Walk") {
+            activity = <p><i class="fas fa-walking"></i> {route.activity}</p>
+        } else if (route.activity === "Winter Sport/Activity") {
+            activity = <p><i class="fas fa-skiing"></i> {route.activity}</p>
+        } else if (route.activity === "Bike Ride") {
+            activity = <p><i class="fas fa-biking"></i> {route.activity}</p>
+        } else if (route.activity === "Swim") {
+            activity = <p><i class="fas fa-swimmer"></i> {route.activity}</p>
+        } else if (route.activity === "Run") {
+            activity = <p><i class="fas fa-running"></i> {route.activity}</p>
+        } else if (route.activity === "Hike") {
+            activity = <p><i class="fas fa-hiking"></i> {route.activity}</p>
+        } else if (route.activity === "Sport/ Other Activity") {
+            activity = <p><i class="fas fa-skating"></i> {route.activity}</p>
+        }
+        debugger;
         // if (!this.props.route) {
         //     return null;
         // }
@@ -171,10 +189,10 @@ class RouteShow extends React.Component {
                         <div id="route-show-top">
                             <div id="route-show-username">{this.props.user.first_name} {this.props.user.last_name}</div>
                             <div id="route-show-info-info">
-                                <p>{route.activity}</p>
+                                {activity}
                                 <p><i className="fas fa-map-marker-alt"></i>   {route.city}</p>
                                 <p><i className="fas fa-route"></i>   {route.distance} MI</p>
-                                <p></p>
+                                <p><i class="fas fa-shoe-prints"></i> {steps} STEPS</p>
                             </div>
                             <div id="route-show-name">{route.name}</div>
                         </div>

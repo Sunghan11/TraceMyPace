@@ -169,11 +169,34 @@ class RouteMap extends React.Component {
         for (let j = 0; j < latlng.length; j++) {
             latlngbounds.extend(latlng[j]);
         }
-        this.map.fitBounds(latlngbounds);        
+        this.map.fitBounds(latlngbounds);
+
+        let myLat = this.markers[0].position.lat();
+        let myLng = this.markers[0].position.lng();
+        let myLatLng = { lat: myLat, lng: myLng }
+        debugger;
+        const formAdd = [];
+        // let formCity;
+
+        this.geocoder.geocode({ 'location': myLatLng }, results => {
+            debugger;
+            for (var i = 0; i < results[0].address_components.length; i++) {
+                var address = results[0].address_components[i];
+                debugger;
+                if (address.types[0] === "locality") {
+                    formAdd.push(address.short_name)
+                } else if (address.types[0] === "administrative_area_level_1") {
+                    formAdd.push(address.short_name)
+                }
+            }
+            const formCity = formAdd.join(", ");
+            debugger;
+            this.setState({ city: formCity });
+        })
     }
 
-    getCity() {
-        // e.preventDefault();
+    getCity(e) {
+        e.preventDefault();
         debugger;
         let myLat = this.markers[0].position.lat();
         let myLng = this.markers[0].position.lng();
@@ -416,7 +439,6 @@ class RouteMap extends React.Component {
         
         // if (this.markers.length > 1) {
             this.createdDate();
-            this.getCity();
             debugger;
             this.props.createRoute(this.newRouteParams())
             // .then(res => {
@@ -520,8 +542,10 @@ class RouteMap extends React.Component {
                                 <div id="save-routes">
                                     <span id="save-routes-1">Save to Routes</span>
                                     <button
-                                        // onClick={this.getCity}
-                                        type="submit"
+                                        onClick={()=> {
+                                            this.getCity;
+                                            this.saveRoute;
+                                        }}
                                         className="create-route-btn"
                                         id="route-submit">SAVE ROUTE</button>
                                 </div>

@@ -60,7 +60,7 @@ const Footer = () => {
                             {/* <div id="footnotes"> */}
                                 {/* <ul> */}
                                     <p>
-                                        Giving Credit for some edited photos and links to © 2020 Under Armour®, Inc. 
+                                        Giving Credit for external Links to UA Store to © 2020 Under Armour®, Inc.  
                                     </p>
                                     {/* <li><a href="https://account.underarmour.com/privacy">Privacy Policy</a></li>
                                     <li><a href="https://account.underarmour.com/terms-and-conditions">Terms of Use</a></li>
