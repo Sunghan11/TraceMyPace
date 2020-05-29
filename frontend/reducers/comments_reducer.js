@@ -1,6 +1,6 @@
 import {RECEIVE_COMMENTS, RECEIVE_COMMENT, REMOVE_COMMENT} from '../actions/comment_actions';
 
-const CommentsReducer = (state = {}, action) => {
+const commentsReducer = (state = {}, action) => {
     Object.freeze(state);
     let newState = {};
 
@@ -20,4 +20,4 @@ const CommentsReducer = (state = {}, action) => {
     }
 };
 
-export default CommentsReducer;
+export default commentsReducer;

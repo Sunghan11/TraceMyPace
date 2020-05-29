@@ -14,26 +14,33 @@ class StatusIndex extends React.Component {
     }
 
     render() {
-
+        debugger;
         return (
-            <div className="status-index">
-                <div id="status-index-icon">
-                    <img src={window.avatarURL} />
+            <div className="status-index-container">
+                <div className="status-index">
+                    <div id="status-index-icon">
+                        <img src={window.avatarURL} />
+                    </div>
+                    <StatusContainer />
                 </div>
-                <StatusContainer />
-
+                <br/>
+                <div className="status-line"></div>
+                <div></div>
+                <br/>
+                <br/>
                 <div id="status-items">
                     {this.props.statuses.map(status => {
-                        if (status.author_id === this.props.user.id) {
+                        // if (status.author_id === this.props.currentUser.id) {
                             return <StatusIndexItem
+                                deleteStatus={this.props.deleteStatus}
                                 status={status}
                                 user={this.props.currentUser}
-                                key={`stat${status.id}`}
+                                key={`status-${status.id}`}
                             />
-                        }
+                    // }
                     })}
                 </div>
-                        
+                            
             </div>
         )
     }

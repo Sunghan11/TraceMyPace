@@ -2,11 +2,13 @@ import React from 'react';
 
 class Status extends React.Component {
     constructor(props) {
+        debugger;
         super(props);
         this.state = {
             body: "",
-            author_id: 0
+            author_id: this.props.user.id
         }
+        
 
         this.handleSubmit = this.handleSubmit.bind(this);
     }
@@ -19,20 +21,12 @@ class Status extends React.Component {
 
     handleSubmit(e) {
         e.preventDefault();
+        
 
-        e.preventDefault();
-
-        if (this.state.body.length > 0) {
-            const stat = {
-                body: this.state.body,
-                author_id: this.props.user.id,
-            }
-            this.props.createStatus(stat)
-            this.setState({ //reset
-                body: ""
-            })
-
-        }
+        this.props.createStatus(this.state)
+        this.setState({ //reset
+            body: ""
+        })
     }
 
     render() {

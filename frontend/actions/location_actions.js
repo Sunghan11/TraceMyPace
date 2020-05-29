@@ -5,22 +5,22 @@ export const RECEIVE_LOCATION = 'RECEIVE_LOCATION';
 export const REMOVE_LOCATION = 'REMOVE_LOCATION';
 export const RECEIVE_LOCATION_ERRORS = "RECEIVE_LOCATION_ERRORS";
 
-const receiveLocations = locations => ({
+export const receiveLocations = locations => ({
     type: RECEIVE_LOCATIONS,
     locations
 });
 
-const receiveLocation = location => ({
+export const receiveLocation = location => ({
     type: RECEIVE_LOCATION,
     location
 });
 
-const removeLocation = locationId => ({
+export const removeLocation = locationId => ({
     type: REMOVE_LOCATION,
     locationId
 });
 
-const receiveLocationErrors = errors => ({
+export const receiveLocationErrors = errors => ({
     RECEIVE_LOCATION_ERRORS,
     errors
 });

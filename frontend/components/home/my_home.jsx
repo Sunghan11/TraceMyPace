@@ -40,7 +40,7 @@ class MyHome extends React.Component {
                                 <div className="dash-nav-container"
                                     id="dash-nav-dashboard">MY DASHBOARD</div>
                             </NavLink>
-                            <NavLink to="/24" activeClassName="active">
+                            <NavLink to="/my_home/my_workouts" activeClassName="active">
                                 <div className="dash-nav-container"
                                     id="dash-nav-dashfriends">MY FRIENDS</div>
                             </NavLink>

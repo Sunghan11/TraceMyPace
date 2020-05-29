@@ -1,9 +1,9 @@
 class Api::StatusesController < ApplicationController
-    before_action :ensure_logged_in
 
     def index
-       @statuses = Status.all
-       render :index 
+        
+        @statuses = Status.all
+        render :index 
     end
 
     def show
@@ -22,14 +22,18 @@ class Api::StatusesController < ApplicationController
 
     def destroy
         @status = Status.find(params[:id])
-        @status.destroy
-        render json: {}
+        if current_user.id == @status.author_id
+            @status.destroy
+            render json: index
+        else
+            render json: ["Only author can delete own Status"], status: 404
+        end
     end
 
 
     private
 
-    def route_params
+    def status_params
         params.require(:status).permit(:body, :author_id)
     end
 end

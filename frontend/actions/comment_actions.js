@@ -5,22 +5,22 @@ export const RECEIVE_COMMENT = "RECEIVE_COMMENT";
 export const REMOVE_COMMENT = "REMOVE_COMMENT";
 export const RECEIVE_COMMENT_ERRORS = "RECEIVE_COMMENT_ERRORS";
 
-const receiveComments = comments =>  ({
+export const receiveComments = comments =>  ({
     type: RECEIVE_COMMENTS,
     comments
 })
 
-const receiveComment = comment => ({
+export const receiveComment = comment => ({
     type: RECEIVE_COMMENT,
     comment
 });
 
-const removeComment = commentId => ({
+export const removeComment = commentId => ({
     type: REMOVE_COMMENT,
     commentId
 });
 
-const receiveCommentErrors = errors => ({
+export const receiveCommentErrors = errors => ({
     RECEIVE_COMMENT_ERRORS,
     errors
 });

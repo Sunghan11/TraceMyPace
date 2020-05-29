@@ -16,7 +16,7 @@ const msp = state => ({
 
 const mdp = dispatch => ({
     fetchStatuses: () => dispatch(fetchStatuses()),
-    deleteStatus: statusId => dispatch(deleteStatus(statusId)),
+    deleteStatus: id => dispatch(deleteStatus(id)),
     fetchComments: () => dispatch(fetchComments())
 });
 

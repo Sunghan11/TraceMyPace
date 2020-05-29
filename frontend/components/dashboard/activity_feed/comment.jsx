@@ -50,7 +50,7 @@ class Comment extends React.Component {
                     <input 
                         id="comment-container-submit"
                         type="submit"
-                        value="POST"
+                        value="REPLY"
                     />
                 </form>
             </div>

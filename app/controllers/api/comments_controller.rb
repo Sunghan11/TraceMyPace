@@ -1,6 +1,4 @@
 class Api::CommentsController < ApplicationController
-    before_action :ensure_logged_in
-
     # def index
     #     if params[:status_id]
     #         @status = Status.find(params[:status_id])

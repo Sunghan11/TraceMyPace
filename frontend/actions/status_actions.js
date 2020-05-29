@@ -1,26 +1,26 @@
 import * as APIUtil from '../util/status_api_util';
 
-export const RECEIVE_ALL_STATUSES = 'RECEIVE_ALL_STATUSES';
+export const RECEIVE_STATUSES = 'RECEIVE_STATUSES';
 export const RECEIVE_STATUS = 'RECEIVE_STATUS';
 export const REMOVE_STATUS = 'REMOVE_STATUS';
 export const RECEIVE_STATUS_ERRORS = "RECEIVE_STATUS_ERRORS";
 
-const receiveStatuses = statuses => ({
+export const receiveStatuses = statuses => ({
     type: RECEIVE_STATUSES,
     statuses
 })
 
-const receiveStatus = status => ({
+export const receiveStatus = status => ({
     type: RECEIVE_STATUS,
     status
 });
 
-const removeStatus = statusId => ({
+export const removeStatus = statusId => ({
     type: REMOVE_STATUS,
     statusId
 });
 
-const receiveStatusErrors = errors => ({
+export const receiveStatusErrors = errors => ({
     RECEIVE_STATUS_ERRORS,
     errors
 });
@@ -46,5 +46,6 @@ export const createStatus = status => dispatch => (
 export const deleteStatus = statusId => dispatch => (
     APIUtil.fetchStatus(statusId)
         .then(() => dispatch(removeStatus(statusId))
-        ), err => dispatch(receiveStatusErrors(err.responseJSON))
+    )
+        // ), err => dispatch(receiveStatusErrors(err.responseJSON))
 )

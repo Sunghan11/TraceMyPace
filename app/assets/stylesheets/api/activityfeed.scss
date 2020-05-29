@@ -8,10 +8,18 @@
     height: 52px;
 }
 
+#status-form {
+    display:flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 120px;
+}
+
 #status-form textArea {
     display:block;
     box-sizing: border-box;
-    width: 556px;
+    max-width: 556px;
+    width: 100vw;
     height: 80px;
     padding: 6px 8px;
     border-radius: 5px;
@@ -19,11 +27,13 @@
     font-weight: bold;
 }
 
+
 #status-form button {
     background: #ff8714;
     color: white;
     font-weight: bold;
     font-size: 14px;
+    width: 120px;
     right: 0;
     border:0;
     padding: 6px 45px;
@@ -31,4 +41,54 @@
     box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.4);
     cursor: pointer;
     font-family: 'Open Sans', sans-serif;
+    
+}
+
+
+
+#status-delete button {
+    border: 0;
+    color: #2f98d9;
+    background: white;
+    cursor: pointer;
+}
+
+#status-index-profile-pic img {
+    width: 52px;
+    height: 52px;
+}
+
+#status-index-right {
+    max-width: 556;
+    width: 100vw;
+}
+
+.status-index-item-container {
+    display: flex;
+    font-family: 'Heebo', sans-serif;
+}
+
+#status-top {
+    display: flex;
+    box-sizing: border-box;
+    justify-content: space-between;
+    height: 50px;
+    border: 1px solid #cdcdcd;
+    padding: 0px 17px;
+    color: #2f98d9;
+    line-height: 50px;
+}
+
+#status-body {
+    height: 50px;
+    border: 1px solid #cdcdcd;
+    padding-left: 17px;
+    line-height: 50px;
+    background: #f0f0f0;
+    color: #666666;
+}
+
+.status-line {
+    border-bottom: solid 1px #cdcdcd;
+    width: 100%;
 }

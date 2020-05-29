@@ -1,6 +1,6 @@
 import { RECEIVE_STATUSES, RECEIVE_STATUS, REMOVE_STATUS } from '../actions/status_actions';
 
-const StatusesReducer = (state = {}, action) => {
+const statusesReducer = (state = {}, action) => {
     Object.freeze(state);
     let newState = {};
 
@@ -20,4 +20,4 @@ const StatusesReducer = (state = {}, action) => {
     }
 };
 
-export default StatusesReducer;
+export default statusesReducer;
