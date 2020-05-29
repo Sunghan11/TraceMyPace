@@ -24,9 +24,9 @@ class MyDashboard extends React.Component {
                             <span>hours</span>
                         </div>
                         <div id="my-dashboard-headings-distance">
-                            <span>CALORIES</span>
+                            <span>STEPS</span>
                             <div>3348.8</div>
-                            <span>burned</span>
+                            <span>TAKEN</span>
                         </div>
                         <div id="my-dashboard-headings-distance">
                             <span>WORKOUTS</span>

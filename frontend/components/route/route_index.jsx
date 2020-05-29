@@ -42,6 +42,7 @@ class RouteIndex extends React.Component {
         debugger;
 
         const routes = Object.values(this.props.routes);
+        const currentUser = Object.values(this.props.currentUser)[0];
 
 
         routes.forEach((route) => {
@@ -68,12 +69,14 @@ class RouteIndex extends React.Component {
                             </tr>
                         </thead>
                         <tbody>
-                            {routes.map(route => (
-                                <RouteIndexItem
+                            {routes.map(route => {
+                                debugger;
+                                if (route.userId === currentUser.id)
+                                return <RouteIndexItem
                                     route={route}
                                     key={route.id}
                                     deleteRoute={this.props.deleteRoute} />
-                            ))}
+                            })}
                             {/* {this.props.routes.map( route => {
                                 if (route && route.user_id === this.props.user) {
                                     return <RouteIndexItem route={route} key={`route-${route.id}`}/>

@@ -29,7 +29,7 @@ class LogInForm extends React.Component {
     };
 
     componentDidMount() {
-        return this.props.clearErrors();
+        return this.props.removeErrors();
     };
 
 

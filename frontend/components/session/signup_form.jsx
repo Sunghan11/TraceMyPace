@@ -25,10 +25,11 @@ class SignUpForm extends React.Component {
             // location: false,
             // }
         }
-        // debugger;
+        debugger;
         // this.props.errors = [];
+        // this.props.errors.session = [];
         this.errors = {};
-        // this.renderError = this.renderError.bind(this)
+        // this.renderErrors = this.renderErrors.bind(this)
         this.handleSubmit = this.handleSubmit.bind(this);
         this.handleDemoLogin = this.handleDemoLogin.bind(this);
         // this.renderError = this.renderError.bind(this);
@@ -58,26 +59,26 @@ class SignUpForm extends React.Component {
             gender: this.state.gender,
             location: this.state.location
         });
-
         this.props.submitForm(user);
     }
 
-    componentDidMount(){
-     return this.props.clearErrors();
+    componentWillUnmount(){
+     return this.props.removeErrors();
     }
 
 
 
     renderError(message) {
-        // let allErrors = [];
-        // let allErrors = this.props.errors;
-        // if(this.state.errors)
-        // if (this.props.errors.length > 0) {
-        //     allErrors = this.props.errors.concat(this.state.errors)
-        // }
-        // }
-        // debugger;
+    //     debugger;
+    //     // let allErrors = [];
+    //     // let allErrors = this.props.errors;
+    //     // if(this.state.errors)
+    //     // if (this.props.errors.length > 0) {
+    //     //     allErrors = this.props.errors.concat(this.state.errors)
+    //     // }
+    //     // }
         let allErrors = this.props.errors.concat(this.state.errors);
+        debugger;
         
     // }
         // debugger;
@@ -179,6 +180,7 @@ class SignUpForm extends React.Component {
             YEARS.push(i)
         }
 
+        debugger;
         
         const link = this.props.formType === 'Sign Up' ? <Link to="/login">LOG IN</Link> : <Link to="/signup">SIGN UP</Link>
 
@@ -189,7 +191,7 @@ class SignUpForm extends React.Component {
             <div className="signup-page">
                 <div className="signup-form">
                     <form onSubmit={this.handleSubmit}>
-                    {/* <div className="errors">{this.renderErrors()}</div> */}
+                    <div className="errors">{this.renderErrors()}</div>
                     <Link className="login-link" to="/login">LOG IN</Link>
                     <br/>
                     <br/>
@@ -221,7 +223,7 @@ class SignUpForm extends React.Component {
                                 type="text"
                                 placeholder="Last Name" />
                         </div>
-                            <div className="errors">{this.renderError("Last name can't be blank")}</div>
+                            {/* <div className="errors">{this.renderError("Last name can't be blank")}</div> */}
 
                         <div className="form-group">
                             <label className="control-label"></label>
@@ -231,8 +233,8 @@ class SignUpForm extends React.Component {
                                 type="text"
                                 placeholder="Email" />
                         </div>
-                            <div className="errors">{this.renderError("Email can't be blank")}</div>
-                            <div className="errors">{this.renderError("Email has already been taken")}</div>
+                            {/* <div className="errors">{this.renderError("Email can't be blank")}</div> */}
+                            {/* <div className="errors">{this.renderError("Email has already been taken")}</div> */}
 
                         <div className="form-group">
                             <label className="control-label"></label>
@@ -242,7 +244,7 @@ class SignUpForm extends React.Component {
                                 type="password"
                                 placeholder="Password" />
                         </div>
-                            <div className="errors">{this.renderError("Password is too short (minimum is 6 characters)")}</div>
+                            {/* <div className="errors">{this.renderError("Password is too short (minimum is 6 characters)")}</div> */}
 
 
 
@@ -277,7 +279,7 @@ class SignUpForm extends React.Component {
                                 </div>
                             </div>
                                 
-                                <div className="errors">{this.renderError()}</div>
+                                {/* <div className="errors">{this.renderError()}</div> */}
 
                         </div>
 
@@ -306,7 +308,7 @@ class SignUpForm extends React.Component {
                                         <div>✔</div>
                                     </label>
                                 </div>
-                                <div className="errors">{this.renderError("Gender is not included in the list")}</div>
+                                {/* <div className="errors">{this.renderError("Gender is not included in the list")}</div> */}
                         </div>
 
                         <div className="form-group">

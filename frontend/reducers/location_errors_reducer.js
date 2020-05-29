@@ -1,5 +1,5 @@
 import { RECEIVE_LOCATION_ERRORS, RECEIVE_LOCATION, RECEIVE_LOCATIONS, REMOVE_LOCATION } from '../actions/location_actions';
-import { CLEAR_ERRORS } from '../actions/error_actions';
+import { REMOVE_ERRORS } from '../actions/error_actions';
 const locationErrorsReducer = (state = [], action) => {
     Object.freeze(state);
 
@@ -12,7 +12,7 @@ const locationErrorsReducer = (state = [], action) => {
             return [];
         case REMOVE_LOCATION:
             return [];
-        case CLEAR_ERRORS:
+        case REMOVE_ERRORS:
             return [];
         default:
             return state;

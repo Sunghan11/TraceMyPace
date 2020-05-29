@@ -1,7 +1,7 @@
-export const CLEAR_ERRORS = 'CLEAR_ERRORS';
+export const REMOVE_ERRORS = 'REMOVE_ERRORS';
 
-export const clearErrors = () => dispatch => (
+export const removeErrors = () => dispatch => (
     dispatch({
-        type: CLEAR_ERRORS
+        type: REMOVE_ERRORS
     })
 )
