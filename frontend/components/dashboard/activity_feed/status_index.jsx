@@ -1,16 +1,13 @@
 import React from 'react';
-import CommentContainer from './comment_container';
 import StatusIndexItem from './status_index_item';
 import StatusContainer from './status_container';
-import UserNavContainer from '../../nav/user_nav_container';
-import { NavLink } from 'react-router-dom';
-import Footer from '../../footer/footer';
+
 
 class StatusIndex extends React.Component {
 
     componentDidMount() {
         this.props.fetchStatuses();
-        this.props.fetchComments();
+        // this.props.fetchComments();
     }
 
     render() {
@@ -29,7 +26,7 @@ class StatusIndex extends React.Component {
                 <br/>
                 <br/>
                 <div id="status-items">
-                    {this.props.statuses.map(status => {
+                    {this.props.statuses.slice(0).reverse().map(status => {
                         // if (status.author_id === this.props.currentUser.id) {
                             return <StatusIndexItem
                                 status={status}

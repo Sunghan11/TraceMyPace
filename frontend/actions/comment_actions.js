@@ -25,8 +25,8 @@ export const receiveCommentErrors = errors => ({
     errors
 });
 
-export const fetchComments = () => dispatch => (
-    APIUtil.fetchComments()
+export const fetchComments = statusId => dispatch => (
+    APIUtil.fetchComments(statusId)
         .then(comments => dispatch(receiveComments(comments))
     ), err => dispatch(receiveCommentErrors(err.responseJSON))
 );

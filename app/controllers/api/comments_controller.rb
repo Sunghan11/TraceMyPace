@@ -1,15 +1,4 @@
 class Api::CommentsController < ApplicationController
-    # def index
-    #     if params[:status_id]
-    #         @status = Status.find(params[:status_id])
-    #         if @status
-    #             @comments = @status.comments
-    #             render :index
-    #         end
-    #     else
-    #         render json: ["No status Found!"], status: 404
-    #     end
-    # end
 
     def index
         @comments = Comment.all

@@ -1,10 +1,14 @@
 import React from 'react';
+import CommentIndexContainer from './comment_index_container';
 import CommentContainer from './comment_container';
 
 
 class StatusIndexItem extends React.Component {
     constructor(props) {
         super(props);
+        this.state = {
+            visible: false
+        }
 
         this.creationDate = "";
         this.deleteStatus = this.deleteStatus.bind(this)
@@ -24,6 +28,7 @@ class StatusIndexItem extends React.Component {
     }
 
     render() {
+        debugger;
         this.createdDate();
         if (!this.props.status) return null;
         let deleteButton;
@@ -34,6 +39,8 @@ class StatusIndexItem extends React.Component {
         } else {
             deleteButton = ""
         }
+
+        const buttonText = this.state.visible ? <i className="far fa-comment-alt"></i> : <i className="far fa-comment-alt"></i>
 
         return (
             <>
@@ -55,17 +62,32 @@ class StatusIndexItem extends React.Component {
                         </div>
                         <div id="status-body-2">
                             <div id="status-comment-create">
+                                
+                                <button onClick={() => {
+                                this.setState({ visible: !this.state.visible});
+                                }}
+                                >
                                 <i className="far fa-comment-alt"></i>
+                                </button>
                             </div>
+                            
                             <div id="status-createdAt">
-                              |  {this.creationDate}
+                                |
+                                <div id="status-date">
+                                 {this.creationDate}
+                                </div>
                             </div>
                         </div>
                         <div id="status-comments">
-                            <CommentContainer />
+                            {/* <CommentContainer /> */}
+                            {this.state.visible ? <CommentIndexContainer 
+                            status={this.props.status}
+                            /> : null}
                         </div>
                     </div>
                 </div>
+                <br/>
+                <br/>
             </>
         )
     }

@@ -5,12 +5,19 @@ class Comment extends React.Component {
         super(props);
         this.state = {
             body: "",
-            author_id: 0
+            author_id: this.props.user.id,
+            status_id: this.props.status.id
         }
         debugger;
 
         this.handleSubmit = this.handleSubmit.bind(this);
     }
+
+    // componentWillMount() {
+    //     this.setState({
+    //         body: "",
+    //     })
+    // }
 
     update(field) {
         return e => {
@@ -22,38 +29,27 @@ class Comment extends React.Component {
         // debugger;
         e.preventDefault();
 
-        if(this.state.body.length > 0) {
-            const cmt = {
-                body: this.state.body,
-                author_id: this.props.user.id,
-            }
-            this.props.createComment(cmt)
+        if(this.state.body.length !== "") {
+            this.props.createComment(this.state)
             this.setState({ //reset
                 body: ""
             })
 
         }
         debugger;
-
     }
 
     render() {
         return (
-            <div id="comments-container">
-                <form onSubmit={this.handleSubmit}>
-                    <input 
-                        id="comment-input" 
-                        type="text" 
-                        value={this.state.body} 
-                        onChange={this.update("body")}
-                    />
-                    <input 
-                        id="comment-container-submit"
-                        type="submit"
-                        value="REPLY"
-                    />
-                </form>
-            </div>
+            <form id="comment-form" onSubmit={this.handleSubmit}>
+                <img src={window.avatarURL} />
+                <textarea   
+                    value={this.state.body} 
+                    onChange={this.update("body")}
+                    placeholder={`Write a comment...`}
+                />
+                <button type="submit">POST</button>
+            </form>
         )
     }
 }

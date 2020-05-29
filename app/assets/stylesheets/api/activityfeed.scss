@@ -58,12 +58,26 @@
 }
 
 #status-index-right {
-    max-width: 556;
+    max-width: 556px;
     width: 100vw;
+}
+
+#status-createdAt {
+    display: flex;
+    justify-content: space-between;
+    font-family: 'Heebo', sans-serif;
+    font-size: 20px;
+    color: #999999;
+}
+
+#status-date {
+    font-size: 12px;
+    padding-left: 10px;
 }
 
 .status-index-item-container {
     display: flex;
+    justify-content: space-between;
     font-family: 'Heebo', sans-serif;
 }
 
@@ -98,7 +112,104 @@
     color: #666666;
 }
 
+#status-body-2 i:hover {
+    color: #2f98d9;
+    cursor: pointer;
+}
+
+#status-body-2 button {
+    border:0;
+    color: #999999;
+    font-size: 16px;
+    font-weight: bold;
+}
+
 .status-line {
     border-bottom: solid 1px #cdcdcd;
     width: 100%;
+}
+
+#comment-form {
+    display:flex;
+    justify-content: space-between;
+    font-family: 'Open Sans', sans-serif;
+    padding: 10px;
+    border-bottom: 1px solid #cdcdcd;
+    border-left: 1px solid #cdcdcd;
+    border-right: 1px solid #cdcdcd;
+    height: 52px;
+    
+}
+
+#comment-form img {
+    width: 52px;
+    height: 52px;
+}
+
+#comment-form textarea {
+    display:block;
+    box-sizing: border-box;
+    max-width: 410px;
+    width: 100vw;
+    height: 32px;
+    border: 1px solid #cdcdcd;
+    margin-top: 10px;
+    line-height: 25px;
+}
+
+#comment-form button {
+    height: 34px;
+    width: 55px;
+    border:0;
+    margin-top: 10px;
+    background: #ffffff;
+    border: 1px solid #2f98d9;
+    color: #2f98d9;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.comment-index-item-container {
+    display: flex;
+    font-family: 'Open Sans', sans-serif;
+    justify-content: space-between;
+    padding: 10px 10px 0px 10px;
+    font-size: 14px;
+    border-left: 1px solid #cdcdcd;
+    border-right: 1px solid #cdcdcd;
+}
+
+#comment-index-profile-pic img {
+    width: 52px;
+    height: 52px;
+}
+
+#comment-author {
+    color: #2f98d9;
+    font-weight: bold;
+    font-size: 15px;
+}
+
+#comment-index-right {
+    max-width: 470px;
+    width: 100vw;
+}
+
+#comment-top {
+    display: flex;
+    justify-content: space-between;
+}
+
+#comment-top-right {
+    display: flex;
+    font-size: 12px;
+}
+
+#comment-delete button {
+    border: 0;
+    background: #ffffff;
+    color: #2f98d9;
+    font-weight: bold;
+    cursor: pointer;
 }

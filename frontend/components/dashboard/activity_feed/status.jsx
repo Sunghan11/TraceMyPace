@@ -22,11 +22,12 @@ class Status extends React.Component {
     handleSubmit(e) {
         e.preventDefault();
         
-
-        this.props.createStatus(this.state)
-        this.setState({ //reset
-            body: ""
-        })
+        if(this.state.body.length > 0) {
+            this.props.createStatus(this.state)
+            this.setState({ //reset
+                body: ""
+            })
+        }
     }
 
     render() {

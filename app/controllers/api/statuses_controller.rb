@@ -1,7 +1,6 @@
 class Api::StatusesController < ApplicationController
 
-    def index
-        
+    def index        
         @statuses = Status.all
         render :index 
     end
