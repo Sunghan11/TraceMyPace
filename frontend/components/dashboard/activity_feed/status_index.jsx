@@ -27,14 +27,16 @@ class StatusIndex extends React.Component {
                 <br/>
                 <div id="status-items">
                     {this.props.statuses.slice(0).reverse().map(status => {
-                        // if (status.author_id === this.props.currentUser.id) {
+                        debugger;
+                        if (status.authorId === this.props.currentUser.id) {
                             return <StatusIndexItem
                                 status={status}
+                                
                                 user={this.props.currentUser}
                                 key={status.id}
                                 deleteStatus={this.props.deleteStatus}
                             />
-                    // }
+                        }
                     })}
                 </div>
                             

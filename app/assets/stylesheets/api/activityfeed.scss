@@ -70,6 +70,12 @@
     color: #999999;
 }
 
+#status-createdAt i {
+    line-height: 50px;
+    padding-right: 10px;
+    font-size: 17px;
+}
+
 #status-date {
     font-size: 12px;
     padding-left: 10px;
@@ -112,7 +118,7 @@
     color: #666666;
 }
 
-#status-body-2 i:hover {
+#status-comment-create i:hover {
     color: #2f98d9;
     cursor: pointer;
 }

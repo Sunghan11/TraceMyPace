@@ -72,14 +72,13 @@ class StatusIndexItem extends React.Component {
                             </div>
                             
                             <div id="status-createdAt">
-                                |
+                                <i class="fas fa-globe-americas"></i> |
                                 <div id="status-date">
                                  {this.creationDate}
                                 </div>
                             </div>
                         </div>
                         <div id="status-comments">
-                            {/* <CommentContainer /> */}
                             {this.state.visible ? <CommentIndexContainer 
                             status={this.props.status}
                             /> : null}
