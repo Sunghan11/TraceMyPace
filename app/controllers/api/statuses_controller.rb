@@ -24,7 +24,7 @@ class Api::StatusesController < ApplicationController
         @status = Status.find(params[:id])
         if current_user.id == @status.author_id
             @status.destroy
-            render json: index
+            render json: {}
         else
             render json: ["Only author can delete own Status"], status: 404
         end

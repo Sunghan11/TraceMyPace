@@ -27,7 +27,6 @@
     font-weight: bold;
 }
 
-
 #status-form button {
     background: #ff8714;
     color: white;
@@ -83,6 +82,17 @@
     height: 50px;
     border: 1px solid #cdcdcd;
     padding-left: 17px;
+    line-height: 50px;
+    background: #f0f0f0;
+    color: #666666;
+}
+
+#status-body-2 {
+    display: flex;
+    border: 1px solid #cdcdcd;
+    height: 50px;
+    justify-content: space-between;
+    padding: 0px 18px;
     line-height: 50px;
     background: #f0f0f0;
     color: #666666;

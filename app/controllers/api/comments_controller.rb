@@ -34,7 +34,7 @@ class Api::CommentsController < ApplicationController
         @comment = Comment.find(params[:id])
         if current_user.id == @comment.author_id
             @comment.destroy
-            render :index
+            render json: {}
         else
             render json: ["Only authors can delete own comments"], status: 404
         end

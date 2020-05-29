@@ -32,10 +32,10 @@ class StatusIndex extends React.Component {
                     {this.props.statuses.map(status => {
                         // if (status.author_id === this.props.currentUser.id) {
                             return <StatusIndexItem
-                                deleteStatus={this.props.deleteStatus}
                                 status={status}
                                 user={this.props.currentUser}
-                                key={`status-${status.id}`}
+                                key={status.id}
+                                deleteStatus={this.props.deleteStatus}
                             />
                     // }
                     })}

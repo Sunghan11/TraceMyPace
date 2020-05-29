@@ -7,7 +7,7 @@ class StatusIndexItem extends React.Component {
         super(props);
 
         this.creationDate = "";
-        this.handleClick = this.handleClick.bind(this)
+        this.deleteStatus = this.deleteStatus.bind(this)
     }
 
     createdDate() {
@@ -18,17 +18,18 @@ class StatusIndexItem extends React.Component {
         this.creationDate = cDate;
     }
 
-    handleClick() {
+    deleteStatus() {
         debugger;
         this.props.deleteStatus(this.props.status.id)
     }
 
     render() {
+        this.createdDate();
         if (!this.props.status) return null;
         let deleteButton;
         if (this.props.user.id === this.props.status.authorId) {
             deleteButton = <button
-                onClick={this.handleClick}><i className="fas fa-times"></i>
+                onClick={this.deleteStatus}><i className="fas fa-times"></i>
                     </button>
         } else {
             deleteButton = ""
@@ -52,8 +53,13 @@ class StatusIndexItem extends React.Component {
                         <div id="status-body">
                             {this.props.status.body}
                         </div>
-                        <div id="status-createdAt">
-                            {this.creationDate}
+                        <div id="status-body-2">
+                            <div id="status-comment-create">
+                                <i className="far fa-comment-alt"></i>
+                            </div>
+                            <div id="status-createdAt">
+                              |  {this.creationDate}
+                            </div>
                         </div>
                         <div id="status-comments">
                             <CommentContainer />

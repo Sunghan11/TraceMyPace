@@ -44,8 +44,7 @@ export const createStatus = status => dispatch => (
 )
 
 export const deleteStatus = statusId => dispatch => (
-    APIUtil.fetchStatus(statusId)
+    APIUtil.deleteStatus(statusId)
         .then(() => dispatch(removeStatus(statusId))
-    )
-        // ), err => dispatch(receiveStatusErrors(err.responseJSON))
+        ), err => dispatch(receiveStatusErrors(err.responseJSON))
 )
