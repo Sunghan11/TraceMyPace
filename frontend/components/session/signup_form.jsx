@@ -28,7 +28,7 @@ class SignUpForm extends React.Component {
         debugger;
         // this.props.errors = [];
         // this.props.errors.session = [];
-        this.errors = {};
+        // this.errors = {};
         // this.renderErrors = this.renderErrors.bind(this)
         this.handleSubmit = this.handleSubmit.bind(this);
         this.handleDemoLogin = this.handleDemoLogin.bind(this);
@@ -50,6 +50,7 @@ class SignUpForm extends React.Component {
 
     handleSubmit(e) {
         e.preventDefault();
+        debugger;
         const user = Object.assign({}, {
             first_name: this.state.first_name,
             last_name: this.state.last_name,
@@ -62,7 +63,7 @@ class SignUpForm extends React.Component {
         this.props.submitForm(user);
     }
 
-    componentWillUnmount(){
+    componentDidMount(){
      return this.props.removeErrors();
     }
 
@@ -191,7 +192,8 @@ class SignUpForm extends React.Component {
             <div className="signup-page">
                 <div className="signup-form">
                     <form onSubmit={this.handleSubmit}>
-                    <div className="errors">{this.renderErrors()}</div>
+                        {this.renderErrors()}
+                    {/* <div className="errors">{this.renderErrors()}</div> */}
                     <Link className="login-link" to="/login">LOG IN</Link>
                     <br/>
                     <br/>
@@ -213,7 +215,7 @@ class SignUpForm extends React.Component {
                                 type="text"
                                 placeholder="First Name" />
                         </div>
-                            <div className="errors">{this.renderError("First name can't be blank")}</div>
+                            {/* <div className="errors">{this.renderError("First name can't be blank")}</div> */}
 
                         <div className="form-group">
                             <label className="control-label"></label>

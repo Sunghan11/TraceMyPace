@@ -1,7 +1,7 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
 import RouteIndexItem from './route_index_item';
-import UserNav from '../nav/user_nav';
+import UserNavContainer from '../nav/user_nav_container';
 import Footer from '../footer/footer';
 
 
@@ -50,7 +50,7 @@ class RouteIndex extends React.Component {
         })
         return (
             <>  
-                <UserNav />
+                <UserNavContainer />
                 <div className="route-index">
                     <div id="route-create">
                         <h1>My Routes</h1>

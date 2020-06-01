@@ -15,6 +15,12 @@ const msp = ({ errors }) => {
     // navLink: <Link to="/signup">LOG IN</Link>
 };
 
+// const msp = state => ({
+//     errors: state.errors.session,
+//     formType: "Sign Up"
+// })
+
+
 const mdp = dispatch => ({
     removeErrors: () => dispatch(removeErrors()),
     submitForm: user => dispatch(signup(user)),

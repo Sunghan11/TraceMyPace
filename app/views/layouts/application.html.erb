@@ -37,13 +37,7 @@
       window.googleAPIKey = "<%= Rails.application.credentials.google[:api_key] %>";
     </script>
 
-    <% if logged_in? %>
-      <script type="text/javascript">
-      window.currentUser = <%= render(
-        "api/users/user.json.jbuilder",
-        user: current_user).html_safe%>
-        </script>
-    <% end %>
+
 
   </head>
 

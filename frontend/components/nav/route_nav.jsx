@@ -24,8 +24,8 @@ const RouteNav = ({ logout }) => (
                         <li><Link to="/routes/my_routes">My Routes</Link></li>
                     </ul>
                 </div>
-                <li>Challenges</li>
-                <li>UA Shop</li>
+                <div>Challenges</div>
+                <div><a href="https://www.underarmour.com/en-us/hovr/g/33yb?cid=MMF%7CREF%7CMMFitness%7CSite%7Chome_page%7CHOVR">UA Shop</a></div>
             </ul>
 
             <div className="home-nav-profile">

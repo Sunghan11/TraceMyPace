@@ -1,5 +1,5 @@
 import React from 'react';
-import RouteNavContainer from '../../nav/route_nav';
+import RouteNavContainer from '../../nav/route_nav_container';
 
 class RouteMap extends React.Component {
     constructor(props) {

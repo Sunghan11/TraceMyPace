@@ -3,17 +3,12 @@ import { HashRouter, Route, Redirect, Switch } from 'react-router-dom';
 import LoginFormContainer from './session/login_form_container';
 import SignupFormContainer from './session/signup_form_container';
 import MyHomeContainer from './home/my_home_container'
-// import SignUpForm from './sessions/signup_form';;
-import NavContainer from './nav/nav_container'
 import Nav from './nav/nav';
 import RouteMapContainer from './route/route_map/route_map_container';
 import RouteIndexContainer from './route/route_index_container';
 import RouteShowContainer from './route/route_show_container';
-import UserNavContainer from './nav/user_nav_container';
 import Splash from './splash/splash';
-import Footer from './footer/footer';
 import {AuthRoute, ProtectedRoute} from '../util/route_util';
-// import CommentIndexContainer from './dashboard/activity_feed/comment_index_container';
 import ActivityFeedContainer from './dashboard/activity_feed/activity_feed_container';
 
 
@@ -34,7 +29,7 @@ const App = () => (
                 {/* <ProtectedRoute exact path="/my_home" component={MyHomeContainer} /> */}
                 <ProtectedRoute exact path="/my_home/activity_feed" component={ActivityFeedContainer} />
                 <ProtectedRoute exact path="/my_home/user_dashboard" component={MyHomeContainer} />                
-        <ProtectedRoute exact path="/my_home/my_home/user_dashboard" component={MyHomeContainer} />                
+                <ProtectedRoute exact path="/my_home/my_home/user_dashboard" component={MyHomeContainer} />                
                 <ProtectedRoute exact path="/routes/my_routes" component={RouteIndexContainer} />
                 <ProtectedRoute exact path="/routes/view/:routeId" component={RouteShowContainer} />
 
