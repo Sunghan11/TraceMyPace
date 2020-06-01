@@ -32,8 +32,29 @@ users = User.create([
     {first_name: "Kawhi", last_name: "Leonard", email: "TheClaw@gmail.com", password:"password", birth_date:"1991-06-29", gender: "Male", location: "United States"},
 ])
 
-routes = Route.create ([
+routes = Route.create([
     {name: "First Route", user_id: User.first.id, activity: "Run", route_map:"" , distance: "4.50", city: "New York"},
     {name: "Second Route", user_id: User.first.id, activity: "Walk", route_map: "" , distance: "5.50", city: "New York"},
     {name: "Third Route", user_id: User.first.id, activity: "Run", route_map: "", distance: "6.50", city: "New York"},
+])
+
+statuses = Status.create([
+    {body: "Great Run Today!", author_id: User.first.id},
+    {body: "Run across the Brooklyn Bridge!", author_id: User.first.id},
+    {body: "Mamba Mentality", author_id: User.second.id},
+    {body: "1.. 2.. 3..", author_id: User.third.id},
+    {body: "Supermannnn is in the Building!", author_id: User.fourth.id},
+    {body: "Not 1, not 2, not 3...", author_id: User.fifth.id},
+    {body: "the Greatest Run of All Time", author_id: User.sixth.id},
+    {body: "Too fast, too Strong, too goooood", author_id: User.seventh.id},
+    {body: "... ... ...", author_id: User.last.id}
+])
+
+comments = Comment.create([
+    {body: "Not a bad run, not great, but not bad", author_id: User.second.id, status_id: Status.first.id},
+    {body: "Not the Greatest Run of all time", author_id: User.sixth.id, status_id: Status.first.id},
+    {body: "Beautiful View", author_id: User.fifth.id, status_id: Status.second.id},
+    {body: "Lets Goooo!", author_id: User.third.id, status_id: Status.second.id},
+    {body: "# 1", author_id: User.seventh.id, status_id: Status.second.id},
+    {body: "The Claw approves", author_id: User.last.id, status_id: Status.first.id},
 ])
