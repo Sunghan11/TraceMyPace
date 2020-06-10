@@ -4,11 +4,11 @@
 // class SmallMap extends React.Component {
 //     constructor(props) {
 //         super(props)
-//         this.markersArr = [];
 //         this.state = {
-//             locations: []
+//             coordsArr: []
 //         }
-
+        
+//         this.markersArr = [];
 //         this.addMarker = this.addMarker.bind(this);
 //         this.showRoute = this.showRoute.bind(this);
 //     }
@@ -55,7 +55,7 @@
 //         marker.setMap(this.map);
 
 //         this.markersArr.push(marker);
-
+// debugger;
 //         if (this.markersArr.length > 1) {
 //             this.markersArr.forEach(marker => marker.setMap(null));
 //             const lastPosition = this.markersArr.length - 1;

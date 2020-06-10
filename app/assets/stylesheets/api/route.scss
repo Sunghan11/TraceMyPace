@@ -324,10 +324,16 @@
 #route-show-map {
     max-width: 1320px;
     height: 785px;
-    width: vw;
+    width: 100vw;
 }
 
 .route-show-map {
     width: 1320;
     overflow: hidden;
+}
+
+#show-map {
+    max-width: 1320;
+    height: 785px;
+    width: 100vw;
 }

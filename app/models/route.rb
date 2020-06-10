@@ -1,5 +1,5 @@
 class Route < ApplicationRecord
-    validates :name, :route_map, :activity, :distance, :city, :user_id, presence: true
+    validates :name, :route_map, :activity, :distance, :city, :user_id, :location_markers, presence: true
     # validates :city
 
     belongs_to :user,
@@ -8,5 +8,6 @@ class Route < ApplicationRecord
 
     has_many :locations,
         foreign_key: :route_id,
-        class_name: :Location    
+        class_name: :Location,
+        dependent: :destroy  
 end

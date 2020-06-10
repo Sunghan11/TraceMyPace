@@ -14,7 +14,7 @@ const msp = state => ({
 const mdp = dispatch => ({
     createRoute: route => dispatch(createRoute(route)),
     fetchRoute: () => dispatch(fetchRoutes()),
-    // createLocation: location => dispatch(createLocation(location)),
+    createLocation: location => dispatch(createLocation(location)),
     // fetchLocations: () => dispatch(fetchLocations())
 
 });

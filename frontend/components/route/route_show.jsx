@@ -13,7 +13,7 @@ class RouteShow extends React.Component {
         this.dirServ = new google.maps.DirectionsService();
         this.dirRend = new google.maps.DirectionsRenderer({
             polylineOptions: {
-                strokeColor: 'purple',
+                strokeColor: 'magenta',
                 strokeWeight: 4,
             },
             supressMarkers: true
@@ -33,15 +33,18 @@ class RouteShow extends React.Component {
         // this.showRoute(this.dirServ, this.dirRend);
         // this.map = map;
 
-        this.props.fetchRoute(this.props.match.params.routeId)
-        // this.initMap();
         debugger;
+        this.props.fetchRoute(this.props.match.params.routeId)
+            // .then(action => (
+            //     this.props.fetchUser(action.route.userId)
+            // ));
+        // this.initMap();
     }
 
     componentDidUpdate(prevProps) {
         debugger;
         if (this.props.route) {
-            // this.decodeMarkers();
+            this.locationMarkersArr();
             this.initMap();
         }
 
@@ -50,107 +53,95 @@ class RouteShow extends React.Component {
         }
     }
 
-    // initMap() {
-    //     const mapEle = document.getElementById("show-map");
-    //     let options = {
-    //         center: {lat:40.736436, lng: -73.994061},
-    //         zoom: 15,
-    //         // travelMode: "WALKING"
-    //     }
-    //     this.map = new google.maps.Map(this.refs.map, options);
-    //     this.dirRend.setMap(map);
-    //     this.showRoute(dirServ, dirRend);
-    // }
-
     initMap() {
-
-        let rmSplit = this.props.route.routeMap.split("S%7C")
-        let splitAgain = rmSplit[1].split("&")
-        let splitLatLng = splitAgain[0].split(",")
-
-        const options = {
-            // center: { lat: splitLatLng[0].toFloat(), lng: splitLatLng[1].toFloat() },
-            center: {lat: 40, lng: 40},
-            zoom: 15,
+        debugger;
+        const mapEle = document.getElementById("show-map");
+        let options = {
+            mapTypeId: google.maps.MapTypeId.ROADMAP
+            // center: {lat:40.736436, lng: -73.994061},
+            // zoom: 15,
+            // travelMode: "WALKING"
         }
+        this.map = new google.maps.Map(mapEle, options);
+        this.dirRend.setMap(this.map);
+        this.showRoute(this.dirServ, this.dirRend);
+        debugger;
+    }
 
-        let map = new google.maps.Map(this.refs.map, options);
-        this.dirRend.setMap(map);
-        this.map = map;
+    // initMap() {
+
+    //     let rmSplit = this.props.route.routeMap.split("S%7C")
+    //     let splitAgain = rmSplit[1].split("&")
+    //     let splitLatLng = splitAgain[0].split(",")
+
+    //     const options = {
+    //         // center: { lat: splitLatLng[0].toFloat(), lng: splitLatLng[1].toFloat() },
+    //         center: {lat: 40, lng: 40},
+    //         zoom: 15,
+    //     }
+
+    //     let map = new google.maps.Map(this.refs.map, options);
+    //     this.dirRend.setMap(map);
+    //     this.map = map;
 
         
-        // this.showRoute(this.dirServ, this.dirRend)
-    }
-
-    addMarker(location) {
-        // const marker = new google.maps.Marker({ position: location});
-
-        // marker.setMap(this.map);
-        // this.markers.push(marker);
-
-        // if (this.markers.length > 1) {
-        //     this.markers.forEach(marker => marker.setMap(null));
-        //     this.displayRoute(
-        //         this.markers[0].position,
-        //         this.markersArray[this.markers.length - 1].position,
-        //         this.markers.slice(1, this.markers.length - 1),
-        //         this.dirServ,
-        //         this.dirRend
-        //     )
-        // }
-    }
-
-    // decodeMarkers() {
-    //     debugger;
-    //     let coords = this.props.route.encodedMarkers.split(',').map(Number);
-
-    //     for(let i = 0; i < coords.length; i += 2) {
-    //         let coord = {lat: coords[i], lng: coords[i+1] };
-    //         let marker = new google.maps.Marker({
-    //             position: coord,
-    //             map: this.map,
-    //         });
-
-    //         this.markersArr.push(marker);
-    //     }
+    //     // this.showRoute(this.dirServ, this.dirRend)
     // }
 
-    // showRoute(dirServ, dirRend) {
-    //     let start = this.markersArr[0].position;
-    //     let finish = this.markersArr[this.markersArr.length-1].position;
-    //     let waypoints = []
-    //     for (let i = 1; i < this.markersArr.length - 1; i++) {
-    //         waypoints.push({
-    //             location: this.markersArr[i].position,
-    //             stopover: false,
-    //         });
-    //     }
 
-    //     const request = {
-    //         origin: start,
-    //         waypoints: waypoints,
-    //         destination: finish,
-    //         travelMode: google.maps.DirectionsTravelMode.WALKING,
-    //     }
-    //     this.dirServ.route(request, (response, status) => {
-    //         if (status === "OK") {
-    //             this.dirRend.setDirections(response);
-    //         }
-    //     });
-    // }
+    locationMarkersArr() {
+        debugger;
+        let coords = this.props.route.locationMarkers.split(',').map(Number);
+
+        for(let i = 0; i < coords.length; i += 2) {
+            let coord = {lat: coords[i], lng: coords[i+1] };
+            let marker = new google.maps.Marker({
+                position: coord,
+                map: this.map,
+            });
+
+            this.markersArr.push(marker);
+        }
+        debugger;
+    }
+
+    showRoute(dirServ, dirRend) {
+        debugger;
+        let start = this.markersArr[0].position;
+        let finish = this.markersArr[this.markersArr.length-1].position;
+        let waypoints = []
+        for (let i = 1; i < this.markersArr.length - 1; i++) {
+            waypoints.push({
+                location: this.markersArr[i].position,
+                stopover: false,
+            });
+        }
+
+        const request = {
+            origin: start,
+            waypoints: waypoints,
+            destination: finish,
+            travelMode: google.maps.DirectionsTravelMode.WALKING,
+        }
+        this.dirServ.route(request, (response, status) => {
+            if (status === "OK") {
+                this.dirRend.setDirections(response);
+            }
+        });
+    }
 
     handleClick() {
         // debugger;
         this.props.deleteRoute(this.props.route.id)
-        this.props.history.push('/routes/my_routes')
+        .then(this.props.history.push('/routes/my_routes'));
     }
 
     render () {
 
-        const routeMapCopy = this.props.route.routeMap;
-        const rMSplit = routeMapCopy.split("75");
-        const rMJoin1 = `${rMSplit[0]}1320${rMSplit[1]}780${rMSplit[2]}`;
-        let newRouteMap = rMJoin1.slice(0,-1).concat("5");
+        // const routeMapCopy = this.props.route.routeMap;
+        // const rMSplit = routeMapCopy.split("75");
+        // const rMJoin1 = `${rMSplit[0]}1320${rMSplit[1]}780${rMSplit[2]}`;
+        // let newRouteMap = rMJoin1.slice(0,-1).concat("5");
         
         
 
@@ -198,8 +189,11 @@ class RouteShow extends React.Component {
                         </div>
                     </div>
                     <div id="route-show-map">
-                        {/* <SmallMap /> */}
-                        <img className="route-show-map" src={newRouteMap} />
+                        {/* <SmallMap 
+                            route={this.props.route}
+                            locations={Object.values(this.props.locations)}
+                        /> */}
+                        {/* <img className="route-show-map" src={newRouteMap} /> */}
                         <div id="show-map" ref="map"></div>
                     </div>
                     <div id="route-show-buttons">

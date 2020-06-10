@@ -1,5 +1,6 @@
 import React from 'react';
 import RouteNavContainer from '../../nav/route_nav_container';
+import SmallMapContainer from '../route_map/small_map_container';
 
 class RouteMap extends React.Component {
     constructor(props) {
@@ -17,6 +18,7 @@ class RouteMap extends React.Component {
             // locationArr: [], save: false
             // elevations: 0,
             // snapToRoads: true,
+            coordArr: [],
         }
 
         this.cDate = {}
@@ -101,9 +103,12 @@ class RouteMap extends React.Component {
     }
     addMarker(coords) {
         debugger;
-        let marker = new google.maps.Marker({
-            position: coords,
-            map: this.map
+        // let marker = new google.maps.Marker({
+        //     position: coords,
+        //     map: this.map
+        // })
+        const marker = new google.maps.Marker({
+            position: coords
         })
         // if(props.iconImage) {
         //     marker.setIcon(props.iconImage);
@@ -274,6 +279,16 @@ class RouteMap extends React.Component {
             });
         }
 
+        this.setState({
+            coordArr: this.markers.map((marker, idx) => {
+                return ({
+                    latitude: marker.position.lat(),
+                    longitude: marker.position.lng(),
+                    order: idx
+                })
+            })
+        })
+
         const request = {
             origin: start,
             waypoints: waypoints,
@@ -398,7 +413,20 @@ class RouteMap extends React.Component {
             [field]: e.target.value })
     };
 
-    
+
+    locationMarkers() {
+        
+        let markersStr = "";
+        this.state.coordArr.forEach(coordinate => {
+            debugger;
+            let lat = coordinate.latitude;
+            let lng = coordinate.longitude;
+
+            markersStr += `${lat},${lng},`;
+        });
+        debugger;
+        return markersStr.slice(0, -1);
+    }
 
     newRouteParams() {
         
@@ -415,6 +443,8 @@ class RouteMap extends React.Component {
             distance: this.state.distance,
             city: this.state.city,
             route_map: this.state.route_map,
+            location_markers: this.locationMarkers(),
+            // location_ids: this.state.coordArr,
             // locationsArr: this.markers,
         }
     }
@@ -430,8 +460,6 @@ class RouteMap extends React.Component {
     
     }
 
-
-
     saveRoute(e) {
         e.preventDefault();  
         const that = this;      
@@ -442,8 +470,9 @@ class RouteMap extends React.Component {
             debugger;
             this.props.createRoute(this.newRouteParams())
             // .then(res => {
-            //     this.markers.forEach(coordinate => {
-            //         this.props.createLocation({
+            //     debugger;
+            //     that.state.coordArr.forEach(coordinate => {
+            //         that.props.createLocation({
             //             route_id: res.route.id,
             //             order: coordinate.order,
             //             latitude: coordinate.latitude,
@@ -452,7 +481,7 @@ class RouteMap extends React.Component {
             //     })
             //     return res;
             // }).then(res => this.props.history.push(`/routes/my_routes`));
-
+            // })
 
                 // .then(this.props.history.push(`/routes/view/${this.props.route.id}`))
                 .then(this.props.history.push('/routes/my_routes'));
@@ -585,6 +614,9 @@ class RouteMap extends React.Component {
                         </div>
                         
                     </div>
+                    {/* <SmallMapContainer 
+                        routeData={this.state}
+                    /> */}
                     
                     {/* userRoutes */}
                 </div>
