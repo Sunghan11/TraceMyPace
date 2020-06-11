@@ -13,6 +13,16 @@
     height: 42px;
 }
 
+#mydashboard-top {
+    font-family: 'Heebo', sans-serif;
+}
+
+#dash-routes span {
+    font-size: 25px;
+    font-weight: 500;
+    // font-weight: bold;
+}
+
 .dash-nav-container {
     border-right: 1px solid #d3d2d1;
     border-top:1px solid #d3d2d1;
@@ -175,4 +185,73 @@
     padding-bottom: 20px;
 }
 
+.dash-map {
+    width: 135px;
+    height: 135px;
+}
 
+#dash-route-box {
+    position: relative;
+    width: 138px;
+    height: 135px;
+}
+
+#dash-routes-index {
+    display: flex;
+    padding: 10px 0px;
+    justify-content: space-between;
+}
+
+#dash-route-box-content {
+    display: flex;
+    flex-direction: column;
+    box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.4);
+    width: 112px;
+    height: 40px;
+    font-size: 0;
+    padding: 2px 4px;
+    background-color: rgba(255,255,255,.9);
+    position: absolute;
+    bottom: 4px;
+}
+
+#dash-route-box-content div {
+    // padding: 2px 4px;
+    display:inline-block;
+    font-size: 13px;
+    // margin:0;
+    // padding:0;
+    overflow:hidden;
+    word-break: break-all;
+    text-overflow: ellipsis;
+    height: 18px;
+   
+}
+
+#two {
+    font-weight: 500;
+}
+
+#one {
+    overflow: hidden;
+     text-overflow: ellipsis;
+}
+
+#dash-routes-title {
+    display: flex;
+    justify-content: space-between;
+    width: 620px;
+}
+
+#dash-routes-title a {
+    text-decoration: none;
+    background: #EDEDED;
+    color: #2F98D9;
+    border: none;
+    // border: 1px solid grey;
+    padding: 4px 10px;
+    border-radius: 5px;
+    font-size: 13px;
+    vertical-align: baseline;
+    margin: 0px 5px 0px 0px;
+}

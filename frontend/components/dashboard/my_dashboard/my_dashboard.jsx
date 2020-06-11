@@ -27,7 +27,8 @@ class MyDashboard extends React.Component {
         debugger;
         // if(this.props.currentUser.id === this.props.route.user_id)
         const routes = Object.values(this.props.routes);
-        // const currentUser = Object.values(this.props.currentUser)[0];
+        const currentUser = Object.values(this.props.currentUser)[0];
+        const routesArr = [];
         routes.map(route=> {
             if (route.userId === this.props.currentUser.id) {
                 this.totalDistance += route.distance;
@@ -64,9 +65,40 @@ class MyDashboard extends React.Component {
                             <span>completed</span>
                         </div>
                     </div>
+                    <br />
+                    <br />
                     <div id="my-dashboard-recent-routes">
-                        <div>
-                            <h2>RECENT ROUTES</h2>
+                        <div id="dash-routes">
+                            <div id="dash-routes-title">
+                                <span>RECENT ROUTES</span>
+                                <div>
+                                <Link to={`/routes/my_routes`}>View All
+                                </Link>
+                                </div>
+                            </div>
+                            <div className="line"></div>
+                            <div id="dash-routes-index">
+                                {routes.slice(0).reverse().map(route => {
+                                    debugger;
+                                    if (route.userId === currentUser && routesArr.length < 4) 
+
+                                    routesArr.push(route);
+                                })}
+                                
+                                {routesArr.map(route => {
+                                    
+                                    return <div id="dash-route-box"> 
+                                        <Link to={`/routes/view/${route.id}`}>
+                                            <img className="dash-map" src={route.routeMap} />
+                                        </Link>
+                                        <div id="dash-route-box-content">
+                                            <div>{route.name}</div>
+                                            <div id="two">{route.distance} mi</div>
+                                        </div>
+                                    </div>
+                                }
+                                )}
+                            </div>
                         </div>
                         <div>
                             <img src=""/>

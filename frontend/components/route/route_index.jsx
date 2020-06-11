@@ -70,7 +70,7 @@ class RouteIndex extends React.Component {
                             </tr>
                         </thead>
                         <tbody>
-                            {routes.map(route => {
+                            {routes.slice(0).reverse().map(route => {
                                 debugger;
                                 if (route.userId === currentUser.id)
                                 return <RouteIndexItem

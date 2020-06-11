@@ -78,7 +78,7 @@ class MyHome extends React.Component {
                                             </div>
                                             <br />
                                             <div id="total-distance">
-                                                <div>{this.totalDistance}</div>
+                                                <div>{this.totalDistance.toFixed(2)}</div>
                                                 <div id="total-miles">
                                                     <span>TOTAL</span>
                                                     <span>MILES</span>

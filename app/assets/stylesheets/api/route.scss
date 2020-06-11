@@ -342,12 +342,22 @@
     display: flex;
 }
 
-#route-delete-button {
-    background: rgb(182, 182, 182);
-    color: black;
-    border: none;
-    border: 1px solid grey;
-    padding: 10px 5px;
-    cursor: pointer;
-
+.route-tag a {
+    text-decoration: none;
+    color: #2457ff;
 }
+
+#route-delete-button {
+    background: #EDEDED;
+    color: #2F98D9;
+    border: none;
+    // border: 1px solid grey;
+    padding: 4px 10px;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+.route-tag a {
+    cursor: pointer;
+}
+
