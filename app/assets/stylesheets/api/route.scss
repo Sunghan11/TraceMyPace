@@ -337,3 +337,17 @@
     height: 785px;
     width: 100vw;
 }
+
+#route-show-buttons {
+    display: flex;
+}
+
+#route-delete-button {
+    background: rgb(182, 182, 182);
+    color: black;
+    border: none;
+    border: 1px solid grey;
+    padding: 10px 5px;
+    cursor: pointer;
+
+}

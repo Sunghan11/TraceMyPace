@@ -16,7 +16,8 @@ export const createRoute = (route) => (
     $.ajax({
         method: 'POST',
         url: 'api/routes',
-        data: {route}
+        data: {route},
+        error: err => console.log(err),
     })
 );
 
@@ -24,7 +25,8 @@ export const updateRoute = (route) => (
     $.ajax({
         method: 'PATCH',
         url: `api/routes/${route.id}`,
-        data: {route}
+        data: {route},
+        error: err => console.log(err),
     })
 );
 

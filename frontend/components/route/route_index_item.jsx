@@ -98,7 +98,7 @@ class RouteIndexItem extends React.Component {
                 </td>
                 <td className="route-tag" id="route-tag-delete">
                     <a onClick={this.showModal}>
-                        <span><button>Delete</button></span>
+                        <span><button id="route-delete-button">DELETE</button></span>
                     </a>
                     <DeleteModal
                         show={this.state.modalOpen}

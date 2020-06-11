@@ -65,7 +65,7 @@ class RouteIndex extends React.Component {
                                 <th>Distance</th>
                                 <th>Name</th>
                                 <th>City</th>
-                                <th>Edit</th>
+                                <th>Privacy</th>
                                 <th>Options</th>
                             </tr>
                         </thead>

@@ -10,6 +10,9 @@ import RouteShowContainer from './route/route_show_container';
 import Splash from './splash/splash';
 import {AuthRoute, ProtectedRoute} from '../util/route_util';
 import ActivityFeedContainer from './dashboard/activity_feed/activity_feed_container';
+import Challenge from './dashboard/challenges';
+import UserNavContainer from './nav/user_nav_container';
+import Footer from './footer/footer';
 
 
 const App = () => (
@@ -32,6 +35,9 @@ const App = () => (
                 <ProtectedRoute exact path="/my_home/my_home/user_dashboard" component={MyHomeContainer} />                
                 <ProtectedRoute exact path="/routes/my_routes" component={RouteIndexContainer} />
                 <ProtectedRoute exact path="/routes/view/:routeId" component={RouteShowContainer} />
+                <ProtectedRoute path="/challenges" component={UserNavContainer} />
+                <ProtectedRoute exact path="/challenges" component={Challenge} />
+                <ProtectedRoute exact path="/challenges" component={Footer} />
 
             {/* </Switch>
         </div> */}

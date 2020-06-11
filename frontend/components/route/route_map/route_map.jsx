@@ -155,7 +155,7 @@ class RouteMap extends React.Component {
             this.setState({city: formCity});
             this.map.setCenter(results[0].geometry.location);
             //google api to set map distance view
-            this.map.setZoom(13);
+            this.map.setZoom(15);
         })
     };
 
@@ -461,48 +461,32 @@ class RouteMap extends React.Component {
     }
 
     saveRoute(e) {
-        e.preventDefault();  
-        const that = this;      
+        e.preventDefault();     
         debugger;
         
-        // if (this.markers.length > 1) {
-            this.createdDate();
-            debugger;
-            this.props.createRoute(this.newRouteParams())
-            // .then(res => {
-            //     debugger;
-            //     that.state.coordArr.forEach(coordinate => {
-            //         that.props.createLocation({
-            //             route_id: res.route.id,
-            //             order: coordinate.order,
-            //             latitude: coordinate.latitude,
-            //             longitude: coordinate.longitude
-            //         })
-            //     })
-            //     return res;
-            // }).then(res => this.props.history.push(`/routes/my_routes`));
-            // })
+        this.createdDate();
+        debugger;
+            if (this.markers.length > 1) {
+                this.props.createRoute(this.newRouteParams())
+                    // .then(action => 
+                    // //     console.log();
+                    // // });
+                    //     this.props.history.push(`/routes/view/${action.route.id}`)
+                    // )
+                // } else {
+
+                // }
 
                 // .then(this.props.history.push(`/routes/view/${this.props.route.id}`))
                 .then(this.props.history.push('/routes/my_routes'));
- 
+                
         // } else {
         //     alert('Invalid Route. Please choose at least 2 waypoints.');
         // }
-        // e.preventDefault();
-        // debugger;
-        // this.props.createRoute({
-        //     name: this.state.name,
-        //     user_id: this.props.currentUser.id,
-        //     activity: this.state.activity,
-        //     route_map: this.state.polyline,
-        //     distance: this.state.distance,
-        //     city: this.getCity,
-        // })
-        // debugger;
         // // // .then(data => this.props.history.push(`/routes/view/${data.route.id}`))
 
         // this.props.history.push('/routes/my_routes')
+        }
     }
 
 
