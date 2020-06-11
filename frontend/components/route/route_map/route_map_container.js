@@ -11,12 +11,13 @@ const msp = state => ({
     errors: state.errors.routes,
 });
 
-const mdp = dispatch => ({
-    createRoute: route => dispatch(createRoute(route)),
-    fetchRoute: () => dispatch(fetchRoutes()),
+const mdp = dispatch => {
+    return {
+        createRoute: route => dispatch(createRoute(route)),
+        fetchRoutes: () => dispatch(fetchRoutes()),
     // createLocation: location => dispatch(createLocation(location)),
     // fetchLocations: () => dispatch(fetchLocations())
-
-});
+    }
+};
 
 export default connect(msp, mdp)(RouteMap)

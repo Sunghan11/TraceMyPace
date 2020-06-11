@@ -21,9 +21,9 @@ class RouteIndex extends React.Component {
         // this.props.fetchLocations()
     }
 
-    componentWillMount() {
-        this.props.fetchRoutes();
-    }
+    // componentWillMount() {
+    //     this.props.fetchRoutes();
+    // }
 
     updateRoute() {
         this.props.history.push(`routes/edit/${this.props.route.id}`)

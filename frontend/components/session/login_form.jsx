@@ -16,7 +16,7 @@ class LogInForm extends React.Component {
         this.handleSubmit = this.handleSubmit.bind(this);
         this.handleDemoLogin = this.handleDemoLogin.bind(this);
         // this.props.errors = [];
-        this.errors ={};
+        // this.errors ={};
     }
 
 
@@ -29,6 +29,7 @@ class LogInForm extends React.Component {
     };
 
     componentDidMount() {
+        this.props.fetchRoutes();
         return this.props.removeErrors();
     };
 
@@ -45,33 +46,34 @@ class LogInForm extends React.Component {
     }
 
 
-    // renderError(message) {
-    //     let allErrors = this.props.errors.concat(this.state.errors)
-    //     if (allErrors.includes(message)) {
-    //         if (message === "Email can't be blank") {
-    //             return (
-    //                 <div>
-    //                     <span>Email is required.</span>
-    //                 </div>
-    //             )
-    //         } else if (message === "Incorrect username or password. Please try again") {
-    //             // debugger;
-    //             if (this.state.password.length > 0) {
-    //                 return (
-    //                     <div>
-    //                         <span>Incorrect username or password. Please try again.</span>
-    //                     </div>
-    //                 )
-    //             } else {
-    //                 return (
-    //                     <div>
-    //                         <span>Password is required.</span>
-    //                     </div>
-    //                 )
-    //             }
-    //         }
-    //     }
-    // }
+    renderError(message) {
+        debugger;
+        let allErrors = this.props.errors.concat(this.state.errors)
+        if (allErrors.includes(message)) {
+            if (message === "Email can't be blank") {
+                return (
+                    <div>
+                        <span>Email is required.</span>
+                    </div>
+                )
+            } else if (message === "Incorrect username or password. Please try again.") {
+                // debugger;
+                if (this.state.password.length > 0) {
+                    return (
+                        <div>
+                            <span>Incorrect username or password. Please try again.</span>
+                        </div>
+                    )
+                } else {
+                    return (
+                        <div>
+                            <span>Password is required.</span>
+                        </div>
+                    )
+                }
+            }
+        }
+    }
     renderErrors() {
         // debugger;
         
@@ -130,7 +132,9 @@ class LogInForm extends React.Component {
                                 type="text"
                                 placeholder="Email" />
                         </div>
-
+                            {/* <div className="errors">{this.renderError("Email can't be blank")}</div> */}
+                            {/* <div className="errors">{this.renderError("Email has already been taken")}</div> */}
+                        
                         <div className="form-group">
                             <label className="control-label"></label>
                             <input className="input-group"
@@ -139,6 +143,7 @@ class LogInForm extends React.Component {
                                 type="password"
                                 placeholder="Password" />
                         </div>
+                            {/* <div className="errors">{this.renderError("Incorrect username or password. Please try again")}</div> */}
                         
                         <div className="form-group">
                         <span className="forgot-password">Please do not forget your password</span>

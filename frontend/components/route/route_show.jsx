@@ -174,6 +174,7 @@ class RouteShow extends React.Component {
             <>
                 <UserNavContainer/>
                 <br/>
+                <br/>
                 <div className="route-show-main">
 
                     <div className="route-show-info">

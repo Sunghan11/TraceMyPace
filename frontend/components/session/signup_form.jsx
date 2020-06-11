@@ -36,6 +36,9 @@ class SignUpForm extends React.Component {
 
     }
 
+    componentDidMount() {
+        this.props.fetchRoutes()
+    }
 
     handleDemoLogin() {
         // debugger;
@@ -192,7 +195,7 @@ class SignUpForm extends React.Component {
             <div className="signup-page">
                 <div className="signup-form">
                     <form onSubmit={this.handleSubmit}>
-                        {this.renderErrors()}
+                        {/* {this.renderErrors()} */}
                     {/* <div className="errors">{this.renderErrors()}</div> */}
                     <Link className="login-link" to="/login">LOG IN</Link>
                     <br/>
@@ -215,7 +218,7 @@ class SignUpForm extends React.Component {
                                 type="text"
                                 placeholder="First Name" />
                         </div>
-                            {/* <div className="errors">{this.renderError("First name can't be blank")}</div> */}
+                            <div className="errors">{this.renderError("First name can't be blank")}</div>
 
                         <div className="form-group">
                             <label className="control-label"></label>
@@ -225,7 +228,7 @@ class SignUpForm extends React.Component {
                                 type="text"
                                 placeholder="Last Name" />
                         </div>
-                            {/* <div className="errors">{this.renderError("Last name can't be blank")}</div> */}
+                            <div className="errors">{this.renderError("Last name can't be blank")}</div>
 
                         <div className="form-group">
                             <label className="control-label"></label>
@@ -235,8 +238,8 @@ class SignUpForm extends React.Component {
                                 type="text"
                                 placeholder="Email" />
                         </div>
-                            {/* <div className="errors">{this.renderError("Email can't be blank")}</div> */}
-                            {/* <div className="errors">{this.renderError("Email has already been taken")}</div> */}
+                            <div className="errors">{this.renderError("Email can't be blank")}</div> 
+                            <div className="errors">{this.renderError("Email has already been taken")}</div>
 
                         <div className="form-group">
                             <label className="control-label"></label>
@@ -246,7 +249,7 @@ class SignUpForm extends React.Component {
                                 type="password"
                                 placeholder="Password" />
                         </div>
-                            {/* <div className="errors">{this.renderError("Password is too short (minimum is 6 characters)")}</div> */}
+                            <div className="errors">{this.renderError("Password is too short (minimum is 6 characters)")}</div>
 
 
 
@@ -281,7 +284,7 @@ class SignUpForm extends React.Component {
                                 </div>
                             </div>
                                 
-                                {/* <div className="errors">{this.renderError()}</div> */}
+                                <div className="errors">{this.renderError()}</div>
 
                         </div>
 
@@ -310,7 +313,7 @@ class SignUpForm extends React.Component {
                                         <div>✔</div>
                                     </label>
                                 </div>
-                                {/* <div className="errors">{this.renderError("Gender is not included in the list")}</div> */}
+                                <div className="errors">{this.renderError("Gender is not included in the list")}</div>
                         </div>
 
                         <div className="form-group">

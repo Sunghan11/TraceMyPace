@@ -467,26 +467,24 @@ class RouteMap extends React.Component {
         this.createdDate();
         debugger;
             if (this.markers.length > 1) {
-                this.props.createRoute(this.newRouteParams())
-                    // .then(action => 
-                    // //     console.log();
-                    // // });
-                    //     this.props.history.push(`/routes/view/${action.route.id}`)
-                    // )
+                this.props.createRoute(this.newRouteParams()).then(action => {
+                    //     console.log();
+                    // });
+                        this.props.history.push(`/routes/view/${action.route.id}`)
+                })
                 // } else {
 
                 // }
 
                 // .then(this.props.history.push(`/routes/view/${this.props.route.id}`))
-                .then(this.props.history.push('/routes/my_routes'));
+                // .then(this.props.history.push('/routes/my_routes'));
                 
-        // } else {
-        //     alert('Invalid Route. Please choose at least 2 waypoints.');
-        // }
+        } else {
+            alert('Invalid Route. Please choose at least 2 waypoints.');
+        }
         // // // .then(data => this.props.history.push(`/routes/view/${data.route.id}`))
 
         // this.props.history.push('/routes/my_routes')
-        }
     }
 
 
