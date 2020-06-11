@@ -18,7 +18,7 @@ class RouteIndex extends React.Component {
 
     componentDidMount() {
         this.props.fetchRoutes()
-        this.props.fetchLocations()
+        // this.props.fetchLocations()
     }
 
     componentWillMount() {

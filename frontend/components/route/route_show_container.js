@@ -2,7 +2,7 @@ import {connect} from 'react-redux';
 import RouteShow from './route_show';
 import {fetchRoute, deleteRoute} from '../../actions/route_actions'
 import {fetchUser} from '../../actions/session_actions';
-import {fetchLocations } from "../../actions/location_actions";
+// import {fetchLocations } from "../../actions/location_actions";
 
 const msp = (state, ownProps) => {
     const route = state.entities.routes[ownProps.match.params.routeId];

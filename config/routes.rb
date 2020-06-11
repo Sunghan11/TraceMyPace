@@ -9,7 +9,7 @@ Rails.application.routes.draw do
     end
     resource :session, only: [:create, :destroy]
     resources :routes, only: [:create, :show, :index, :update, :destroy]
-    resources :locations, only: [:create, :show, :index, :update, :destroy]
+    # resources :locations, only: [:create, :show, :index, :update, :destroy]
     resources :comments, only: [:create, :show, :index, :destroy]
     resources :statuses, only: [:create, :show, :index, :destroy] do
       resources :comments, only: [:index]
