@@ -5,15 +5,28 @@ import Footer from '../footer/footer';
 import DashboardContainer from '../dashboard/dashboard_container';
 import UserNavContainer from '../nav/user_nav_container'
 import {NavLink} from 'react-router-dom';
-import MyDashboard from '../dashboard/my_dashboard/my_dashboard';
+import MyDashboardContainer from '../dashboard/my_dashboard/my_dashboard_container';
 
 class MyHome extends React.Component {
     constructor(props) {    
         super(props);
-        // debugger
+        debugger
+
+        this.totalDistance = 0;
     }
+
+    // componentDidMount() {
+    //     this.props.fetchRoutes();
+    // }
+
     
     render () {
+        debugger;
+        const routes = Object.values(this.props.routes);
+
+        routes.forEach((route) => {
+            this.totalDistance += route.distance
+        })
 
         return (
 
@@ -48,7 +61,10 @@ class MyHome extends React.Component {
                     </div>
                     <div id="dash-bottom-half">
                         <div id="left-main-dash">
-                            <MyDashboard />
+                            <MyDashboardContainer 
+                                // routes={routes}
+                                // totalDistance={this.totalDistance}
+                            />
                         </div>
                         <div id="right-main-dash">
                             <div id="dash-right-section">
@@ -62,7 +78,7 @@ class MyHome extends React.Component {
                                             </div>
                                             <br />
                                             <div id="total-distance">
-                                                <div>0</div>
+                                                <div>{this.totalDistance}</div>
                                                 <div id="total-miles">
                                                     <span>TOTAL</span>
                                                     <span>MILES</span>

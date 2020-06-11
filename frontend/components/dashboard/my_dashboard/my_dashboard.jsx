@@ -1,13 +1,41 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
+import { logoutCurrentUser } from '../../../actions/session_actions';
 
 class MyDashboard extends React.Component {
     constructor(props) {
         super(props);
+        this.totalDistance = 0;
+        this.totalRoutes = 0;
+    }
+
+    milesToAvgTime(miles) {
+        const min = miles * 12;
+        const hr = Math.floor(min / 60);
+        
+        const newMin = Math.floor(min % 60);
+        if (hr < 10) {
+            return `0${hr}:${newMin}`
+        } else {
+            return `${hr}:${newMin}`
+        }
     }
 
 
+
     render() {
+        debugger;
+        // if(this.props.currentUser.id === this.props.route.user_id)
+        const routes = Object.values(this.props.routes);
+        // const currentUser = Object.values(this.props.currentUser)[0];
+        routes.map(route=> {
+            if (route.userId === this.props.currentUser.id) {
+                this.totalDistance += route.distance;
+                this.totalRoutes += 1;
+                debugger;
+            }
+        });
+
 
         return (
             <>
@@ -15,22 +43,24 @@ class MyDashboard extends React.Component {
                     <div className="my-dashboard-headings">
                         <div id="my-dashboard-headings-distance">
                             <span>DISTANCE</span>
-                            <div>25.5</div>
+                            <div>{this.totalDistance.toFixed(2)}</div>
                             <span>miles</span>
                         </div>
                         <div id="my-dashboard-headings-distance">
                             <span>DURATION</span>
-                            <div>05:48</div>
+                            <div>{
+                                this.milesToAvgTime(this.totalDistance)
+                            }</div>
                             <span>hours</span>
                         </div>
                         <div id="my-dashboard-headings-distance">
                             <span>STEPS</span>
-                            <div>3348.8</div>
+                            <div>{Math.floor(this.totalDistance * 2210)}</div>
                             <span>TAKEN</span>
                         </div>
                         <div id="my-dashboard-headings-distance">
-                            <span>WORKOUTS</span>
-                            <div>5.0</div>
+                            <span>ROUTES</span>
+                            <div>{this.totalRoutes}</div>
                             <span>completed</span>
                         </div>
                     </div>
