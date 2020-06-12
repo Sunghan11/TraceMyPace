@@ -34,13 +34,13 @@ class ActivityFeed extends React.Component {
                                 <div className="dash-nav-container"
                                     id="dash-nav-box">ACTIVITY FEED</div>
                             </NavLink>
-                            <NavLink to="my_home/user_dashboard" activeClassName="active">
+                            <NavLink to="/my_home/user_dashboard" activeClassName="active">
                                 <div className="dash-nav-container"
                                     id="dash-nav-dashboard">MY DASHBOARD</div>
                             </NavLink>
-                            <NavLink to="my_home/24" activeClassName="active">
+                            <NavLink to="/my_home/my_workouts" activeClassName="active">
                                 <div className="dash-nav-container"
-                                    id="dash-nav-dashfriends">MY FRIENDS</div>
+                                    id="dash-nav-dashfriends">MY WORKOUTS</div>
                             </NavLink>
                         </div>
                     </div>

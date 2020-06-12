@@ -13,6 +13,9 @@ import ActivityFeedContainer from './dashboard/activity_feed/activity_feed_conta
 import Challenge from './dashboard/challenges';
 import UserNavContainer from './nav/user_nav_container';
 import Footer from './footer/footer';
+import MyWorkout from './dashboard/my_workout';
+import Workout from './workout';
+import Goal from './goal';
 
 
 const App = () => (
@@ -32,12 +35,13 @@ const App = () => (
                 {/* <ProtectedRoute exact path="/my_home" component={MyHomeContainer} /> */}
                 <ProtectedRoute exact path="/my_home/activity_feed" component={ActivityFeedContainer} />
                 <ProtectedRoute exact path="/my_home/user_dashboard" component={MyHomeContainer} />                
-                <ProtectedRoute exact path="/my_home/my_home/user_dashboard" component={MyHomeContainer} />                
+                {/* <ProtectedRoute exact path="/my_home/my_home/user_dashboard" component={MyHomeContainer} />                 */}
                 <ProtectedRoute exact path="/routes/my_routes" component={RouteIndexContainer} />
                 <ProtectedRoute exact path="/routes/view/:routeId" component={RouteShowContainer} />
-                <ProtectedRoute path="/challenges" component={UserNavContainer} />
                 <ProtectedRoute exact path="/challenges" component={Challenge} />
-                <ProtectedRoute exact path="/challenges" component={Footer} />
+                <ProtectedRoute exact path="/my_home/my_workouts" component={MyWorkout} />
+                <ProtectedRoute exact path="/workouts" component={Workout} />
+                <ProtectedRoute exact path="/goals" component={Goal} />
 
             {/* </Switch>
         </div> */}
