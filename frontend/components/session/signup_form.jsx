@@ -37,7 +37,7 @@ class SignUpForm extends React.Component {
     }
 
     componentDidMount() {
-        this.props.fetchRoutes()
+        // return this.props.fetchRoutes()
     }
 
     handleDemoLogin() {
@@ -67,6 +67,7 @@ class SignUpForm extends React.Component {
     }
 
     componentDidMount(){
+        this.props.fetchRoutes();
      return this.props.removeErrors();
     }
 

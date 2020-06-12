@@ -4,7 +4,7 @@ import { receiveErrors } from './session_actions';
 export const RECEIVE_ROUTES = "RECEIVE_ROUTES";
 export const RECEIVE_ROUTE = "RECEIVE_ROUTE";
 export const REMOVE_ROUTE = "REMOVE_ROUTE";
-export const RECEIVE_ERRORS = "RECEIVE_ERRORS";
+export const RECEIVE_ROUTE_ERRORS = "RECEIVE_ROUTE_ERRORS";
 
 export const receiveRoutes = (routes) => ({
     type: RECEIVE_ROUTES,
@@ -22,7 +22,7 @@ export const removeRoute = (routeId) => ({
 });
 
 export const receiveRouteErrors = (errors) => ({
-    type: RECEIVE_ERRORS,
+    type: RECEIVE_ROUTE_ERRORS,
     errors
 });
 
@@ -37,8 +37,6 @@ export const fetchRoute = (routeId) => dispatch => (
     .then(route => dispatch(receiveRoute(route))
     , err => dispatch(receiveRouteErrors(err.responseJSON))
 ));
-
-
 
 export const createRoute = route => dispatch => (
     APIUtil.createRoute(route).then(route => dispatch(receiveRoute(route))

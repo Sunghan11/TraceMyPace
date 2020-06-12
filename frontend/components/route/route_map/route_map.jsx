@@ -49,8 +49,7 @@ class RouteMap extends React.Component {
     }
     componentDidMount() {
         this.initMap();
-        
-
+        return this.props.removeErrors();
     }
 
     setCurrentPosition(map) {
@@ -428,6 +427,26 @@ class RouteMap extends React.Component {
         return markersStr.slice(0, -1);
     }
 
+    renderError(message) {
+        debugger;
+        let allErrors = this.props.errors.concat(this.state.errors)
+        if (allErrors.includes(message)) {
+            if (message === "Name can't be blank") {
+                return (
+                    <div>
+                        <span>Name is required.</span>
+                    </div>
+                )
+            } else if (message === "Activity can't be blank") {
+                return (
+                    <div>
+                        <span>Activity is required.</span>
+                    </div>
+                )
+            }
+        }
+    }
+
     newRouteParams() {
         
 
@@ -460,6 +479,17 @@ class RouteMap extends React.Component {
     
     }
 
+    renderErrors() {
+        debugger;
+        return (
+            <ul className="display-errors">
+                {this.props.errors.map((error, i) => (
+                    <li key={`error-${i}`}> {error}</li>
+                ))}
+            </ul>
+        );
+    }
+
     saveRoute(e) {
         e.preventDefault();     
         debugger;
@@ -490,6 +520,9 @@ class RouteMap extends React.Component {
 
     render() {
         
+        const errors = this.props.errors
+        debugger;
+
         const ACTIVITIES = ["Choose an Actitivity",
             "Walk", "Winter Sport/Activity", "Bike Ride", "Swim",
             "Run", "Sport/ Other Activity", "Hike"
@@ -505,6 +538,7 @@ class RouteMap extends React.Component {
                         <div className="routes-title-1">
                             {/* <h2 className="routes-title-1-1">MY ROUTES</h2> */}
                             <form id="search-bar" onSubmit={this.updateCenter}>
+                                {/* <div className="errors">{this.renderErrors()}</div> */}
                                 <label id="search-label">Choose a map location
                                     <div>
                                         <input
@@ -532,6 +566,7 @@ class RouteMap extends React.Component {
                                     />
                                     <span>*</span>
                                 </div>
+                                <div className="errors">{this.renderError("Name can't be blank")}</div>
                                 <div id="route-details-2">
                                     <select value={this.state.activity}
                                         className="optA"
@@ -541,6 +576,7 @@ class RouteMap extends React.Component {
                                     </select>
                                     <span>*</span>
                                 </div>
+                                <div className="errors">{this.renderError("Activity can't be blank")}</div>
                                 {/* <div id="route-created-date">
                                     <input id="create-date"
                                         type="button"

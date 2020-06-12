@@ -4,9 +4,10 @@ import { signup, login, removeErrors } from '../../actions/session_actions';
 import SignUpForm from './signup_form';
 import {fetchRoutes} from '../../actions/route_actions';
 
-const msp = ({ errors }) => {
+const msp = state => {
+    debugger;
     return {
-        errors: errors.session,
+        errors: state.errors.session,
         formType: "Sign Up",
         demoUser: {
             email: "testUser@gmail.com",
