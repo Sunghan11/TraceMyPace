@@ -151,19 +151,19 @@ class RouteShow extends React.Component {
         let activity;
 
         if (route.activity === "Walk") {
-            activity = <p><i class="fas fa-walking"></i> {route.activity}</p>
+            activity = <p><i className="fas fa-walking"></i> {route.activity}</p>
         } else if (route.activity === "Winter Sport/Activity") {
-            activity = <p><i class="fas fa-skiing"></i> {route.activity}</p>
+            activity = <p><i className="fas fa-skiing"></i> {route.activity}</p>
         } else if (route.activity === "Bike Ride") {
-            activity = <p><i class="fas fa-biking"></i> {route.activity}</p>
+            activity = <p><i className="fas fa-biking"></i> {route.activity}</p>
         } else if (route.activity === "Swim") {
-            activity = <p><i class="fas fa-swimmer"></i> {route.activity}</p>
+            activity = <p><i className="fas fa-swimmer"></i> {route.activity}</p>
         } else if (route.activity === "Run") {
-            activity = <p><i class="fas fa-running"></i> {route.activity}</p>
+            activity = <p><i className="fas fa-running"></i> {route.activity}</p>
         } else if (route.activity === "Hike") {
-            activity = <p><i class="fas fa-hiking"></i> {route.activity}</p>
+            activity = <p><i className="fas fa-hiking"></i> {route.activity}</p>
         } else if (route.activity === "Sport/ Other Activity") {
-            activity = <p><i class="fas fa-skating"></i> {route.activity}</p>
+            activity = <p><i className="fas fa-skating"></i> {route.activity}</p>
         }
         debugger;
         // if (!this.props.route) {
@@ -184,7 +184,7 @@ class RouteShow extends React.Component {
                                 {activity}
                                 <p><i className="fas fa-map-marker-alt"></i>   {route.city}</p>
                                 <p><i className="fas fa-route"></i>   {route.distance} MI</p>
-                                <p><i class="fas fa-shoe-prints"></i> {steps} STEPS</p>
+                                <p><i className="fas fa-shoe-prints"></i> {steps} STEPS</p>
                             </div>
                             <div id="route-show-name">{route.name}</div>
                         </div>

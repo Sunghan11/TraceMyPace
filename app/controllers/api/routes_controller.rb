@@ -2,7 +2,7 @@ class Api::RoutesController < ApplicationController
 
     def index
         @routes = Route.all
-        render :index
+        # render :index
     end
 
     def show

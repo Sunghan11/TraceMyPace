@@ -25,7 +25,9 @@ class MyHome extends React.Component {
         const routes = Object.values(this.props.routes);
 
         routes.forEach((route) => {
-            this.totalDistance += route.distance
+            if (route.userId === this.props.currentUser.id) {
+                this.totalDistance += route.distance
+            }
         })
 
         return (

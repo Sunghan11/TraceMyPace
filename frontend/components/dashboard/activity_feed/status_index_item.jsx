@@ -72,7 +72,7 @@ class StatusIndexItem extends React.Component {
                             </div>
                             
                             <div id="status-createdAt">
-                                <i class="fas fa-globe-americas"></i> |
+                                <i className="fas fa-globe-americas"></i> |
                                 <div id="status-date">
                                  {this.creationDate}
                                 </div>
