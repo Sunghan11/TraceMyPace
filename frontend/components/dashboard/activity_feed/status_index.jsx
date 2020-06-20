@@ -4,13 +4,22 @@ import StatusContainer from './status_container';
 
 
 class StatusIndex extends React.Component {
+    constructor(props) {
+        super(props);
+
+
+        this.totalDistance = 0;
+    }
 
     componentDidMount() {
         this.props.fetchStatuses();
+        this.props.fetchRoutes();
         // this.props.fetchComments();
     }
 
     render() {
+
+
         debugger;
         return (
             <div className="status-index-container">

@@ -7,6 +7,7 @@ const msp = state => {
     debugger;
     return {
     comments: Object.values(state.entities.comments),
+    routes: Object.values(state.entities.routes),
     currentUser: state.entities.users[state.session.id],
     users: state.entities.users
 }};
