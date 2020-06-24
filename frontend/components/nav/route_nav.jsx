@@ -16,7 +16,7 @@ const RouteNav = ({ logout }) => (
             </Link>
             {/* {currentUser.first_name} */}
             <ul className="home-nav-links">
-                <li>Training</li>
+                {/* <li>Training</li> */}
                 <div className="home-nav-create">
                     Routes
                             <ul className="home-nav-create-opt">

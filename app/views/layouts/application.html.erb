@@ -11,6 +11,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@900&display=swap" rel="stylesheet">
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
+    <%= favicon_link_tag asset_path('favicon.ico') %>
     <%= javascript_include_tag "https://maps.googleapis.com/maps/api/js?key=#{Rails.application.credentials.google[:api_key]}&libraries=geometry,directions,places,visualization,drawing  "%>
     
     <script src="https://kit.fontawesome.com/d344ed52f8.js" crossorigin="anonymous"></script>     
@@ -37,6 +38,7 @@
       window.challenge = "<%= image_url('challengepic.png') %>";
       window.googleAPIKey = "<%= Rails.application.credentials.google[:api_key] %>";
     </script>
+    
 
 
 
