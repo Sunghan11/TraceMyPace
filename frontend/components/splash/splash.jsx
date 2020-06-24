@@ -62,7 +62,7 @@ class Splash extends React.Component {
                                         and cadence, plus get personalzied
                                         coaching tips along the way.
                                     </p>
-                                <a href="https://www.underarmour.com/en-us/hovr/g/33yb?cid=MMF%7CREF%7CMMFitness%7CSite%7Chome_page%7CHOVR"><button className="splash-smartshoes-button">LEARN MORE</button></a>
+                                <a target="_blank" href="https://www.underarmour.com/en-us/hovr/g/33yb?cid=MMF%7CREF%7CMMFitness%7CSite%7Chome_page%7CHOVR"><button className="splash-smartshoes-button">LEARN MORE</button></a>
                             </div>
                             <div className="ua-picture-container">
                                 <img src={window.UAHoverapp}/>
