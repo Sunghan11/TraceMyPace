@@ -24,27 +24,27 @@ const Footer = () => {
                 </div>
                 <div id="footer-second-bar">
                     <div id="footer-social">
-                            <h4><a href="https://sunghan11.github.io/">Portfolio</a></h4>
+                            <h4><a target="_blank" href="https://sunghan11.github.io/">Portfolio</a></h4>
                     </div>
 
                     <div id="footer-help">
-                            <h4><a href="https://www.linkedin.com/in/elijah-nam-6a412b25/">LinkedIn</a></h4>
+                            <h4><a target="_blank" href="https://www.linkedin.com/in/elijah-nam-6a412b25/">LinkedIn</a></h4>
                     </div>
 
                     <div id="footer-about">
-                            <h4><a href="https://angel.co/u/elijah-nam">AngelList</a></h4>
+                            <h4><a target="_blank" href="https://angel.co/u/elijah-nam">AngelList</a></h4>
                     </div>
                     <div id="footer-about">
-                            <h4><a href="https://github.com/Sunghan11">Github</a></h4>
+                            <h4><a target="_blank" href="https://github.com/Sunghan11">Github</a></h4>
                     </div>
 
                     <div id="footer-community">
                         <h4>UA FITNESS COMMUNITY</h4>
                         <ul>
-                                <li><a href="https://itunes.apple.com/us/app/record-by-under-armour-connects/id895425891?mt=8"><button><img src={window.UArecordURL} /></button></a></li>
-                                <li><a href="https://itunes.apple.com/us/app/running-walking-biking-endomondo/id333210180?mt=8"><button><img src={window.UAgreenURL} /></button></a></li>
-                                <li><a href="https://itunes.apple.com/us/app/calorie-counter-diet-tracker/id341232718?mt=8"><button><img src={window.UAfitnessURL} /></button></a></li>
-                            <li><a href="https://itunes.apple.com/us/app/map-my-fitness-gps-workout/id298903147?mt=8"><button><img src={window.UAmmfURL} /></button></a></li>
+                                <li><a target="_blank" href="https://itunes.apple.com/us/app/record-by-under-armour-connects/id895425891?mt=8"><button><img src={window.UArecordURL} /></button></a></li>
+                                <li><a target="_blank" href="https://itunes.apple.com/us/app/running-walking-biking-endomondo/id333210180?mt=8"><button><img src={window.UAgreenURL} /></button></a></li>
+                                <li><a target="_blank" href="https://itunes.apple.com/us/app/calorie-counter-diet-tracker/id341232718?mt=8"><button><img src={window.UAfitnessURL} /></button></a></li>
+                                <li><a target="_blank" href="https://itunes.apple.com/us/app/map-my-fitness-gps-workout/id298903147?mt=8"><button><img src={window.UAmmfURL} /></button></a></li>
                         </ul>
                     </div>
 
