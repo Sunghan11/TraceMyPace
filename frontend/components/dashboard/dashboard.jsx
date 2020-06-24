@@ -65,18 +65,18 @@ class DashNav extends React.Component {
                         <div id="dash-ua">
                             <div id="dash-ua-shop">
                                 <span id="dash-ua-shop-top">GET THE LATEST GEAR</span>
-                                <a href="https://www.underarmour.com/en-us/?cid=MMF|REF|MMRun|Site">
+                                <a target="_blank" href="https://www.underarmour.com/en-us/?cid=MMF|REF|MMRun|Site">
                                     <i className="fas fa-shopping-cart fa-4x"></i>
                                 </a>
-                                <a href="https://www.underarmour.com/en-us/?cid=MMF|REF|MMRun|Site">Shop UnderArmour.com</a>
+                                <a target="_blank" href="https://www.underarmour.com/en-us/?cid=MMF|REF|MMRun|Site">Shop UnderArmour.com</a>
                             </div>
                             <div id="dash-me">
                                 <span id="dash-me-github">FOLLOW ME ON GITHUB</span>
                                 <div>
-                                    <a href="https://github.com/Sunghan11">
+                                    <a target="_blank" href="https://github.com/Sunghan11">
                                         <i className="fab fa-github-square fa-5x"></i>
                                     </a>
-                                    <a href="https://github.com/Sunghan11">GitHub</a>
+                                    <a target="_blank" href="https://github.com/Sunghan11">GitHub</a>
                                 </div>
 
                             </div>
