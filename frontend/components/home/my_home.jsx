@@ -89,8 +89,8 @@ class MyHome extends React.Component {
                                         </div>
                                     </div>
                                     <div id="profile-edit">
-                                        <span>Edit Profile</span>
-                                        <span>Find Friends</span>
+                                        {/* <span>Edit Profile</span>
+                                        <span>Find Friends</span> */}
                                     </div>
                                 </div>
                             </div>

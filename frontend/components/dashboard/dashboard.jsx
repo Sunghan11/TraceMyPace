@@ -1,6 +1,6 @@
 import React from 'react';
 import {Link, NavLink} from 'react-router-dom';
-import MyDashboard from './my_dashboard/my_dashboard';
+import MyDashboardContainer from './my_dashboard/my_dashboard_container';
 
 class DashNav extends React.Component {
     constructor(props) {
@@ -34,7 +34,7 @@ class DashNav extends React.Component {
                 </div>
                 <div id="dash-bottom-half">
                     <div id="left-main-dash">
-                        <MyDashboard />
+                        <MyDashboardContainer />
                     </div>
                     <div id="right-main-dash">
                         <div id="dash-right-section">
@@ -57,8 +57,8 @@ class DashNav extends React.Component {
                                     </div>
                                 </div>
                                 <div id="profile-edit">
-                                    <span>Edit Profile</span>
-                                    <span>Find Friends</span>
+                                    {/* <span>Edit Profile</span>
+                                    <span>Find Friends</span> */}
                                 </div>
                             </div>
                         </div>
