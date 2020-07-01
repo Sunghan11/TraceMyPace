@@ -17,7 +17,7 @@ function SessionNav() {
                     {/* <li><Link to="/signup">Training</Link></li> */}
                     <li><Link to="/signup">Routes</Link></li>
                     <li><Link to="/signup">Challenges</Link></li>
-                    <li><a href="https://www.underarmour.com/en-us/hovr/g/33yb?cid=MMF%7CREF%7CMMFitness%7CSite%7Chome_page%7CHOVR">UA Shop</a></li>
+                    {/* <li><a href="https://www.underarmour.com/en-us/hovr/g/33yb?cid=MMF%7CREF%7CMMFitness%7CSite%7Chome_page%7CHOVR">UA Shop</a></li> */}
                 </ul>
 
             </nav>

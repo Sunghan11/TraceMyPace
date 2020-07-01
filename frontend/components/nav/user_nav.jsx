@@ -27,7 +27,7 @@ const UserNav = ({logout}) => (
                 <div>
                     <Link to="/challenges">Challenges</Link>
                 </div>
-                <div><a href="https://www.underarmour.com/en-us/hovr/g/33yb?cid=MMF%7CREF%7CMMFitness%7CSite%7Chome_page%7CHOVR">UA Shop</a></div>
+                {/* <div><a href="https://www.underarmour.com/en-us/hovr/g/33yb?cid=MMF%7CREF%7CMMFitness%7CSite%7Chome_page%7CHOVR">UA Shop</a></div> */}
             </ul>
 
             <div className="home-nav-profile">
