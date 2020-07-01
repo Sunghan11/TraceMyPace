@@ -76,12 +76,20 @@ class ActivityFeed extends React.Component {
                                 </div>
                             </div>
                             <div id="dash-ua">
-                                <div id="dash-ua-shop">
+                                {/* <div id="dash-ua-shop">
                                     <span id="dash-ua-shop-top">GET THE LATEST GEAR</span>
                                     <a target="_blank" href="https://www.underarmour.com/en-us/?cid=MMF|REF|MMRun|Site">
                                         <i className="fas fa-shopping-cart fa-4x"></i>
                                     </a>
                                     <a target="_blank" href="https://www.underarmour.com/en-us/?cid=MMF|REF|MMRun|Site">Shop UnderArmour.com</a>
+                                </div> */}
+
+                                <div id="dash-ua-shop">
+                                    <span id="dash-ua-shop-top">LINK UP WITH ME</span>
+                                    <a target="_blank" href="https://www.linkedin.com/in/elijah-nam-6a412b25/">
+                                        <i className="fab fa-linkedin fa-4x"></i>
+                                    </a>
+                                    <a target="_blank" href="https://sunghan11.github.io/">My Portfolio</a>
                                 </div>
                                 <div id="dash-me">
                                     <span id="dash-me-github">FOLLOW ME ON GITHUB</span>

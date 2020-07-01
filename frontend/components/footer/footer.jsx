@@ -53,14 +53,14 @@ const Footer = () => {
             </div> 
             <div id="footer-third-bar">
                 <div id="UA-logo-img">
-                    <img src={window.UAfullLogoURL} />
+                    <img src={window.logoBlack} />
                 </div>
                     {/* <div> */}
                         {/* <ul> */}
                             {/* <div id="footnotes"> */}
                                 {/* <ul> */}
                                     <p>
-                                        Giving Credit for external Links to UA Store to © 2020 Under Armour®, Inc.  
+                                        © 2020 TRACEMYPACE®, Inc.  
                                     </p>
                                     {/* <li><a href="https://account.underarmour.com/privacy">Privacy Policy</a></li>
                                     <li><a href="https://account.underarmour.com/terms-and-conditions">Terms of Use</a></li>

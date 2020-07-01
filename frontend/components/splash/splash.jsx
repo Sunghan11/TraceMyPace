@@ -53,7 +53,7 @@ class Splash extends React.Component {
                             <div className="splash-second">
                                 <hr align="left" />
                                 <h2 className="heading2" align="left">
-                                SYNCS WITH UNDER ARMOUR SMART SHOES
+                                GETTING DATA ON THE GO
                                 </h2>
                                 <hr align="left" />
                                 <div className="mid-description"></div>
@@ -62,7 +62,7 @@ class Splash extends React.Component {
                                         and cadence, plus get personalzied
                                         coaching tips along the way.
                                     </p>
-                                <a target="_blank" href="https://www.underarmour.com/en-us/hovr/g/33yb?cid=MMF%7CREF%7CMMFitness%7CSite%7Chome_page%7CHOVR"><button className="splash-smartshoes-button">LEARN MORE</button></a>
+                                {/* <a target="_blank" href="https://www.underarmour.com/en-us/hovr/g/33yb?cid=MMF%7CREF%7CMMFitness%7CSite%7Chome_page%7CHOVR"><button className="splash-smartshoes-button">LEARN MORE</button></a> */}
                             </div>
                             <div className="ua-picture-container">
                                 <img src={window.UAHoverapp}/>
