@@ -38,7 +38,7 @@ const Footer = () => {
                             <h4><a target="_blank" href="https://github.com/Sunghan11">Github</a></h4>
                     </div>
 
-                    <div id="footer-community">
+                    {/* <div id="footer-community">
                         <h4>UA FITNESS COMMUNITY</h4>
                         <ul>
                                 <li><a target="_blank" href="https://itunes.apple.com/us/app/record-by-under-armour-connects/id895425891?mt=8"><button><img src={window.UArecordURL} /></button></a></li>
@@ -46,7 +46,7 @@ const Footer = () => {
                                 <li><a target="_blank" href="https://itunes.apple.com/us/app/calorie-counter-diet-tracker/id341232718?mt=8"><button><img src={window.UAfitnessURL} /></button></a></li>
                                 <li><a target="_blank" href="https://itunes.apple.com/us/app/map-my-fitness-gps-workout/id298903147?mt=8"><button><img src={window.UAmmfURL} /></button></a></li>
                         </ul>
-                    </div>
+                    </div> */}
 
                 </div>
             </div>
