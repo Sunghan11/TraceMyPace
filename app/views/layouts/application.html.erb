@@ -14,10 +14,12 @@
     <%= favicon_link_tag asset_path('favicon.ico') %>
     <%= javascript_include_tag "https://maps.googleapis.com/maps/api/js?key=#{Rails.application.credentials.google[:api_key]}&libraries=geometry,directions,places,visualization,drawing  "%>
     
-    <meta property='og:image' content="http://tracemypace.herokuapp.com/#// tracemypacesplash.jpg"/>
     <script src="https://kit.fontawesome.com/d344ed52f8.js" crossorigin="anonymous"></script>     
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
-
+    <meta property='og:title' content="TraceMyPace"/>
+    <meta property='og:image' content="<%= image_url('tracemypacesplash.jpg') %>"/>
+    <meta property='og:description' content="A clone of the popular running App built using JavaScript, Ruby on Rails, React/Redux, and PostgreSQL"/>
+    <meta property='og:url' content="https://tracemypace.herokuapp.com/#/" />
 
     <script type="text/javascript">
       window.logoURL = "<%= image_url('logo.png') %>";
