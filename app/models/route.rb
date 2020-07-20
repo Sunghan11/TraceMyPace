@@ -6,6 +6,10 @@ class Route < ApplicationRecord
         foreign_key: :user_id,
         class_name: :User
 
+    has_many :workouts,
+        foreign_key: :route_id,
+        class_name: :Workout
+
     # has_many :locations,
     #     foreign_key: :route_id,
     #     class_name: :Location,
