@@ -27,6 +27,7 @@ class WorkoutIndexItem extends React.Component {
     }
 
     render() {
+        debugger;
         if(!this.props.workout) return null;
         let deleteButton;
         if (this.props.user.id === this.props.workout.userId) {

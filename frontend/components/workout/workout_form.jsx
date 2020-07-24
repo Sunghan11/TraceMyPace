@@ -143,7 +143,7 @@ class Workout extends React.Component {
                                                 value={route.id}
                                                 placeholder="Select...">
                                                 {/* style={<img className='workout-map' src={route.routeMap} />}> */}
-                                                    {route.name} 
+                                                    {route.name} {route.distance} mi
                                                     {/* <div id="workout-route-select">
                                                         <div id="workout-route-select-name">
                                                             {route.name}
@@ -160,6 +160,15 @@ class Workout extends React.Component {
                                     </select>
                                     {/* <img src={window.downArrow} /> */}
                                 </label>
+
+                                {/* <div className="workout-form-save"> */}
+                                    <button 
+                                        className="workout-form-save-button"
+                                        type="submit"
+                                        value="SAVE">SAVE</button>
+
+                                {/* </div> */}
+
                             </form>
                         </div>
                     </div>

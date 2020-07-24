@@ -53,7 +53,7 @@ const UserNav = ({logout}) => (
                     <Link className="shortcuts-1" to="/routes/create">Create Route</Link>
                 </div>
                 <div>
-                    <Link className="shortcuts-1" to="/workouts">Log Workout</Link>
+                    <Link className="shortcuts-1" to="/workouts/create">Log Workout</Link>
                 </div>
                 <div>
                     <Link className="shortcuts-1" to="/goals">Create a Goal</Link>
