@@ -3,10 +3,13 @@ import Workout from './workout_form';
 import { createWorkout } from '../../actions/workout_actions';
 import { fetchRoutes } from '../../actions/route_actions'
 
-const msp = state => ({
-    user: state.entities.users[state.session.id],
+const msp = state => {
+    debugger;
+    return {
+    currentUser: state.entities.users[state.session.id],
     routes: state.entities.routes
-})
+    }
+}
 
 const mdp = dispatch => ({
     createWorkout: workout => dispatch(createWorkout(workout)),

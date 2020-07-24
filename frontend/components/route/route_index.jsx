@@ -75,7 +75,7 @@ class RouteIndex extends React.Component {
                                 if (route.userId === currentUser.id)
                                 return <RouteIndexItem
                                     route={route}
-                                    key={route.id}
+                                    key={`route-${route.id}`}
                                     deleteRoute={this.props.deleteRoute} />
                             })}
                             {/* {this.props.routes.map( route => {

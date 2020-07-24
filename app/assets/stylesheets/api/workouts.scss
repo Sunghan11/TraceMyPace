@@ -1,0 +1,103 @@
+#workout-log-create-page {
+    max-width: 960px;
+    width: 100vw;
+    padding: 20px 0 85px 0;
+    margin: 0 auto;
+}
+
+#workout-form {
+    padding: 0px 8px;
+    max-width: 650px;
+    font-size: 16px;
+    font-family: 'Heebo', sans-serif;
+}
+
+#workout-title span {
+    font-size: 32px;
+    font-family: 'Heebo', sans-serif;
+}
+
+#workout-heading {
+    display: flex;
+    // line-height: 60px;
+}
+
+#workout-heading i {
+    color: #0076C0;
+    font-size: 27px;
+    display: block;
+    height: 60px;
+    width: 70px;
+    border-radius: 40px;
+    border: 3px solid #0076C0;
+    line-height: 60px;
+    text-align: center;
+}
+
+#workout-heading span {
+    padding-left: 20px;
+    padding-top: 8px;
+}
+
+#workout-form-body form {
+    margin-top: 20px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    max-width: 610px;
+    max-height: 420px;
+    width: 100vw;
+    height: 100vh;
+    background-color: #f8f8f8;
+    border: 1px solid #d9d9d9;
+}
+
+#workout-form-body img {
+    width: 10px;
+    height: 10px;
+}
+
+#workout-form-body input {
+    background-color: white;
+    padding: 12px 16px;
+}
+
+.workout-map img {
+    width: 45px;
+    height: 45px;
+}
+
+#workout-form-body select {
+    padding: 12px 0px 12px 0px;
+}
+
+#workout-form-name input {
+    width: 250px;
+}
+
+#workout-form-date input {
+    width: 210px;
+}
+
+#workout-form-gear select {
+    width: 350px;
+}
+
+#workout-form-description textarea {
+    width: 575px;
+    height: 75px;
+    padding: 12px 16px;
+    overflow: auto;
+    word-break: break-word;
+    resize: both;
+}
+
+#workout-form-route select {
+    width: 350px;
+}
+
+#workout-form-body1 {
+    display: flex;
+    justify-content: space-between;
+}

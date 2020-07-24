@@ -29,7 +29,7 @@ class WorkoutIndex extends React.Component {
                     </div>
                     <div id="workout-index-items">
                         {this.props.workouts.slice(0).reverse().map(workout => {
-                        if (workout.authorId === this.props.currentUser.id) {
+                        if (workout.userId === this.props.currentUser.id) {
                             return <WorkoutIndexItem
                                 workout={workout}
                                 user={this.props.currentUser}

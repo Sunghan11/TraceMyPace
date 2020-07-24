@@ -2,6 +2,7 @@ import {RECEIVE_ROUTES, RECEIVE_ROUTE, REMOVE_ROUTE} from '../actions/route_acti
 import RouteShow from '../components/route/route_show';
 
 const routesReducer = (state = {}, action) => {
+    debugger;
     Object.freeze(state);
     let newState = {};
 

@@ -2,6 +2,7 @@ import React from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import UserNavContainer from '../nav/user_nav_container';
 import Footer from '../footer/footer';
+import WorkoutFormContainer from '../workout/workout_form_container';
 
 // const Challenge = () => {
 class MyWorkout extends React.Component {
@@ -31,7 +32,8 @@ class MyWorkout extends React.Component {
                     </div>
                 </div>
                 <div id="coming-soon">
-                    <h2>Coming Soon</h2>
+                    {/* <h2>Coming Soon</h2> */}
+                    <WorkoutFormContainer />
                 </div>
                 <Footer />
             </>

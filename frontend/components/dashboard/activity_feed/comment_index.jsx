@@ -20,7 +20,7 @@ class CommentIndex extends React.Component {
                             return <CommentIndexItem
                                 comment={comment}
                                 user={this.props.currentUser}
-                                key={comment.id}
+                                key={`comment-${comment.id}`}
                                 deleteComment={this.props.deleteComment}
                             />
 

@@ -572,7 +572,7 @@ class RouteMap extends React.Component {
                                         className="optA"
                                         onChange={this.update("activity")}>
                                         {ACTIVITIES.map(activity =>
-                                            <option key={activity} value={activity}>{activity}</option>)}
+                                            <option key={`activity-${activity}`} value={activity}>{activity}</option>)}
                                     </select>
                                     <span>*</span>
                                 </div>
