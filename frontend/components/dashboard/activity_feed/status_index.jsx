@@ -42,7 +42,7 @@ class StatusIndex extends React.Component {
                                 status={status}
                                 
                                 user={this.props.currentUser}
-                                key={status.id}
+                                key={`status-${status.id}`}
                                 deleteStatus={this.props.deleteStatus}
                             />
                         }
