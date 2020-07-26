@@ -35,13 +35,13 @@ export const fetchWorkout = workoutId => dispatch => (
     APIUtil.fetchWorkout(workoutId)
         .then(workout => dispatch(receiveWorkout(workout))
     ), err => dispatch(receiveWorkoutErrors(err.responseJSON))
-)
+);
 
 export const createWorkout = workout => dispatch => (
     APIUtil.createWorkout(workout)
         .then(workout => dispatch(receiveWorkout(workout))
     ), err => dispatch(receiveWorkoutErrors(err.responseJSON))
-)
+);
 
 export const deleteWorkout = workoutId => dispatch => (
     APIUtil.deleteWorkout(workoutId)

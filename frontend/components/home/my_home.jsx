@@ -55,7 +55,7 @@ class MyHome extends React.Component {
                                 <div className="dash-nav-container"
                                     id="dash-nav-dashboard">MY DASHBOARD</div>
                             </NavLink>
-                            <NavLink to="/my_home/my_workouts" activeClassName="active">
+                            <NavLink to="/workouts" activeClassName="active">
                                 <div className="dash-nav-container"
                                     id="dash-nav-dashfriends">MY WORKOUTS</div>
                             </NavLink>

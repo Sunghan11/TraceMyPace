@@ -7,7 +7,9 @@ class WorkoutIndexItem extends React.Component {
         this.state = {
             // visible: false
         }
+        debugger;
 
+        this.route = "";
         this.creationDate = "";
         this.deleteWorkout = this.deleteWorkout.bind(this);
     }
@@ -38,6 +40,13 @@ class WorkoutIndexItem extends React.Component {
             deleteButton = ""
         }
 
+        this.props.routes.map(route => {
+            if (route.id == this.props.workout.routeId) {
+                this.route = route;
+            }
+        });
+        debugger;
+
         return (
             <>
                 <div className="workout-index-item-container">
@@ -47,7 +56,7 @@ class WorkoutIndexItem extends React.Component {
                     <div id="workout-index-info">
                         <div id="workout-index-info-distance">
                             <span>DISTANCE</span>
-                            <span></span>
+                            <span>{this.route.distance} MI</span>
                         </div>
                     </div>
                 </div>

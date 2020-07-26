@@ -39,7 +39,7 @@ const App = () => (
                 <ProtectedRoute exact path="/routes/my_routes" component={RouteIndexContainer} />
                 <ProtectedRoute exact path="/routes/view/:routeId" component={RouteShowContainer} />
                 <ProtectedRoute exact path="/challenges" component={Challenge} />
-                <ProtectedRoute exact path="/my_home/my_workouts" component={MyWorkout} />
+                <ProtectedRoute exact path="/workouts" component={MyWorkout} />
                 <ProtectedRoute exact path="/workouts/create" component={Workout} />
                 <ProtectedRoute exact path="/goals" component={Goal} />
 

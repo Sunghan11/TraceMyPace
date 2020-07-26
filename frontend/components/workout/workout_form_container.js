@@ -1,11 +1,13 @@
 import { connect } from 'react-redux';
-import Workout from './workout_form';
-import { createWorkout } from '../../actions/workout_actions';
-import { fetchRoutes } from '../../actions/route_actions'
+import WorkoutForm from './workout_form';
+import { createWorkout, fetchWorkouts } from '../../actions/workout_actions';
+import { fetchRoutes } from '../../actions/route_actions';
+import { removeErrors } from '../../actions/error_actions';
 
 const msp = state => {
     debugger;
     return {
+    errors: state.errors.workout,
     currentUser: state.entities.users[state.session.id],
     routes: state.entities.routes
     }
@@ -13,7 +15,9 @@ const msp = state => {
 
 const mdp = dispatch => ({
     createWorkout: workout => dispatch(createWorkout(workout)),
-    fetchRoutes: () => dispatch(fetchRoutes())
+    fetchWorkouts: () => dispatch(fetchWorkouts()),
+    fetchRoutes: () => dispatch(fetchRoutes()),
+    removeErrors: () => dispatch(removeErrors())
 })
 
-export default connect(msp, mdp)(Workout);
+export default connect(msp, mdp)(WorkoutForm);

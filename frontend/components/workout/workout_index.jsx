@@ -9,11 +9,17 @@ class WorkoutIndex extends React.Component {
 
     componentDidMount() {
         this.props.fetchWorkouts();
+        this.props.fetchRoutes();
+    }
+
+    componentWillMount() {
+        this.props.fetchRoutes();
     }
 
     render() {
         debugger;
-        let currentUser = this.props.currentUser
+        let currentUser = this.props.currentUser;
+        const routes = Object.values(this.props.routes);
 
         return (
             <>
@@ -35,6 +41,7 @@ class WorkoutIndex extends React.Component {
                             return <WorkoutIndexItem
                                 workout={workout}
                                 user={this.props.currentUser}
+                                routes={routes}
                                 key={`workout-${workout.id}`}
                                 deleteWorkout={this.props.deleteWorkout}
                             />

@@ -1,8 +1,8 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, withRouter } from 'react-router-dom';
 
 
-class Workout extends React.Component {
+class WorkoutForm extends React.Component {
     constructor(props) {
         debugger;
         super(props)
@@ -13,18 +13,24 @@ class Workout extends React.Component {
             description: '',
             user_id: props.currentUser.id,
             route_id: '',
-
-
         }
 
         this.handleSubmit = this.handleSubmit.bind(this);
     }
 
     update(field) {
+        debugger;
         return e => (
             this.setState({ [field]: e.target.value })
         )
     };
+
+    // update2(field1, field2) {
+    //     return e => (
+    //         this.setState({ [field1]: e.target.value }),
+    //         this.setState({ [field2]: e.target.value })
+    //     )
+    // };
 
     componentDidMount() {
         this.props.fetchRoutes();
@@ -37,17 +43,20 @@ class Workout extends React.Component {
 
 
     handleSubmit(e) {
+        debugger;
         e.preventDefault();
         this.props.createWorkout({
             name: this.state.name,
             date: this.state.date,
             description: this.state.description,
             user_id: this.state.user_id,
-            route_id: this.state.route_id,
+            // route_id: this.state.route_id.slice(0,2),
+            // route: this.state.route
+            route: this.state.route_id
 
         })
-        this.props.history.push('./workouts');
-    }
+        this.props.history.push('/workouts')
+    };
 
     renderErrors() {
         return (
@@ -160,6 +169,8 @@ class Workout extends React.Component {
                                     </select>
                                     {/* <img src={window.downArrow} /> */}
                                 </label>
+                                {/* <input id="workout-form-save-button" type="submit" value="SAVE"/> */}
+
 
                                 {/* <div className="workout-form-save"> */}
                                     <button 
@@ -179,4 +190,4 @@ class Workout extends React.Component {
     }
 }
 
-export default Workout;
+export default withRouter(WorkoutForm);
