@@ -50,12 +50,11 @@ class WorkoutForm extends React.Component {
             date: this.state.date,
             description: this.state.description,
             user_id: this.state.user_id,
+            route_id: this.state.route_id
             // route_id: this.state.route_id.slice(0,2),
             // route: this.state.route
-            route: this.state.route_id
 
-        })
-        this.props.history.push('/workouts')
+        }).then(this.props.history.push('/workouts'));
     };
 
     renderErrors() {

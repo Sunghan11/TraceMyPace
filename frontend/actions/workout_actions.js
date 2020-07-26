@@ -28,23 +28,22 @@ export const receiveWorkoutErrors = errors => ({
 export const fetchWorkouts = () => dispatch => (
     APIUtil.fetchWorkouts()
         .then(workouts => dispatch(receiveWorkouts(workouts))
-    ), err => dispatch(receiveWorkoutErrors(err.responseJSON))
-);
+    , err => dispatch(receiveWorkoutErrors(err.responseJSON))
+));
 
 export const fetchWorkout = workoutId => dispatch => (
     APIUtil.fetchWorkout(workoutId)
         .then(workout => dispatch(receiveWorkout(workout))
-    ), err => dispatch(receiveWorkoutErrors(err.responseJSON))
-);
+    , err => dispatch(receiveWorkoutErrors(err.responseJSON))
+));
 
-export const createWorkout = workout => dispatch => (
-    APIUtil.createWorkout(workout)
-        .then(workout => dispatch(receiveWorkout(workout))
-    ), err => dispatch(receiveWorkoutErrors(err.responseJSON))
-);
+export const createRoute = route => dispatch => (
+    APIUtil.createRoute(route).then(route => dispatch(receiveRoute(route))
+        , err => dispatch(receiveRouteErrors(err.responseJSON))
+    ));
 
 export const deleteWorkout = workoutId => dispatch => (
     APIUtil.deleteWorkout(workoutId)
         .then(() => dispatch(removeWorkout(workoutId))
-    ), err => dispatch(receiveWorkoutErrors(err.responseJSON))
-)
+    , err => dispatch(receiveWorkoutErrors(err.responseJSON))
+));
