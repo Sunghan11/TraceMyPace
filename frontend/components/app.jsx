@@ -14,6 +14,7 @@ import Challenge from './dashboard/challenges';
 import UserNavContainer from './nav/user_nav_container';
 import Footer from './footer/footer';
 import MyWorkout from './dashboard/my_workout';
+import WorkoutShowContainer from './workout/workout_show_container';
 import Workout from './workout';
 import Goal from './goal';
 
@@ -42,6 +43,7 @@ const App = () => (
                 <ProtectedRoute exact path="/workouts" component={MyWorkout} />
                 <ProtectedRoute exact path="/workouts/create" component={Workout} />
                 <ProtectedRoute exact path="/goals" component={Goal} />
+                <ProtectedRoute exact path="/workout/:workoutId" component={WorkoutShowContainer} />
 
             {/* </Switch>
         </div> */}

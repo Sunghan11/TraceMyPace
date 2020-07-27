@@ -1,0 +1,18 @@
+#workout-show-container-top {
+    width: 625px;
+
+}
+
+#workout-show-info {
+    display: flex;
+    text-align: center;
+}
+
+#workout-show-info-tab {
+    display: flex;
+    flex-direction: column;
+    width: 115px;
+    height: 60px;
+    padding: 8px 2px;
+    justify-content: space-between;
+}

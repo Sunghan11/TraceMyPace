@@ -21,7 +21,7 @@
     padding: 12px 15px;
     border-radius: 5px;
     background: #FF8714;
-    border:1 px solid #FF8714;
+    border:1px solid #FF8714;
     box-shadow: 1px, 1px, 1px, 1px, rgba(0,0,0,.4);
     color: #FFFFFF;
     // font-weight: bold;
@@ -60,6 +60,10 @@ tr {
     box-sizing: border-box;
     height: 108px;
     // border: 1px solid #DDDDDD    
+}
+
+thead {
+    height: 45px;
 }
 
 tr:nth-child(odd) {

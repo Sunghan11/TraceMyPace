@@ -24,6 +24,13 @@ const UserNav = ({logout}) => (
                         <li><Link to="/routes/my_routes">My Routes</Link></li>
                     </ul>
                 </div>
+                <div className="home-nav-create">
+                    Workouts
+                    <ul className="home-nav-create-opt">
+                        <li><Link to="/workouts/create">Log Workout</Link></li>
+                        <li><Link to="/workouts">My Workouts</Link></li>
+                    </ul>
+                </div>
                 <div>
                     <Link to="/challenges">Challenges</Link>
                 </div>

@@ -118,3 +118,154 @@
     width:160px;
     height: 40px;
 }
+
+#workout-index-container {
+    max-width: 920px;
+    width: 100vw;
+    padding: 20px;
+}
+
+#workout-index-table {
+    display: flex;
+    justify-content: space-around;
+    font-family: 'Heebo', sans-serif;
+    text-align: center;
+    padding: 0px 0px 10px;
+}
+
+#workout-index-item-table {
+    display: flex;
+    justify-content: space-around;
+    font-family: 'Heebo', sans-serif;
+    text-align: center;
+    
+}
+
+#workout-i-t-1 {
+    padding: 0px 8px;
+    width: 134px;
+}
+
+#workout-i-t-2 {
+    padding: 0px 8px;
+    width: 200px;
+}
+
+#workout-i-t-3 {
+    padding: 0px 8px;
+    width: 134px;
+}
+
+#workout-i-t-4 {
+    padding: 0px 8px;
+    width: 134px;
+}
+
+#workout-i-t-5 {
+    padding: 0px 8px;
+    width: 134px;
+}
+
+#workout-i-it-1 {
+    padding: 0px 8px;
+    width: 134px;
+    line-height: 60px;
+}
+
+#workout-i-it-2 {
+    display: block;
+    padding: 0px 8px;
+    width: 200px;
+    line-height: 60px;
+    text-decoration: none;
+}
+
+#workout-index-activity-link {
+    text-decoration: none;
+    color: blue;
+}
+
+#workout-i-it-3 {
+    padding: 0px 8px;
+    width: 134px;
+    line-height: 60px;
+}
+
+#workout-i-it-4 {
+    padding: 0px 8px;
+    width: 134px;
+    line-height: 60px;
+}
+
+#workout-i-it-5 {
+    padding: 0px 8px;
+    width: 134px;
+    line-height: 60px;
+}
+
+#workout-i-it-5 button {
+    border: none;
+    background-color: #FFFFFF;
+    color: red;
+    cursor: pointer;
+}
+
+.line-workout {
+    border-bottom: solid 1px #d3d6dc;
+    width: 100%;
+}
+
+#workout-header {
+    display: flex;
+    justify-content: space-between;
+    font-family: 'Heebo', sans-serif;
+    font-weight: bold;
+    padding: 12px 0px;
+    font-size: 26px;
+    margin: 0px 0px 25px;
+}
+
+#workout-create-button {
+    color: #FFFFFF;
+    background-color: #16D374;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 16px;
+    font-weight: bold;
+}
+
+#index-workout-items {
+    font-family: 'Heebo', sans-serif;
+    display: flex;
+    justify-content: space-around;
+}
+
+#workout-mid-header {
+    font-family: 'Heebo', sans-serif;
+    display: flex;
+    justify-content: space-evenly;
+    margin: 0px 0px 40px;
+    text-align: center;
+}
+
+#workout-mid-d {
+    display: flex;
+    flex-direction: column;
+}
+
+#w-m-d-1 {
+    font-size: 40px;
+    font-weight: bold;
+}
+
+#w-m-d-2 {
+    margin-top: -15px;
+}
+
+#workout-mid-divider {
+    border-left-style: solid;
+    border-left-color: #d3d6dc;
+    border-left-width: 2px;
+    height: 46px;
+    margin-top: 15px;
+}
