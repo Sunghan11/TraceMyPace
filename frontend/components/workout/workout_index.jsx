@@ -69,7 +69,7 @@ class WorkoutIndex extends React.Component {
                     </div>
                     <div id="workout-mid-header">
                         <div id="workout-mid-d">
-                            <span id="w-m-d-1">{this.totalDistance}</span>
+                            <span id="w-m-d-1">{this.totalDistance.toFixed(2)}</span>
                             <span id="w-m-d-2">Distance (mi)</span>
                         </div>
                         <div id="workout-mid-divider"></div>

@@ -184,3 +184,15 @@
     text-align: right;
     padding: 5px 15px;
 }
+
+#workout-show-info-user-data {
+    width: 150px;
+    border-right: 1px solid #c3c2c2;
+}
+
+#workout-show-info-user-description {
+    display: flex;
+    flex-direction: column;
+    word-wrap: break-word;
+    padding: 2px 7px;
+}

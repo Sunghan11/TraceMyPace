@@ -1,6 +1,6 @@
 class Workout < ApplicationRecord
 
-    validates :name, :date, :description, :gear, presence: true
+    validates :name, :date, :description, presence: true
 
     belongs_to :route,
         foreign_key: :route_id,

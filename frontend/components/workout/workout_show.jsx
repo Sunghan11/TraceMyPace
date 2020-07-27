@@ -257,6 +257,10 @@ class WorkoutShow extends React.Component {
                                 <span>{this.workoutDate}</span>
                                 <span>by {currentUser.first_name.toUpperCase()} {currentUser.last_name.toUpperCase()}</span>
                             </div>
+                            <div id="workout-show-info-user-description">
+                                <span>NOTE</span>
+                                <span>{this.props.workout.description}</span>
+                            </div>
                         </div>
                         <div className="line-workout"></div>
                         <div id="workout-show-delete">

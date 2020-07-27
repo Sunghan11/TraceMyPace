@@ -1,1 +1,1 @@
-json.extract! workout, :id, :name, :date, :description, :user_id, :route_id, :created_at, :gear
+json.extract! workout, :id, :name, :date, :description, :user_id, :route_id, :created_at

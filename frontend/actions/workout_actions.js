@@ -10,7 +10,7 @@ export const receiveWorkouts = workouts => ({
     workouts
 })
 
-export const receiveWorkout = workout => ({
+export const receiveWorkout = (workout) => ({
     type: RECEIVE_WORKOUT,
     workout
 });
@@ -21,7 +21,7 @@ export const removeWorkout = workoutId => ({
 });
 
 export const receiveWorkoutErrors = errors => ({
-    RECEIVE_WORKOUT_ERRORS,
+    type: RECEIVE_WORKOUT_ERRORS,
     errors
 });
 
@@ -37,9 +37,9 @@ export const fetchWorkout = workoutId => dispatch => (
     , err => dispatch(receiveWorkoutErrors(err.responseJSON))
 ));
 
-export const createRoute = route => dispatch => (
-    APIUtil.createRoute(route).then(route => dispatch(receiveRoute(route))
-        , err => dispatch(receiveRouteErrors(err.responseJSON))
+export const createWorkout = workout => dispatch => (
+    APIUtil.createWorkout(workout).then(workout => dispatch(receiveWorkout(workout))
+        , err => dispatch(receiveWorkoutErrors(err.responseJSON))
     ));
 
 export const deleteWorkout = workoutId => dispatch => (

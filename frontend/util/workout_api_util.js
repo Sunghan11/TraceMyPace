@@ -16,7 +16,8 @@ export const createWorkout = workout => (
     $.ajax({
         method: 'POST',
         url: `api/workouts`,
-        data: { workout }
+        data: { workout: workout },
+        error: err => console.log(err),
     })
 );
 
