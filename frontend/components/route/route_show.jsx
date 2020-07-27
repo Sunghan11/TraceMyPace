@@ -22,23 +22,8 @@ class RouteShow extends React.Component {
     }
 
     componentDidMount() {
-        //         const mapEle = document.getElementById("show-map");
-        // let options = {
-        //     center: {lat:40.736436, lng: -73.994061},
-        //     zoom: 15,
-        //     // travelMode: "WALKING"
-        // }
-        // let map = new google.maps.Map(this.refs.map, options);
-        // this.dirRend.setMap(map);
-        // this.showRoute(this.dirServ, this.dirRend);
-        // this.map = map;
-
         debugger;
         this.props.fetchRoute(this.props.match.params.routeId)
-            // .then(action => (
-            //     this.props.fetchUser(action.route.userId)
-            // ));
-        // this.initMap();
     }
 
     componentDidUpdate(prevProps) {
@@ -67,27 +52,6 @@ class RouteShow extends React.Component {
         this.showRoute(this.dirServ, this.dirRend);
         debugger;
     }
-
-    // initMap() {
-
-    //     let rmSplit = this.props.route.routeMap.split("S%7C")
-    //     let splitAgain = rmSplit[1].split("&")
-    //     let splitLatLng = splitAgain[0].split(",")
-
-    //     const options = {
-    //         // center: { lat: splitLatLng[0].toFloat(), lng: splitLatLng[1].toFloat() },
-    //         center: {lat: 40, lng: 40},
-    //         zoom: 15,
-    //     }
-
-    //     let map = new google.maps.Map(this.refs.map, options);
-    //     this.dirRend.setMap(map);
-    //     this.map = map;
-
-        
-    //     // this.showRoute(this.dirServ, this.dirRend)
-    // }
-
 
     locationMarkersArr() {
         debugger;

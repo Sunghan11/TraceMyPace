@@ -9,7 +9,7 @@ class WorkoutForm extends React.Component {
         this.state = {
             name: '',
             date: '',
-            gear_used: 'No Gear',
+            gear: 'No Gear',
             description: '',
             user_id: props.currentUser.id,
             route_id: '',
@@ -50,7 +50,8 @@ class WorkoutForm extends React.Component {
             date: this.state.date,
             description: this.state.description,
             user_id: this.state.user_id,
-            route_id: this.state.route_id
+            route_id: this.state.route_id,
+            // gear: this.state.gear,
             // route_id: this.state.route_id.slice(0,2),
             // route: this.state.route
 
@@ -118,7 +119,7 @@ class WorkoutForm extends React.Component {
                                 <label id="workout-form-gear">
                                     <span>Gear used</span>
                                     <br/>
-                                    <select className="workout-gear" onChange={this.update("gear_used")}>
+                                    <select className="workout-gear" onChange={this.update("gear")}>
                                         {GEARS.map(gear => {
                                             debugger;
                                             return <option key={`gear-${gear}`} value={gear}>{gear}</option>})}
