@@ -20,7 +20,7 @@ class Api::RoutesController < ApplicationController
 
     def edit
         @route = Route.find(params[:id])
-        render json: `/api/routes/#{@route.id}/`
+        render json: `/api/routes/#{@route.id}/edit`
     end
     
     def update

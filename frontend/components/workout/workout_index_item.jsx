@@ -86,7 +86,7 @@ class WorkoutIndexItem extends React.Component {
                 </div> */}
                 <div id="workout-index-item-table">
                     <span id="workout-i-it-1">{this.workoutDate}</span>
-                    <Link id="workout-index-activity-link" to={`/workout/${this.props.workout.id}`}>
+                    <Link id="workout-index-activity-link" to={`/workouts/${this.props.workout.id}`}>
                         <span id="workout-i-it-2">{this.route.activity}</span>
                     </Link>
                     <span id="workout-i-it-3">{this.route.distance}</span>

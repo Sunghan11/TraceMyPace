@@ -2,12 +2,12 @@ class Api::WorkoutsController < ApplicationController
 
     def index
         @workouts = Workout.all
-        render :index
+        # render :index
     end
 
     def show
         @workout = Workout.find(params[:id])
-        render :show
+        # render :show
     end
 
     def create
