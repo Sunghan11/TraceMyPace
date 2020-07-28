@@ -10,7 +10,7 @@ const msp = state => {
     errors: state.errors.workout,
     currentUser: state.entities.users[state.session.id],
     routes: state.entities.routes,
-    // workouts: state.entities.workouts,
+    workouts: state.entities.workouts,
     }
 }
 

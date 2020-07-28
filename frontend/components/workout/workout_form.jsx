@@ -84,7 +84,7 @@ class WorkoutForm extends React.Component {
         const currentUser = this.props.currentUser
         const GEARS = ["No Gear"]
         debugger
-        if (Object.values(this.props.routes).length < 1) {
+        if (Object.values(this.props.workouts).length === undefined) {
             return null;
         }
         debugger;
