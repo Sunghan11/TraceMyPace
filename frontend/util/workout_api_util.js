@@ -12,23 +12,25 @@ export const fetchWorkout = (workoutId) => (
     })
 )
 
-export const createWorkout = (workout) => (
+export const createWorkout = (workout) => {
+    return (
     $.ajax({
         method: 'POST',
         url: `api/workouts`,
         data: { workout: workout },
         error: err => console.log(err),
-    })
-);
+        })
+    )
+};
 
-export const updateWorkout = (workout) => (
-    $.ajax({
-        method: 'PATCH',
-        url: `api/workouts/${workout.id}`,
-        data: { workout },
-        error: err => console.log(err),
-    })
-);
+// export const updateWorkout = (workout) => (
+//     $.ajax({
+//         method: 'PATCH',
+//         url: `api/workouts/${workout.id}`,
+//         data: { workout },
+//         error: err => console.log(err),
+//     })
+// );
 
 export const deleteWorkout = workoutId => (
     $.ajax({

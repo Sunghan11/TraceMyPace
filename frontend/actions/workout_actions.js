@@ -3,14 +3,14 @@ import * as APIUtil from '../util/workout_api_util';
 export const RECEIVE_WORKOUTS = 'RECEIVE_WORKOUTS';
 export const RECEIVE_WORKOUT = 'RECEIVE_WORKOUT';
 export const REMOVE_WORKOUT = 'REMOVE_WORKOUT';
-export const RECEIVE_WORKOUT_ERRORS = "RECEIVE_WORKOUT_ERRORS";
+export const RECEIVE_WORKOUT_ERRORS = 'RECEIVE_WORKOUT_ERRORS';
 
 export const receiveWorkouts = workouts => ({
     type: RECEIVE_WORKOUTS,
     workouts
 })
 
-export const receiveWorkout = (workout) => ({
+export const receiveWorkout = workout => ({
     type: RECEIVE_WORKOUT,
     workout
 });

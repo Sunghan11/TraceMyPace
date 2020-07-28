@@ -21,7 +21,7 @@ export const removeComment = commentId => ({
 });
 
 export const receiveCommentErrors = errors => ({
-    RECEIVE_COMMENT_ERRORS,
+    type: RECEIVE_COMMENT_ERRORS,
     errors
 });
 

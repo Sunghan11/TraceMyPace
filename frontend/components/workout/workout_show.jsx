@@ -29,18 +29,19 @@ class WorkoutShow extends React.Component {
     }
 
     componentDidMount() {
-        this.props.fetchWorkout();
-        this.props.fetchRoutes();
-    }
-
-    componentWillMount() {
-        this.props.fetchRoutes();
-    }
-
-    deleteWorkout() {
         debugger;
-        this.props.deleteWorkout(this.props.workout.id)
+        this.props.fetchWorkout(this.props.match.params.workoutId);
+        this.props.fetchRoutes();
     }
+
+    // componentWillMount() {
+    //     this.props.fetchRoutes();
+    // }
+
+    // deleteWorkout() {
+    //     debugger;
+    //     this.props.deleteWorkout(this.props.workout.id)
+    // }
     
     // createdDate() {
     //     const MONTHS = [
@@ -62,12 +63,13 @@ class WorkoutShow extends React.Component {
 
 
 
-    componentDidUpdate(prevProps) {
+    componentDidUpdate() {
         debugger;
         if (this.route) {
             this.locationMarkersArr();
             this.initMap();
         }
+      
     }
 
     initMap() {
@@ -199,11 +201,11 @@ class WorkoutShow extends React.Component {
                         <Link id="workout-show-header-link" to="/my_home/user_dashboard">
                             <span>Home</span>
                         </Link>
-                        <i class="fas fa-caret-right"></i>
+                        <i className="fas fa-caret-right"></i>
                         <Link id="workout-show-header-link" to="/workouts">
                             <span>My Workouts</span>
                         </Link>
-                        <i class="fas fa-caret-right"></i>
+                        <i className="fas fa-caret-right"></i>
                         <span id="workout-show-header-d">Details</span>
 
                     </div>
@@ -221,7 +223,7 @@ class WorkoutShow extends React.Component {
                                     <i className="fab fa-github-square"></i>
                                 </a>
                                 <a target="_blank" href="https://sunghan11.github.io/">
-                                    <i class="far fa-folder-open"></i>
+                                    <i className="far fa-folder-open"></i>
                                 </a>
                             </div>
                         </div>

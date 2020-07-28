@@ -21,7 +21,7 @@ export const removeStatus = statusId => ({
 });
 
 export const receiveStatusErrors = errors => ({
-    RECEIVE_STATUS_ERRORS,
+    type: RECEIVE_STATUS_ERRORS,
     errors
 });
 

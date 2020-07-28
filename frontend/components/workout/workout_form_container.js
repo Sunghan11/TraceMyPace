@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import WorkoutForm from './workout_form';
-import { createWorkout, fetchWorkouts } from '../../actions/workout_actions';
+import { createWorkout } from '../../actions/workout_actions';
 import { fetchRoutes } from '../../actions/route_actions';
 import { removeErrors } from '../../actions/error_actions';
 
@@ -9,7 +9,8 @@ const msp = state => {
     return {
     errors: state.errors.workout,
     currentUser: state.entities.users[state.session.id],
-    routes: state.entities.routes
+    routes: state.entities.routes,
+    // workouts: state.entities.workouts,
     }
 }
 

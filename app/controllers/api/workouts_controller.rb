@@ -2,12 +2,12 @@ class Api::WorkoutsController < ApplicationController
 
     def index
         @workouts = Workout.all
-        # render :index
+        render :index
     end
 
     def show
         @workout = Workout.find(params[:id])
-        # render :show
+        render :show
     end
 
     def create
@@ -26,7 +26,7 @@ class Api::WorkoutsController < ApplicationController
 
     def update
         if @workout.update(workout_params)
-            render `/api/workouts/show`
+            render :show
         else
             render json: @workout.errors.full_messages, status: 404
         end

@@ -89,7 +89,7 @@ class WorkoutIndex extends React.Component {
                         </div>
                     </div>
                     <div id="workout-index-table">
-                        <span id="workout-i-t-1">DATE</span>
+                        <span id="workout-i-t-1">LOG DATE</span>
                         <span id="workout-i-t-2">ACTIVITY</span>
                         <span id="workout-i-t-3">DISTANCE</span>
                         <span id="workout-i-t-4">DURATION</span>

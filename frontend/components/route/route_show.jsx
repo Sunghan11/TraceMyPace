@@ -23,7 +23,9 @@ class RouteShow extends React.Component {
 
     componentDidMount() {
         debugger;
-        this.props.fetchRoute(this.props.match.params.routeId)
+        if (this.props.workout !== "create") {
+            this.props.fetchRoute(this.props.match.params.routeId)
+        }
     }
 
     componentDidUpdate(prevProps) {

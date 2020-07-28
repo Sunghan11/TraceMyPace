@@ -8,7 +8,7 @@ const errorsReducer = combineReducers({
     session: sessionErrorsReducer,
     location: locationErrorsReducer,
     route: routeErrorsReducer,
-    workout: workoutErrorsReducer
+    workout: workoutErrorsReducer,
 });
 
 export default errorsReducer;

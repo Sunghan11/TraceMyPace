@@ -16,10 +16,11 @@ class WorkoutForm extends React.Component {
         }
 
         this.handleSubmit = this.handleSubmit.bind(this);
+        // this.saveWorkout = this.saveWorkout.bind(this);
     }
 
     update(field) {
-        debugger;
+        // debugger;
         return e => (
             this.setState({ [field]: e.target.value })
         )
@@ -37,9 +38,9 @@ class WorkoutForm extends React.Component {
         // return this.props.removeErrors();
     };
 
-    componentWillMount() {
-        this.props.fetchRoutes();
-    }
+    // componentWillMount() {
+    //     this.props.fetchRoutes();
+    // }
 
 
     handleSubmit(e) {
@@ -58,30 +59,35 @@ class WorkoutForm extends React.Component {
         // }).then(this.props.history.push('/workouts'))
         }).then(action => {
             debugger;
-            this.props.history.push(`/workouts/${action.workout.id}`)
+            this.props.history.push(`/workouts/view/${action.workout.id}`)
         });
     };
 
-    renderErrors() {
-        return (
-            <ul className="display-errors">
-                {this.props.errors.map((error, i) => (
-                    <li key={`error-${i}`}> {error}</li>
-                ))}
-            </ul>
-        );
-    }
+    // renderErrors() {
+    //     debugger;
+    //     return (
+    //         <ul className="display-errors">
+    //             {this.props.errors.map((error, i) => (
+    //                 <li key={`error-${i}`}> {error}</li>
+    //             ))}
+    //         </ul>
+    //     );
+    // }
 
 
     render() {
 
         debugger;
+        const errors = this.props.errors;
         const routes = Object.values(this.props.routes);
+        debugger;
         const currentUser = this.props.currentUser
         const GEARS = ["No Gear"]
-        if (Object.values(this.props.routes).length < 1 ) {
+        debugger
+        if (Object.values(this.props.routes).length < 1) {
             return null;
         }
+        debugger;
 
         
         return (
@@ -99,7 +105,8 @@ class WorkoutForm extends React.Component {
                             <span>Stay on top of your fitness goals. Create and log your workouts by filling out details below.</span>
                         </div>
                         <div id="workout-form-body">
-                            <form onSubmit={this.handleSubmit}>
+                            <form className="workout-details" onSubmit={this.handleSubmit}>
+                                {/* <div className="errors">{this.renderErrors()}</div> */}
                                 <div id="workout-form-body1">
                                     <label id="workout-form-name">
                                         <span>Workout name</span>
@@ -126,7 +133,7 @@ class WorkoutForm extends React.Component {
                                     <select className="workout-gear" onChange={this.update("gear")}>
                                         {GEARS.map(gear => {
                                             debugger;
-                                            return <option key={`gear-${gear}`} value={gear}>{gear}</option>})}
+                                            return <option key={`gear-${gear.id}`} value={gear}>{gear}</option>})}
                                     </select>
                                     {/* <img src={window.downArrow} /> */}
                                 </label>
@@ -147,7 +154,7 @@ class WorkoutForm extends React.Component {
                                     <span>Route</span>
                                     <br/>
                                     <select className="workout-route" onChange={this.update("route_id")}>
-                                        <option value="" disabled selected>Select...</option>
+                                        <option value="" defaultValue>Select...</option>
                                         {routes.slice(0).reverse().map(route => {
                                             debugger;
                                             if (route.userId === currentUser.id) {
@@ -177,7 +184,10 @@ class WorkoutForm extends React.Component {
 
 
                                 {/* <div className="workout-form-save"> */}
-                                    <button 
+                                    <button
+                                        // onClick={() => {
+                                        //     this.saveWorkout;
+                                        // }} 
                                         className="workout-form-save-button"
                                         type="submit"
                                         value="SAVE">SAVE</button>
