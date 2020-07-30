@@ -30,5 +30,5 @@ Key Features:
 
 ## License 
 
-@2020 Elijah Nam
+@ 2020 Elijah Nam
 
