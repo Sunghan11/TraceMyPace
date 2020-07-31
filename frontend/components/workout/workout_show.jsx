@@ -11,7 +11,8 @@ class WorkoutShow extends React.Component {
             // visible: false
         }
         debugger;
-    
+        
+        // this.targetWorkout = {}
         this.route = "";
         this.creationDate = "";
         this.workoutDate = "";
@@ -69,6 +70,11 @@ class WorkoutShow extends React.Component {
             this.locationMarkersArr();
             this.initMap();
         }
+
+        // if (prevProps.match.params.content !== this.props.match.params.content) {
+        //     debugger;
+        //     this.props.fetchWorkouts();
+        // }
       
     }
 
@@ -161,6 +167,15 @@ class WorkoutShow extends React.Component {
         } else {
             deleteButton = ""
         }
+
+        // const workouts = Object.values(this.props.workouts);
+
+        // workouts.forEach((workout) => {
+        //     debugger;
+        //     if (workout.id === this.props.match.url.slice(15)) {
+        //         this.targetWorkout = workout
+        //     }
+        // });
 
         this.props.routes.map(route => {
             if (route.id == this.props.workout.routeId) {
