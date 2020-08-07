@@ -28,23 +28,23 @@ export const receiveStatusErrors = errors => ({
 export const fetchStatuses = () => dispatch => (
     APIUtil.fetchStatuses()
         .then(statuses => dispatch(receiveStatuses(statuses))
-        ), err => dispatch(receiveStatusErrors(err.responseJSON))
-);
+        , err => dispatch(receiveStatusErrors(err.responseJSON))
+));
 
 export const fetchStatus = statusId => dispatch => (
     APIUtil.fetchStatus(statusId)
         .then(status => dispatch(receiveStatus(status))
-        ), err => dispatch(receiveStatusErrors(err.responseJSON))
-)
+        , err => dispatch(receiveStatusErrors(err.responseJSON))
+))
 
 export const createStatus = status => dispatch => (
     APIUtil.createStatus(status)
         .then(status => dispatch(receiveStatus(status))
-        ), err => dispatch(receiveStatusErrors(err.responseJSON))
-)
+        , err => dispatch(receiveStatusErrors(err.responseJSON))
+))
 
 export const deleteStatus = statusId => dispatch => (
     APIUtil.deleteStatus(statusId)
         .then(() => dispatch(removeStatus(statusId))
-        ), err => dispatch(receiveStatusErrors(err.responseJSON))
-)
+        , err => dispatch(receiveStatusErrors(err.responseJSON))
+))
