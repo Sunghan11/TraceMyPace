@@ -21,6 +21,7 @@ class Status extends React.Component {
 
     handleSubmit(e) {
         e.preventDefault();
+        debugger;
         
         if(this.state.body.length > 0) {
             this.props.createStatus(this.state)

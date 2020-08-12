@@ -1,1 +1,1 @@
-json.extract! status, :id, :body, :author_id, :gear, :created_at
+json.extract! status, :id, :body, :author_id, :created_at
