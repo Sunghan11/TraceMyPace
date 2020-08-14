@@ -23,7 +23,7 @@ Key Features:
 1. User Authentication and error handling.
 2. Creation/deletion of Routes utilizing Google Maps Api.
 3. Logging Workouts based off user-created Routes.
-4. Posting Statuses and comments on Activity Feed.
+4. Posting Statuses and Comments on Activity Feed.
 
 ## Maintainers
 [@Sunghan11](https://github.com/Sunghan11)
