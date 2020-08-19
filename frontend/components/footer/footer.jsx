@@ -16,10 +16,10 @@ const Footer = () => {
                 <div id="footer-first-bar">
                         <span><img src={window.logoBigURL} /></span>
                     <ul>
-                        <li>RUN</li>
-                        <li>RIDE</li>
-                        <li>WALK</li>
-                        <li>HIKE</li>
+                        <li id="footer-run">RUN</li>
+                        <li id="footer-ride">RIDE</li>
+                        <li id="footer-walk">WALK</li>
+                        <li id="footer-hike">HIKE</li>
                     </ul>
                 </div>
                 <div id="footer-second-bar">
