@@ -202,9 +202,19 @@ ul {
 }
 
 #footer-walk:hover {
-    color: blue;
+    background: -webkit-linear-gradient(left, rgb(46, 1, 97) ,rgb(228, 1, 217));
+    background: -o-linear-gradient(right, rgb(46, 1, 97) ,rgb(228, 1, 217));
+    background: -moz-linear-gradient(right, rgb(46, 1, 97) ,rgb(228, 1, 217));
+    background: linear-gradient(to right, rgb(46, 1, 97) ,rgb(228, 1, 217)); 
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent; 
 }
 
 #footer-hike:hover {
-    color: blue;
+    background: -webkit-linear-gradient(left, rgb(27, 1, 177),rgb(1, 156, 228));
+    background: -o-linear-gradient(right, rgb(27, 1, 177),rgb(1, 156, 228));
+    background: -moz-linear-gradient(right, rgb(27, 1, 177),rgb(1, 156, 228));
+    background: linear-gradient(to right, rgb(27, 1, 177),rgb(1, 156, 228)); 
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent; 
 }
