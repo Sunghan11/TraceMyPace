@@ -615,17 +615,25 @@ class RouteMap extends React.Component {
                                 <button onClick={this.clearRoutes}><i id="second" className="fas fa-times fa-2x"></i><br/>CLEAR</button>
                                 <button onClick={this.updateCenter2}><i id="third" className="fas fa-compress-arrows-alt fa-2x"></i><br/>CENTER</button>
                             </div>
-                            <div id ="map-tools-control2">
-                                <div>
-                                    <input type="radio" readOnly name="activity" value="WALK" checked/>
+
+                            {/* <select value={this.state.activity}
+                                className="optA"
+                                onChange={this.update("activity")}>
+                                {ACTIVITIES.map(activity =>
+                                    <option key={`activity-${activity}`} value={activity}>{activity}</option>)}
+                            </select> */}
+
+                            <div id="map-tools-control2" data-toggle="buttons">
+                                <div class="btn btn-primary active">
+                                    <input type="radio" onChange={this.update("activity")} name="activity" id="activity1" value="WALK" checked/>
                                     <i className="fas fa-walking fa-2x"></i><br/>WALK
                                 </div>
-                                <div>
-                                    <input type="radio" readOnly name="activity" value="HIKE"/>
+                                <div class="btn btn-primary">
+                                    <input type="radio" name="activity" id="activity2" value="HIKE"/>
                                     <i className="fas fa-hiking fa-2x"></i><br/>HIKE
                                 </div>
-                                <div>
-                                    <input type="radio" name="activity" value="BIKE" />
+                                <div class="btn btn-primary">
+                                    <input type="radio" name="activity" id="activity3" value="BIKE" />
                                     <i className="fas fa-biking fa-2x"></i><br/>BIKE
                                 </div>
                             </div>
