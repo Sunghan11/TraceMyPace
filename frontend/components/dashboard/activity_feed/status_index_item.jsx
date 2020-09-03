@@ -67,7 +67,7 @@ class StatusIndexItem extends React.Component {
                                 this.setState({ visible: !this.state.visible});
                                 }}
                                 >
-                                <i className="far fa-comment-alt"></i>
+                                <i className="far fa-comment-alt" alt="Comment" title="Comment"></i>
                                 </button>
                             </div>
                             
