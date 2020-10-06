@@ -13,6 +13,9 @@ class WorkoutForm extends React.Component {
             description: '',
             user_id: props.currentUser.id,
             route_id: '',
+            // hh: 0,
+            // mm: 0,
+            // ss: 0
         }
 
         this.handleSubmit = this.handleSubmit.bind(this);
@@ -76,6 +79,9 @@ class WorkoutForm extends React.Component {
 
 
     render() {
+
+        // const newDur = `${this.hh}:${this.mm}:${this.ss}`
+        // this.duration = newDur;
 
         debugger;
         const errors = this.props.errors;
@@ -180,6 +186,31 @@ class WorkoutForm extends React.Component {
                                     </select>
                                     {/* <img src={window.downArrow} /> */}
                                 </label>
+                                {/* <label id="workout-form-duration">
+                                        <div>Duration</div>
+                                        <div id="duration-log">
+                                            <ul>
+                                                <li>
+                                                <input type="number" placeholder="hh"
+                                                    min="0" max="60">
+                                                </input>
+                                                </li>
+                                                :
+                                                <li>
+                                                    <input type="number" placeholder="mm"
+                                                min="0" max="60">
+                                                </input>
+                                                </li>
+                                                :
+                                                <li>
+                                                    <input type="number" placeholder="ss"
+                                                        min="0" max="60">
+                                                </input>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        
+                                </label> */}
                                 {/* <input id="workout-form-save-button" type="submit" value="SAVE"/> */}
 
 

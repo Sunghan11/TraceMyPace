@@ -84,6 +84,7 @@ class DashNav extends React.Component {
                                     <a target="_blank" href="https://github.com/Sunghan11">
                                         <i className="fab fa-github-square fa-5x"></i>
                                     </a>
+                                    <br/>
                                     <a target="_blank" href="https://github.com/Sunghan11">GitHub</a>
                                 </div>
 

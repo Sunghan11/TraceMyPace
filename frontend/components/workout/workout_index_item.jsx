@@ -35,6 +35,10 @@ class WorkoutIndexItem extends React.Component {
         this.workoutDate = lDate;
     }
 
+    updateDuration() {
+        
+    }
+
     deleteWorkout() {
         debugger;
         this.props.deleteWorkout(this.props.workout.id)

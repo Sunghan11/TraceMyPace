@@ -269,3 +269,12 @@
     height: 46px;
     margin-top: 15px;
 }
+
+#duration-log ul {
+    display: flex;
+    justify-content: space-between;
+    line-height: 35px;
+}
+#duration-log {
+    width: 50%;
+}

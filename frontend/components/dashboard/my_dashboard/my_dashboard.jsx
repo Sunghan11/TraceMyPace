@@ -13,7 +13,8 @@ class MyDashboard extends React.Component {
         const min = miles * 12;
         const hr = Math.floor(min / 60);
         
-        const newMin = Math.floor(min % 60);
+        const oldMin = Math.floor(min % 60);
+        const newMin = ("0" + oldMin).slice(-2);
         if (hr < 10) {
             return `0${hr}:${newMin}`
         } else {
