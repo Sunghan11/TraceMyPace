@@ -29,21 +29,14 @@ class WorkoutForm extends React.Component {
         )
     };
 
-    // update2(field1, field2) {
-    //     return e => (
-    //         this.setState({ [field1]: e.target.value }),
-    //         this.setState({ [field2]: e.target.value })
-    //     )
-    // };
+
 
     componentDidMount() {
         this.props.fetchRoutes();
         // return this.props.removeErrors();
     };
 
-    // componentWillMount() {
-    //     this.props.fetchRoutes();
-    // }
+
 
 
     handleSubmit(e) {
