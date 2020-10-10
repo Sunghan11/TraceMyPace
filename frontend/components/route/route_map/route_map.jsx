@@ -102,10 +102,7 @@ class RouteMap extends React.Component {
     }
     addMarker(coords) {
         debugger;
-        // let marker = new google.maps.Marker({
-        //     position: coords,
-        //     map: this.map
-        // })
+
         const marker = new google.maps.Marker({
             position: coords
         })
@@ -226,17 +223,6 @@ class RouteMap extends React.Component {
         })
     }
 
-    // stringMarkers() {
-    //     let markerString = '';
-    //     this.markers.forEach(marker => {
-    //         let latitude = marker.getPosition().lat();
-    //         let longitude = marker.getPosition().lng();
-    //         markerString += `${latitude},${longitude},`;
-    //     })
-
-    //     return markerString.slice(0,-1);
-    // }
-
     clearRoutes() {
         for (let i = 0 ; i < this.markers.length; i++) {
             this.markers[i].setMap(null)
@@ -355,14 +341,6 @@ class RouteMap extends React.Component {
         }
     }
 
-
-        // let poly = new google.maps.PolyLine({
-        //     strokeColor: '#6A5ACD',
-        //     strokeOpactity: 0.7,
-        //     strokeWeight: 4
-        // });
-        // poly.setMap(map);
-        
     // getElevationAlongPath = () => {
     //     if (this.markers.length > 1) {
     //         const ele = new window.google.maps.ElevationService();
